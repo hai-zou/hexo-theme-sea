@@ -1,0 +1,13 @@
+{
+    // 保存自动格式化代码
+    "editor.formatOnSave": false,
+    "editor.insertSpaces": true,
+    // 配置 Tab 空格数
+    "editor.tabSize": 4,
+    // 字体大小
+    "editor.fontSize": 16,
+    "files.eol": "\r\n",
+
+    "prettier.useTabs": false,
+    "prettier.tabWidth": 4,
+}
