@@ -1,0 +1,41 @@
+/* 中性色 */
+:root {
+    --sea-color-white: #ffffff;
+    --sea-color-black: #000000;
+
+    --sea-color-gray: #8e8e93;
+    --sea-color-gray-1: #ccc;
+    --sea-color-gray-2: #eee;
+
+    --sea-color-divider: rgba(60, 60, 67, 0.12);
+}
+
+/* 亮色主题 */
+:root {
+    --sea-color-bg: #f4f4f4;
+    --sea-color-header-bg: hsla(0,0%,100%,0.9);
+
+    --sea-color-text-1: rgba(60, 60, 67);
+    --sea-color-text-2: rgba(60, 60, 67, 0.75);
+    --sea-color-text-3: rgba(60, 60, 67, 0.33);
+}
+
+/* 暗色主题 */
+html[theme=dark] {
+    --sea-color-bg: #27272b;
+    --sea-color-header-bg: rgba(30,30,34,0.8);
+
+    --sea-color-text-1: rgba(255, 255, 245, 0.86);
+    --sea-color-text-2: rgba(235, 235, 245, 0.6);
+    --sea-color-text-3: rgba(235, 235, 245, 0.38);
+}
+
+:root {
+    --sea-layout-max-width: 800px;
+    --sea-nav-height: 64px;
+}
+
+/* 字体 */
+:root {
+    --sea-font-family-lxgw: "LXGW WenKai Screen", sans-serif;
+}

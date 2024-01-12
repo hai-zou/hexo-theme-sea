@@ -2,8 +2,10 @@
 <html lang="{{ page.lang }}">
 {{ partial('partial/head') }}
 <body>
-  <div id="container">
-    {{ body }}
-  </div>
+    <div id="sea-layout-container">
+        {{ partial('partial/header') }}
+        {{ body }}
+        {{ partial('partial/footer') }}
+    </div>
 </body>
 </html>

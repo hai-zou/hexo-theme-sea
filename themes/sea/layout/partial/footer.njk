@@ -1,0 +1,5 @@
+<div id="sea-footer-container">
+    {% set current = moment().year() %}
+    <div>© {% if current > config.since %} {{ config.since + '-' + current }} {% else %} {{ current }} {% endif %} | {{ config.title }}</div>
+    <div>{{ config.description }}</div>
+</div>

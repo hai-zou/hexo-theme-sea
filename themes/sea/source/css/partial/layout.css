@@ -1,0 +1,5 @@
+#sea-layout-container {
+    width: 85%;
+    max-width: var(--sea-layout-max-width);
+    margin: var(--sea-nav-height) auto 0;
+}
