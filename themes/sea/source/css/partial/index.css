@@ -1,4 +1,4 @@
-.sea-article-item {
+.sea-post-item {
     position: relative;
     padding: 1rem 1.5rem;
     margin-bottom: 0.8rem;
@@ -7,7 +7,7 @@
     background-color: var(--sea-color--main-bg);
 }
 
-.sea-article-title {
+.sea-post-title {
     font-size: 1.4rem;
     font-weight: 700;
     transition: all .3s ease-out 0s;
@@ -16,25 +16,25 @@
     cursor: pointer;
 }
 
-.sea-article-link {
+.sea-post-link {
     display: block;
 }
 
-.sea-article-line {
+.sea-post-line {
     transition: all 0.3s ease-out;
     border-top: 2px solid var(--sea-color-text-1);
     display: block;
     width: 2rem;
 }
 
-.sea-article-abstract {
+.sea-post-abstract {
     line-height: 1.5;
     margin: 1rem 0;
     color: var(--sea-color-text-2);
     letter-spacing: .5px;
 }
 
-.sea-article-meta {
+.sea-post-meta {
     color: var(--sea-color-gray);
     display: flex;
     align-items: center;
@@ -43,11 +43,11 @@
     row-gap: 0.5rem;
 }
 
-.sea-article-item:hover {
-    box-shadow: 0 1px 15px 0 var(--sea-article-shadow);
+.sea-post-item:hover {
+    box-shadow: 0 1px 15px 0 var(--sea-post-shadow);
 }
 
-.sea-article-item .top-flag {
+.sea-post-item .top-flag {
     position: absolute;
     top: -1px;
     right: 0;
@@ -55,11 +55,11 @@
     height: 2.5rem;
 }
 
-.sea-article-item:hover .sea-article-title {
+.sea-post-item:hover .sea-post-title {
     color: var(--sea-color-primary);
 }
 
-.sea-article-item:hover .sea-article-line {
+.sea-post-item:hover .sea-post-line {
     width: 5rem;
     border-color: var(--sea-color-primary);
 }

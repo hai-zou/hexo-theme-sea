@@ -1,23 +1,23 @@
 <div class="sea-home-wrapper">
-    <div class="sea-article-list">
+    <div class="sea-post-list">
         {% set posts = site.posts.sort('-date') %}
         {% for post in posts.slice('0', '4').toArray() %}
-            <div class="sea-article-item">
-                <h2 class="sea-article-title">
-                    <a class="sea-article-link" href="{{ url_for(post.path) }}">
+            <section class="sea-post-item">
+                <h2 class="sea-post-title">
+                    <a class="sea-post-link" href="{{ url_for(post.path) }}">
                         {{ truncate(post.title, {length: 120, separator: ' '}) }}
                     </a>
                 </h2>
-                <div class="sea-article-line"></div>
-                <div class="sea-article-abstract">
+                <div class="sea-post-line"></div>
+                <div class="sea-post-abstract">
                     {% set content = truncate(post.content, {length: 300, separator: ' '}) %}
                     {{ strip_html(content) }}
                 </div>
-                <div class="sea-article-meta">
+                <div class="sea-post-meta">
                     {{ partial('partial/post_date', {post_date: post.date}) }}
                     {{ partial('partial/post_tags', {post_tags: post.tags}) }}
                 </div>
-            </div>
+            </section>
         {% endfor %}
     </div>
 </div>

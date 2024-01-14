@@ -16,7 +16,7 @@
     --sea-color--main-bg: #ffffff;
     --sea-color-bg: #f4f4f4;
     --sea-color-header-bg: hsla(0,0%,100%,0.9);
-    --sea-article-shadow: rgba(0,0,0,.1);
+    --sea-post-shadow: rgba(0,0,0,.1);
 
     --sea-color-text-1: rgba(60, 60, 67);
     --sea-color-text-2: rgba(60, 60, 67, 0.75);
@@ -28,7 +28,7 @@ html[theme=dark] {
     --sea-color--main-bg: #1e1e22;
     --sea-color-bg: #27272b;
     --sea-color-header-bg: rgba(30,30,34,0.8);
-    --sea-article-shadow: rgba(255,255,255,.1);
+    --sea-post-shadow: rgba(255,255,255,.1);
 
     --sea-color-text-1: rgba(255, 255, 245, 0.86);
     --sea-color-text-2: rgba(235, 235, 245, 0.6);

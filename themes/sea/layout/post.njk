@@ -1,7 +1,12 @@
-<div id="content-wrap">
-    <div class="wrapper">
-        <div class="inner">
-            {{ partial('partial/post', {post: page}) }}
-        </div>
+<article class="sea-article">
+    <header class="sea-article-header">
+        <h1 class="sea-article-title">{{ page.title }}</h1>
+        {% if is_post() %}
+            {{ partial('partial/post_date', {post_date: page.date}) }}
+            {{ partial('partial/post_tags', {post_tags: page.tags}) }}
+        {% endif %}
+    </header>
+    <div class="sea-article-content">
+        {{ page_anchor(page.content) }}
     </div>
-</div>
+</article>
