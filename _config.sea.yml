@@ -1,0 +1,13 @@
+since: 2021
+
+menu:
+  - name: 随笔
+    url: /essay/
+  - name: 归档
+    url: /archives/
+  - name: 友链
+    url: /friends/
+  - name: 留言
+    url: /messages/
+  - name: 关于
+    url: /about/

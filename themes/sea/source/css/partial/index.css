@@ -1,0 +1,65 @@
+.sea-article-item {
+    position: relative;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.8rem;
+    transition: all .3s;
+    border-radius: 5px;
+    background-color: var(--sea-color--main-bg);
+}
+
+.sea-article-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: all .3s ease-out 0s;
+    margin: 0.5rem 0;
+    border: none;
+    cursor: pointer;
+}
+
+.sea-article-link {
+    display: block;
+}
+
+.sea-article-line {
+    transition: all 0.3s ease-out;
+    border-top: 2px solid var(--sea-color-text-1);
+    display: block;
+    width: 2rem;
+}
+
+.sea-article-abstract {
+    line-height: 1.5;
+    margin: 1rem 0;
+    color: var(--sea-color-text-2);
+    letter-spacing: .5px;
+}
+
+.sea-article-meta {
+    color: var(--sea-color-gray);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+}
+
+.sea-article-item:hover {
+    box-shadow: 0 1px 15px 0 var(--sea-article-shadow);
+}
+
+.sea-article-item .top-flag {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.sea-article-item:hover .sea-article-title {
+    color: var(--sea-color-primary);
+}
+
+.sea-article-item:hover .sea-article-line {
+    width: 5rem;
+    border-color: var(--sea-color-primary);
+}

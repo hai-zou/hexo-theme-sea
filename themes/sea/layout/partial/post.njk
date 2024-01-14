@@ -1,0 +1,12 @@
+<article class="sea-article">
+    <header class="sea-article-header">
+        <h1 class="sea-article-title">{{ post.title }}</h1>
+        {% if is_post() %}
+            {{ partial('partial/post_date', {post_date: post.date}) }}
+            {{ partial('partial/post_tags', {post_tags: post.tags}) }}
+        {% endif %}
+    </header>
+    <div class="sea-article-content">
+        {{ page_anchor(post.content) }}
+    </div>
+</article>

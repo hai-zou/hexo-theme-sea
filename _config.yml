@@ -8,11 +8,10 @@ keywords:
 author: Hai Zou
 language: zh
 timezone: ''
-since: 2021
 
 # URL
 url: https://www.luckyzh.cn
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true

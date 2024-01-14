@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 html {
     font-size: 16px;
 }
