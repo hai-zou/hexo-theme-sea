@@ -4,7 +4,7 @@
     margin-bottom: 0.8rem;
     transition: all .3s;
     border-radius: 5px;
-    background-color: var(--sea-color--main-bg);
+    background-color: var(--sea-color-main-bg);
 }
 
 .sea-post-title {

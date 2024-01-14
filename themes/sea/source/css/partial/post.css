@@ -1,0 +1,11 @@
+.sea-card-box {
+    padding: 1rem 2.5rem;
+    border-radius: 5px;
+    background-color: var(--sea-color-main-bg);
+    margin-bottom: 1rem;
+}
+
+.sea-post-time,
+.sea-post-tags {
+    display: inline-block;
+}

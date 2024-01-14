@@ -1,0 +1,136 @@
+.sea-post-doc pre,
+.sea-post-doc .highlight {
+    background: #272822;
+    margin: 10px 0;
+    padding: 10px 10px;
+    overflow: auto;
+    color: #fff;
+    font-size: 0.9em;
+    line-height: 22px;
+}
+
+.sea-post-doc pre,
+.sea-post-doc code {
+    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+}
+
+.sea-post-doc code {
+    background: #eee;
+    padding: 0 0.3em;
+    border: none;
+}
+
+.sea-post-doc pre code {
+    background: none;
+    text-shadow: none;
+    padding: 0;
+    color: #fff;
+}
+
+.sea-post-doc .highlight {
+    border-radius: 4px;
+}
+
+.sea-post-doc .highlight pre {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sea-post-doc .highlight table {
+    margin: 0;
+    width: auto;
+}
+
+.sea-post-doc .highlight td {
+    border: none;
+    padding: 0;
+}
+
+.sea-post-doc .highlight figcaption {
+    color: highlight-comment;
+    line-height: 1em;
+    margin-bottom: 1em;
+}
+
+.sea-post-doc .highlight figcaption:before,
+.sea-post-doc .highlight figcaption:after {
+    content: "";
+    display: table;
+}
+
+.sea-post-doc .highlight figcaption:after {
+    clear: both;
+}
+
+.sea-post-doc .highlight figcaption a {
+    float: right;
+}
+
+.sea-post-doc .highlight .gutter pre {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.sea-post-doc .highlight .gutter pre .line {
+    text-shadow: none;
+}
+
+.sea-post-doc .highlight .gutter pre,
+.sea-post-doc .highlight .gutter pre .line {
+    color: #666;
+}
+
+.sea-post-doc .highlight .line {
+    color: #fff;
+    min-height: 19px;
+}
+
+pre .comment {
+    color: #75715e;
+}
+
+pre .keyword,
+pre .function .keyword,
+pre .class .params {
+    color: #66d9ef;
+}
+
+pre .tag,
+pre .doctype,
+pre .params,
+pre .function,
+pre .css .value {
+    color: #fff;
+}
+
+pre .css~* .tag,
+pre .title,
+pre .at_rule,
+pre .at_rule .keyword,
+pre .preprocessor,
+pre .preprocessor .keyword {
+    color: #f92672;
+}
+
+pre .attribute,
+pre .built_in,
+pre .class,
+pre .css~* .class,
+pre .function .title {
+    color: #a6e22e;
+}
+
+pre .value,
+pre .string {
+    color: #e6db74;
+}
+
+pre .number {
+    color: #7163d7;
+}
+
+pre .id,
+pre .css~* .id {
+    color: #fd971f;
+}
