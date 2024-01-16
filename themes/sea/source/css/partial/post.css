@@ -5,6 +5,15 @@
     margin-bottom: 1rem;
 }
 
+.sea-post-meta {
+    color: var(--sea-color-gray);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+}
+
 .sea-post-time,
 .sea-post-tags {
     display: inline-block;

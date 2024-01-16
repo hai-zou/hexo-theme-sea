@@ -34,15 +34,6 @@
     letter-spacing: .5px;
 }
 
-.sea-post-meta {
-    color: var(--sea-color-gray);
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 1.5rem;
-    row-gap: 0.5rem;
-}
-
 .sea-post-item:hover {
     box-shadow: 0 1px 15px 0 var(--sea-post-shadow);
 }

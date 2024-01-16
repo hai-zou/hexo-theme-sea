@@ -1,9 +1,11 @@
-<article class="sea-article sea-card-box sea-post-doc">
+<article class="sea-article sea-card-box sea-doc">
     <header class="sea-article-header">
         <h1 class="sea-article-title">{{ page.title }}</h1>
         {% if is_post() %}
-            {{ partial('partial/post_date', {post_date: page.date}) }}
-            {{ partial('partial/post_tags', {post_tags: page.tags}) }}
+            <div class="sea-post-meta">
+                {{ partial('partial/post_date', {post_date: page.date}) }}
+                {{ partial('partial/post_tags', {post_tags: page.tags}) }}
+            </div>
         {% endif %}
     </header>
     <div class="sea-article-content">

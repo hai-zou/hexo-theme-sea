@@ -1,5 +1,5 @@
-.sea-post-doc pre,
-.sea-post-doc .highlight {
+.sea-doc pre,
+.sea-doc .highlight {
     background: #272822;
     margin: 10px 0;
     padding: 10px 10px;
@@ -9,79 +9,82 @@
     line-height: 22px;
 }
 
-.sea-post-doc pre,
-.sea-post-doc code {
-    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+.sea-doc pre,
+.sea-doc code {
+    font-family: var(--sea-font-family-code);
 }
 
-.sea-post-doc code {
+.sea-doc code {
     background: #eee;
-    padding: 0 0.3em;
-    border: none;
+    padding: 0 .3rem;
+    border-radius: 4px;
+    color: var(--sea-color-text-code);
+    background-color: var(--sea-color-mute);
+    transition: color 0.5s, background-color 0.5s;
 }
 
-.sea-post-doc pre code {
+.sea-doc pre code {
     background: none;
     text-shadow: none;
     padding: 0;
     color: #fff;
 }
 
-.sea-post-doc .highlight {
+.sea-doc .highlight {
     border-radius: 4px;
 }
 
-.sea-post-doc .highlight pre {
+.sea-doc .highlight pre {
     border: none;
     margin: 0;
     padding: 0;
 }
 
-.sea-post-doc .highlight table {
+.sea-doc .highlight table {
     margin: 0;
     width: auto;
 }
 
-.sea-post-doc .highlight td {
+.sea-doc .highlight td {
     border: none;
     padding: 0;
 }
 
-.sea-post-doc .highlight figcaption {
+.sea-doc .highlight figcaption {
     color: highlight-comment;
     line-height: 1em;
     margin-bottom: 1em;
 }
 
-.sea-post-doc .highlight figcaption:before,
-.sea-post-doc .highlight figcaption:after {
+.sea-doc .highlight figcaption:before,
+.sea-doc .highlight figcaption:after {
     content: "";
     display: table;
 }
 
-.sea-post-doc .highlight figcaption:after {
+.sea-doc .highlight figcaption:after {
     clear: both;
 }
 
-.sea-post-doc .highlight figcaption a {
+.sea-doc .highlight figcaption a {
     float: right;
 }
 
-.sea-post-doc .highlight .gutter pre {
+.sea-doc .highlight .gutter pre {
     text-align: right;
     padding-right: 20px;
 }
 
-.sea-post-doc .highlight .gutter pre .line {
+.sea-doc .highlight .gutter pre .line {
     text-shadow: none;
 }
 
-.sea-post-doc .highlight .gutter pre,
-.sea-post-doc .highlight .gutter pre .line {
+.sea-doc .highlight .gutter pre,
+.sea-doc .highlight .gutter pre .line {
     color: #666;
 }
 
-.sea-post-doc .highlight .line {
+.sea-doc .highlight .line {
     color: #fff;
     min-height: 19px;
 }
