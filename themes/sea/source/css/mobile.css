@@ -1,0 +1,58 @@
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    #sea-mobile-nav-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .sea-menu-pc-wrap {
+        display: none;
+    }
+
+    .sea-menu-mobile-wrap {
+        display: block;
+        background-color: var(--sea-color-main-bg);
+        overflow: hidden;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 10;
+        padding-top: var(--sea-nav-height);
+        transition: transform .3s cubic-bezier(.4,0,.2,1);
+        transform: translateX(-100%);
+    }
+    
+    .sea-menu-mobile-list {
+        width: var(--sea-main-width);
+        max-width: var(--sea-main-max-width);
+        margin: 1rem auto;
+        overflow: auto;
+    }
+    
+    .sea-mobile-nav-on {
+        overflow: hidden;
+    }
+    
+    .sea-mobile-nav-on .sea-menu-mobile-wrap {
+        transform: translateX(0);
+    }
+
+    #sea-mobile-nav-toggle .sea-icon-bars {
+        display: inline-block;
+    }
+    #sea-mobile-nav-toggle .sea-icon-close {
+        display: none;
+    }
+    .sea-mobile-nav-on #sea-mobile-nav-toggle .sea-icon-bars {
+        display: none;
+    }
+    .sea-mobile-nav-on #sea-mobile-nav-toggle .sea-icon-close {
+        display: inline-block;
+    }
+}

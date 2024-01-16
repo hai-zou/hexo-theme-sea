@@ -2,8 +2,11 @@
 	position: fixed;
     top: 0;
     left: 0;
+    z-index: 11;
     width: 100%;
     height: var(--sea-nav-height);
     box-shadow: 0 2px 5px var(--sea-color-divider);
     background-color: var(--sea-color-header-bg);
+    -webkit-backdrop-filter: saturate(200%) blur(20px);
+    backdrop-filter: saturate(200%) blur(20px);
 }

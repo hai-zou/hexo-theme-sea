@@ -14,3 +14,7 @@
     margin: 0;
     cursor: pointer;
 }
+
+#sea-mobile-nav-toggle {
+    display: none;
+}

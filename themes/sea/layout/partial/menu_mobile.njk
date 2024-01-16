@@ -1,0 +1,12 @@
+<div class="sea-menu-mobile-wrap">
+    <div class="sea-menu-mobile-list">
+        {% for menu_item in theme.menu %}
+            <a
+                class="sea-menu-link"
+                href="{{ url_for(menu_item.url) }}"
+            >
+                {{ menu_item.name }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
