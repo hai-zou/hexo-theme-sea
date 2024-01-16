@@ -40,3 +40,7 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+{% note info test %}
+Syntax highlighting is refactored and controlled by the following settings. See [Syntax Highlighting](/docs/syntax-highlight#Configuration) for more details.
+{% endnote %}
