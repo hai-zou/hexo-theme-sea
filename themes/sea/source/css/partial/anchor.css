@@ -1,0 +1,48 @@
+@media screen and (max-width: 1250px) {
+    #sea-article-toc {
+        display: none;
+    }
+}
+
+#sea-article-toc {
+    float: right;
+    width: 220px;
+    margin-right: -220px;
+    opacity: .8;
+    position: sticky;
+    top: var(--sea-nav-height);
+    padding-left: 1rem;
+}
+
+.sea-article-toc-title {
+    display: inline-block;
+    border-bottom: 1px solid var(--sea-color-gray);
+    padding: .5rem 0;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+
+#sea-article-toc .toc,
+#sea-article-toc .toc-child {
+    list-style: none;
+    font-size: .8rem;
+}
+
+#sea-article-toc .toc {
+    margin: 0;
+    padding: 0;
+}
+
+#sea-article-toc .toc-child {
+    padding-left: 1.5rem;
+}
+
+#sea-article-toc .toc-link {
+    display: block;
+    padding: .3rem 0;
+    line-height: 1;
+}
+
+#sea-article-toc .toc-link:hover {
+    color: var(--sea-color-primary);
+}

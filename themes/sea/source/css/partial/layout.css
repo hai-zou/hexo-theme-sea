@@ -4,3 +4,9 @@
     max-width: var(--sea-main-max-width);
     margin: var(--sea-nav-height) auto 0;
 }
+
+#sea-main-wrapper::after {
+    content: "";
+    display: table;
+    clear: both;
+}

@@ -11,6 +11,8 @@ a {
 
 html {
     font-size: 16px;
+    scroll-padding-top: var(--sea-nav-height);
+    scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {

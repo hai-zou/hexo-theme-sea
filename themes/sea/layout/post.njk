@@ -1,16 +1,20 @@
-<article class="sea-article sea-card-box sea-doc">
-    <header class="sea-article-header">
-        <h1 class="sea-article-title">{{ page.title }}</h1>
-        {% if is_post() %}
-            <div class="sea-post-meta">
-                {{ partial('partial/post_date', {post_date: page.date}) }}
-                {{ partial('partial/post_tags', {post_tags: page.tags}) }}
-            </div>
-        {% endif %}
-    </header>
-    <div class="sea-article-content">
-        {{ page_anchor(page.content) }}
-    </div>
-</article>
+<div class="sea-article-wrapper">
+    <article class="sea-card-box sea-doc">
+        <header class="sea-article-header">
+            <h1 class="sea-article-title">{{ page.title }}</h1>
+            {% if is_post() %}
+                <div class="sea-post-meta">
+                    {{ partial('partial/post_date', {post_date: page.date}) }}
+                    {{ partial('partial/post_tags', {post_tags: page.tags}) }}
+                </div>
+            {% endif %}
+        </header>
+        <div class="sea-article-content">
+            {{ page_anchor(page.content) }}
+        </div>
+    </article>
 
-{{ partial('partial/comment') }}
+    {{ partial('partial/comment') }}
+</div>
+
+{{ partial('partial/anchor') }}

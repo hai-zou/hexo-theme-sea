@@ -12,5 +12,8 @@ menu:
   - name: 关于
     url: /about/
 
+page:
+  contents: 目录
+
 waline:
   serverURL: https://waline.luckyzh.cn/
