@@ -11,11 +11,11 @@ timezone: ''
 
 # URL
 url: https://www.luckyzh.cn
-permalink: :title.html
+permalink: :title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true
-  trailing_html: true
+  trailing_index: false
+  trailing_html: false
 
 # Directory
 source_dir: source
