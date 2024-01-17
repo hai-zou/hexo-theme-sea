@@ -1,3 +1,4 @@
+{% if page.comments %}
 <section id="sea-comments" class="sea-card-box">
     <div id="sea-waline"></div>
 </section>
@@ -9,3 +10,4 @@
         serverURL: '{{ theme.waline.serverURL }}',
     });
 </script>
+{% endif %}
