@@ -2,12 +2,15 @@ since: 2021
 
 menu:
   - name: 随笔
-    url: /essay/
+    url: /essay.html
   - name: 归档
-    url: /archives/
+    url: /archives.html
   - name: 友链
-    url: /friends/
+    url: /friends.html
   - name: 留言
-    url: /messages/
+    url: /messages.html
   - name: 关于
-    url: /about/
+    url: /about.html
+
+waline:
+  serverURL: https://waline.luckyzh.cn/
