@@ -16,7 +16,8 @@ page:
   contents: 目录
 
 user:
-  avatar: https://www.luckyzh.cn/avatar.jpg
+  avatar: avatar.jpg
+  intro: 一介凡人
 
 waline:
   serverURL: https://waline.luckyzh.cn/

@@ -29,10 +29,10 @@
         z-index: 10;
         padding-top: var(--sea-nav-height);
         transition: transform .3s cubic-bezier(.4,0,.2,1);
-        transform: translateX(-100%);
+        transform: translateX(100%);
     }
     
-    .sea-menu-mobile-list {
+    .sea-menu-mobile-inner {
         width: var(--sea-main-width);
         max-width: var(--sea-main-max-width);
         margin: 1rem auto;
@@ -58,5 +58,11 @@
     }
     .sea-mobile-nav-on #sea-mobile-nav-toggle .sea-icon-close {
         display: inline-block;
+    }
+
+    .sea-menu-mobile-wrap .sea-menu-link {
+        display: block;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--sea-color-divider);
     }
 }
