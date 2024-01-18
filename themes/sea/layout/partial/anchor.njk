@@ -1,6 +1,4 @@
-<aside id="sea-article-toc" role="navigation">
-    <div id="sea-article-toc-inner">
-        <strong class="sea-article-toc-title">{{ theme.page.contents }}</strong>
-        {{ toc(page.content, {list_number: false, class_number: false}) }}
-    </div>
-</aside>
+<div id="sea-article-toc" class="sea-sidebar-card" role="navigation">
+    <strong class="sea-article-toc-title">{{ theme.page.contents }}</strong>
+    {{ toc(page.content, {list_number: false, class_number: false}) }}
+</div>

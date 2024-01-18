@@ -1,0 +1,8 @@
+<aside>
+    {{ partial('partial/card_user') }}
+    {{ partial('partial/card_tags') }}
+
+    {% if is_post() %}
+        {{ partial('partial/anchor') }}
+    {% endif %}
+</aside>

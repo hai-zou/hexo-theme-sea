@@ -47,7 +47,7 @@ html[theme=dark] {
 
 :root {
     --sea-main-width: 85%;
-    --sea-main-max-width: 800px;
+    --sea-main-max-width: 1000px;
     --sea-nav-height: 64px;
 }
 

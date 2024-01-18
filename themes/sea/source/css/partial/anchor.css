@@ -1,23 +1,12 @@
-@media screen and (max-width: 1250px) {
-    #sea-article-toc {
-        display: none;
-    }
-}
-
 #sea-article-toc {
-    float: right;
-    width: 220px;
-    margin-right: -220px;
-    opacity: .8;
     position: sticky;
     top: var(--sea-nav-height);
-    padding-left: 1rem;
 }
 
 .sea-article-toc-title {
     display: inline-block;
     border-bottom: 1px solid var(--sea-color-gray);
-    padding: .5rem 0;
+    padding-bottom: .5rem;
     margin-bottom: .5rem;
     font-size: 1rem;
 }

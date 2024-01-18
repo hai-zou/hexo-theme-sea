@@ -3,6 +3,10 @@
         font-size: 14px;
     }
 
+    .sea-main-right {
+        display: none;
+    }
+
     #sea-mobile-nav-toggle {
         display: block;
         font-size: 1.5rem;

@@ -15,5 +15,8 @@ menu:
 page:
   contents: 目录
 
+user:
+  avatar: https://www.luckyzh.cn/avatar.jpg
+
 waline:
   serverURL: https://waline.luckyzh.cn/

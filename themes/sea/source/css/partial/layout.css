@@ -3,10 +3,14 @@
     padding-top: 2rem;
     max-width: var(--sea-main-max-width);
     margin: var(--sea-nav-height) auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
 }
 
-#sea-main-wrapper::after {
-    content: "";
-    display: table;
-    clear: both;
+.sea-main-left {
+    flex: 1;
+}
+.sea-main-right {
+    width: 240px;
 }
