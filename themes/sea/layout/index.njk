@@ -1,6 +1,5 @@
 <div class="sea-post-list">
-    {% set posts = site.posts.sort('-date') %}
-    {% for post in posts.slice('0', '4').toArray() %}
+    {% for post in page.posts.toArray() %}
         <section class="sea-post-item">
             <h2 class="sea-post-title">
                 <a class="sea-post-link" href="{{ url_for(post.path) }}">
@@ -19,3 +18,5 @@
         </section>
     {% endfor %}
 </div>
+
+{{ partial('partial/pagination') }}
