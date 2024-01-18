@@ -15,15 +15,15 @@ html {
     scroll-behavior: smooth;
 }
 
-html::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 6px;
     height: 5px;
 }
-html::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: var(--sea-color-gray);
 }
-html::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: var(--sea-color-gray-2);
     border-radius: 3px;
 }

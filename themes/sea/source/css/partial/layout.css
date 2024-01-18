@@ -10,6 +10,7 @@
 
 .sea-main-left {
     flex: 1;
+    overflow: hidden;
 }
 .sea-main-right {
     width: 240px;
