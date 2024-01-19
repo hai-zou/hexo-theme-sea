@@ -2,10 +2,13 @@
     <h1 class="sea-nav-logo" title="{{config.description}}">
         <a href="/">{{ config.title }}</a>
     </h1>
-    {{ partial('partial/menu_pc') }}
+    <div class="sea-nav-menus">
+        {{ partial('partial/search_algolia') }}
+        {{ partial('partial/menu_pc') }}
 
-    <div id="sea-mobile-nav-toggle">
-        <i class="fa fa-bars sea-icon-bars"></i>
-        <i class="fa fa-times sea-icon-close"></i>
+        <div id="sea-mobile-nav-toggle">
+            <i class="fa fa-bars sea-icon-bars"></i>
+            <i class="fa fa-times sea-icon-close"></i>
+        </div>
     </div>
 </nav>

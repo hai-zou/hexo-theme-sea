@@ -21,3 +21,8 @@ user:
 
 waline:
   serverURL: https://waline.luckyzh.cn/
+
+algolia:
+  appId: "A6S1DCIE2I"
+  apiKey: "ddcd005e9001a4d845451373d4460827"
+  indexName: "luckyzh"

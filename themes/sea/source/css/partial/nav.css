@@ -15,6 +15,12 @@
     cursor: pointer;
 }
 
+.sea-nav-menus {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 #sea-mobile-nav-toggle {
     display: none;
 }
