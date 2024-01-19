@@ -1,0 +1,11 @@
+.DocSearch {
+    --docsearch-primary-color: var(--sea-color-primary);
+    --docsearch-highlight-color: var(--sea-color-primary);
+    --docsearch-searchbox-shadow: inset 0 0 0 2px var(--sea-color-primary);
+    --docsearch-logo-color: var(--sea-color-primary);
+}
+
+.DocSearch .cls-1,
+.DocSearch .cls-2 {
+    fill: var(--sea-color-primary);
+}
