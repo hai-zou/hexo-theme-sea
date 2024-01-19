@@ -14,10 +14,19 @@ menu:
 
 page:
   contents: 目录
+  tags: 标签
+  tagcloud: 标签云
 
 user:
   avatar: avatar.jpg
+  name: haizou
   intro: 一介凡人
+  
+
+socialLink:
+  github: https://github.com/hai-zou
+  email: zou.hai@outlook.com
+  rss: https://luckyzh.cn/rss.xml
 
 waline:
   serverURL: https://waline.luckyzh.cn/

@@ -1,3 +1,40 @@
 .sea-card-user {
     text-align: center;
 }
+
+.sea-user-avatar {
+    border-radius: 50%;
+}
+
+.sea-social-media {
+    margin-top: .5rem;
+}
+
+.sea-social-link {
+    font-size: 1.2rem;
+    line-height: 1;
+    margin: 0 .8rem;
+}
+
+.sea-card-title {
+    display: inline-block;
+    border-bottom: 1px solid var(--sea-color-gray);
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+}
+
+.sea-card-tags .tag-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.sea-card-tags .tag-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.5rem;
+}
