@@ -38,14 +38,6 @@
     box-shadow: 0 1px 15px 0 var(--sea-post-shadow);
 }
 
-.sea-post-item .top-flag {
-    position: absolute;
-    top: -1px;
-    right: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-}
-
 .sea-post-item:hover .sea-post-title {
     color: var(--sea-color-primary);
 }
@@ -53,4 +45,12 @@
 .sea-post-item:hover .sea-post-line {
     width: 5rem;
     border-color: var(--sea-color-primary);
+}
+
+.sea-post-top-flag {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 2.5rem;
+    height: 2.5rem;
 }
