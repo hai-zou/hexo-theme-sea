@@ -1,1 +1,19 @@
-<div>tags</div>
+<div class="sea-tags-wrapper">
+    <div class="sea-tags-current">
+        {{ page.tag }}
+    </div>
+
+    {% for post in page.posts.toArray() %}
+        <div class="sea-tags-post-item">
+            <a
+                class="sea-tags-post-title"
+                href="{{ url_for(post.path) }}"
+            >
+                {{ post.title }}
+            </a>
+            {{ time_tag(post.date) }}
+        </div>
+    {% endfor %}
+</div>
+
+{{ partial('partial/pagination') }}

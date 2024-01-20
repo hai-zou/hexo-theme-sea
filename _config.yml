@@ -59,6 +59,10 @@ index_generator:
   per_page: 5
   order_by: -date
 
+# 标签分页设置
+tag_generator:
+  per_page: 20
+
 # Category & Tag
 default_category: uncategorized
 category_map:

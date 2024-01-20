@@ -1,0 +1,33 @@
+.sea-tags-wrapper {
+    background-color: var(--sea-color-main-bg);
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    margin-bottom: .8rem;
+}
+
+.sea-tags-current {
+    line-height: 2.5rem;
+    font-size: 1.75rem;
+    border-bottom: 1px solid var(--sea-color-divider);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sea-tags-post-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sea-tags-post-item:hover .sea-tags-post-title {
+    color: var(--sea-color-primary);
+}
+
+.sea-tags-post-title {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
