@@ -1,0 +1,2 @@
+hexo.extend.injector.register('head_end', '<meta name="baidu-site-verification" content="codeva-JdN4jbMZRk">');
+hexo.extend.injector.register('head_end', '<meta name="google-site-verification" content="djOHUZEvT4rsmXBBvUZ5S0MjQ_7nRdwc49_D5_6uhPk">');
