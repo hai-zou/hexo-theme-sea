@@ -34,8 +34,18 @@
     color: var(--sea-color-primary);
 }
 
-.sea-doc .article-heading:hover .headerlink,
-.sea-doc .article-heading .headerlink:focus {
+.sea-doc h1:hover .headerlink,
+.sea-doc h1 .headerlink:focus,
+.sea-doc h2:hover .headerlink,
+.sea-doc h2 .headerlink:focus,
+.sea-doc h3:hover .headerlink,
+.sea-doc h3 .headerlink:focus,
+.sea-doc h4:hover .headerlink,
+.sea-doc h4 .headerlink:focus,
+.sea-doc h5:hover .headerlink,
+.sea-doc h5 .headerlink:focus,
+.sea-doc h6:hover .headerlink,
+.sea-doc h6 .headerlink:focus {
     opacity: 1;
 }
 
