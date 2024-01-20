@@ -95,3 +95,16 @@ theme: sea
 # Deployment
 deploy:
   type: ''
+
+sitemap:
+  path: sitemap.xml
+
+feed:
+  type: atom
+  path: rss.xml
+  limit: 10
+  hub:
+  content:
+  content_limit: 200
+  content_limit_delim: ' '
+  order_by: -date
