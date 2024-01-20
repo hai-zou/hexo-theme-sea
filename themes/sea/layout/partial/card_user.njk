@@ -3,14 +3,10 @@
     <div>{{ theme.user.name }}</div>
     <div>{{ theme.user.intro }}</div>
     <div class="sea-social-media">
-        <a class="sea-social-link github" href="{{ theme.socialLink.github }}">
-            <i class="fa fa-github-square"></i>
-        </a>
-        <a class="sea-social-link" href="mailto:{{ theme.socialLink.email }}">
-            <i class="fa fa-envelope-square"></i>
-        </a>
-        <a class="sea-social-link" href="{{ theme.socialLink.rss }}">
-            <i class="fa fa-rss-square"></i>
-        </a>
+        {% for item in theme.socialLink %}
+            <a class="sea-social-link" href="{{ item.link }}">
+                {{ item.icon }}
+            </a>
+        {% endfor %}
     </div>
 </div>
