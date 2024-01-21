@@ -4,9 +4,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {# CSS #}
-	{{ css('css/main') }}
-
     {# 霞骛文楷字体 #}
     <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'">
     {# 字体图标 #}
@@ -15,6 +12,9 @@
     <link rel="stylesheet" href="https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.css" />
     {# docsearch #}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+
+    {# CSS #}
+	{{ css('css/main') }}
 
     {# Open Graph #}
     {{ open_graph() }}

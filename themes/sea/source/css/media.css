@@ -1,6 +1,14 @@
 @media screen and (max-width: 768px) {
+    :root {
+        --sea-main-width: 100%;
+    }
+
     html {
         font-size: 14px;
+    }
+
+    body {
+        background-color: var(--sea-color-main-bg);
     }
 
     .sea-main-right {
@@ -72,5 +80,43 @@
     #sea-article-toc,
     .sea-card-tags {
         margin-top: 1.5rem;
+    }
+
+    #sea-main-wrapper {
+        padding-top: 0;
+    }
+
+    .sea-header {
+        padding: 0 2rem;
+    }
+
+    .sea-post-list,
+    .sea-archive-wrapper,
+    .sea-tags-wrapper {
+        padding: 1rem 2.5rem;
+    }
+
+    .sea-post-item {
+        border-radius: 0;
+        padding: 0 0 1rem 0;
+        border-bottom: 1px solid var(--sea-color-divider);
+    }
+    .sea-post-item:hover {
+        box-shadow: none;
+    }
+
+    .sea-pagination .page-number,
+    .sea-pagination .prev,
+    .sea-pagination .next,
+    .sea-pagination .space {
+        box-shadow: 0 1px 15px 0 var(--sea-post-shadow);
+    }
+
+    .sea-page-card-wrapper {
+        padding: 0;
+    }
+
+    .DocSearch-Container {
+        position: fixed;
     }
 }

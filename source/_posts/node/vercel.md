@@ -1,7 +1,6 @@
 ---
 title: Vercel Serverless 部署 Node API
 date: 2023-06-18
-sticky: 100
 tags:
   - Node
 ---

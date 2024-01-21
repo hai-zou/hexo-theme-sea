@@ -35,6 +35,9 @@ git config --global user.email 'xxx@xx.com'
 
 ```bash
 ssh-keygen -t rsa -C "xxx@xx.com"
+
+# 指定路径
+ssh-keygen -t rsa -C "xxx@xx.com" -f "$HOME\.ssh\github_rsa"
 ```
 
 ## 查看 SSH 公钥
