@@ -1,0 +1,20 @@
+.sea-float-tools-wrapper {
+    position: fixed;
+    z-index: 20;
+    right: 1rem;
+    bottom: 4rem;
+}
+
+.sea-float-tools-btn {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: var(--sea-color-main-bg);
+    box-shadow: 0 1px 15px 0 var(--sea-post-shadow);
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
