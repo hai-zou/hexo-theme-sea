@@ -13,6 +13,7 @@
             </div>
             <div class="sea-post-meta">
                 {{ partial('partial/post_date', {post_date: post.date}) }}
+                {{ partial('partial/post_categories', {post_categories: post.categories}) }}
                 {{ partial('partial/post_tags', {post_tags: post.tags}) }}
             </div>
             {% if post.sticky %}

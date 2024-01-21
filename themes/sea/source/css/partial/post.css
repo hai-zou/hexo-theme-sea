@@ -15,7 +15,8 @@
 }
 
 .sea-post-time,
-.sea-post-tags {
+.sea-post-tags,
+.sea-post-categories {
     display: inline-flex;
     align-items: center;
     gap: .5rem;

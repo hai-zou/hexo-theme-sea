@@ -47,7 +47,7 @@
         right: 0px;
         bottom: 0px;
         transform: translateX(100%);
-        background-color: var(--sea-post-shadow-1);
+        background-color: var(--sea-color-gutter);
         opacity: 0;
         transition: opacity .3s cubic-bezier(.4,0,.2,1);
     }
