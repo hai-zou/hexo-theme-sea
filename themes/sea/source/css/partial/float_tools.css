@@ -18,3 +18,41 @@
     margin: 5px 0;
     transition: background-color 0.3s;
 }
+
+#sea-theme-mode {
+    position: relative;
+}
+
+#sea-theme-mode .sea-theme-select-box {
+    list-style: none;
+    transform: scale(0);
+    transform-origin: bottom right;
+    position: absolute;
+    bottom: 0;
+    right: 1.5rem;
+    background-color: var(--sea-color-main-bg);
+    border-radius: 6px;
+    box-shadow: 0 0 15px var(--sea-color-divider);
+    border: 1px solid var(--sea-color-gray-1);
+    padding: 0.8rem 0;
+    width: 100px;
+    transition: transform .2s ease-in-out;
+}
+
+#sea-theme-mode:hover .sea-theme-select-box {
+    transform: scale(1);
+}
+
+#sea-theme-mode .sea-theme-select-item {
+    line-height: 2rem;
+    text-align: center;
+}
+
+#sea-theme-mode .sea-theme-select-item:hover {
+    color: var(--sea-color-primary);
+}
+
+#sea-theme-mode .sea-theme-select-item.active {
+    color: var(--sea-color-primary);
+    background-color: var(--sea-color-gray-2);
+}

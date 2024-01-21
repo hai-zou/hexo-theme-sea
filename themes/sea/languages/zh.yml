@@ -5,3 +5,8 @@ page:
   tagcloud: 标签云
   archive: 归档
   archive_total: 共计 %d 篇文章！
+
+theme:
+  auto: 跟随系统
+  light: 浅色模式
+  dark: 深色模式

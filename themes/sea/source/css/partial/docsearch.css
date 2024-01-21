@@ -3,9 +3,33 @@
     --docsearch-highlight-color: var(--sea-color-primary);
     --docsearch-searchbox-shadow: inset 0 0 0 2px var(--sea-color-primary);
     --docsearch-logo-color: var(--sea-color-primary);
+
+    --docsearch-text-color: var(--sea-color-text-1);
+    --docsearch-muted-color: var(--sea-color-text-2);
+    --docsearch-searchbox-focus-background: transparent;
+    --docsearch-key-gradient: transparent;
+    --docsearch-key-shadow: none;
+    --docsearch-modal-background: var(--sea-color-bg-soft);
+    --docsearch-footer-background: var(--sea-color-bg);
 }
 
 .DocSearch .cls-1,
 .DocSearch .cls-2 {
     fill: var(--sea-color-primary);
+}
+
+html[theme=dark] .DocSearch {
+    --docsearch-modal-shadow: none;
+    --docsearch-footer-shadow: none;
+    --docsearch-logo-color: var(--sea-color-text-2);
+    --docsearch-hit-background: var(--sea-color-mute);
+    --docsearch-hit-color: var(--sea-color-text-2);
+    --docsearch-hit-shadow: none;
+    --docsearch-searchbox-background: transparent;
+}
+html[theme=dark] .DocSearch-Footer {
+    border-top: 1px solid var(--sea-color-divider);
+}
+html[theme=dark] .DocSearch-Form {
+    background-color: var(--sea-color-mute);
 }
