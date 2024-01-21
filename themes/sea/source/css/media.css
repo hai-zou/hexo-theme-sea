@@ -78,7 +78,8 @@
     }
 
     #sea-article-toc,
-    .sea-card-tags {
+    .sea-card-tags,
+    .sea-card-categories {
         margin-top: 1.5rem;
     }
 
@@ -92,7 +93,8 @@
 
     .sea-post-list,
     .sea-archive-wrapper,
-    .sea-tags-wrapper {
+    .sea-tags-wrapper,
+    .sea-category-wrapper {
         padding: 1rem 2.5rem;
     }
 

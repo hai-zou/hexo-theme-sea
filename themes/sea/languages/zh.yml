@@ -1,5 +1,6 @@
 page:
   contents: 目录
+  categories: 分类
   tags: 标签
   tagcloud: 标签云
   archive: 归档

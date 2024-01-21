@@ -3,13 +3,17 @@
         {{ partial('partial/card_user') }}
     </div>
 
-    <div class="sea-sidebar-card">
-        {{ partial('partial/card_tags') }}
-    </div>
-
     {% if is_post() %}
         <div class="sea-sidebar-card sea-sidebar-sticky">
             {{ partial('partial/anchor') }}
         </div>
     {% endif %}
+
+    <div class="sea-sidebar-card">
+        {{ partial('partial/card_categories') }}
+    </div>
+
+    <div class="sea-sidebar-card">
+        {{ partial('partial/card_tags') }}
+    </div>
 </aside>
