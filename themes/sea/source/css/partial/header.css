@@ -10,7 +10,3 @@
     -webkit-backdrop-filter: saturate(200%) blur(20px);
     backdrop-filter: saturate(200%) blur(20px);
 }
-
-html[theme=dark] .sea-header {
-    box-shadow: 0 2px 5px var(--sea-color-gutter);
-}
