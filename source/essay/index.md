@@ -3,6 +3,13 @@ title: 随笔
 comments: false
 ---
 
+## 2024 年
+
+### 01-21
+{% note info %}
+博客上线新主题了！！！
+{% endnote %}
+
 ## 2023 年
 
 ### 11-24（Bug 记录）
