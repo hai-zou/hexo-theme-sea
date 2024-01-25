@@ -17,7 +17,7 @@ npm install vue-i18n@9 --save
 
 ## 新建 i18n 文件
 
-1. 文件目录结构如下：<div>![目录结构图](/images/vue_1_1.webp)</div>
+1. 文件目录结构如下：<div>![目录结构图](https://image.luckyzh.cn/images/vue_1_1.webp)</div>
 
 2. 在 index.js 下创建 i18n 实例
 
@@ -95,6 +95,6 @@ toggle() {
 
 ## 使用效果
 
-![效果图1](/images/vue_1_2.webp)
+![效果图1](https://image.luckyzh.cn/images/vue_1_2.webp)
 
-![效果图2](/images/vue_1_3.webp)
+![效果图2](https://image.luckyzh.cn/images/vue_1_3.webp)

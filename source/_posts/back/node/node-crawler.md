@@ -131,7 +131,7 @@ node crawler.js
 
 ## 效果图
 
-![效果图](/images/node-crawler_1.webp)
+![效果图](https://image.luckyzh.cn/images/node-crawler_1.webp)
 
 ## 总结
 

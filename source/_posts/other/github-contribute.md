@@ -11,7 +11,7 @@ tags:
 
 在公司摸鱼的时候写了点自己的代码，但是当我打开 Github 主页查看贡献图的时候发现我的提交没有被记录，于是我通过 `git log` 查询 Commit 记录，检查出作者信息中的邮箱地址有误，没有切换成个人的邮箱地址。
 
-![Contributions](/images/github-contribute_1.webp)
+![Contributions](https://image.luckyzh.cn/images/github-contribute_1.webp)
 
 ## 如何解决？
 

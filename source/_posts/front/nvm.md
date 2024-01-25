@@ -14,7 +14,7 @@ Node 版本管理工具，可以用来安装或切换不同版本的 node.js
 选择 `.exe` 文件，下载后直接点击安装，安装路径不可有空格或中文。
 <https://github.com/coreybutler/nvm-windows/releases>
 
-![](/images/nvm_1.webp)
+![](https://image.luckyzh.cn/images/nvm_1.webp)
 
 ## 基本命令
 

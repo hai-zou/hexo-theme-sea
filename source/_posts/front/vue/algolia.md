@@ -56,12 +56,12 @@ onMounted(() => {
 
 ## 申请 DocSearch 服务
 
-1. 前往 [DocSearch Apply](https://docsearch.algolia.com/apply)，填写网站地址，邮箱，仓库地址，提交申请。![](/images/algolia_1.webp)
-2. 提交申请之后会收到一封邮件，表示他们已经收到申请并很快会回复！![](/images/algolia_2.webp)
-3. 等几分钟之后就会收到处理完成的邮件，里面有我们需要的 `appId`, `apiKey`, `indexName`，将它们填入组件中。![](/images/algolia_3.webp)
+1. 前往 [DocSearch Apply](https://docsearch.algolia.com/apply)，填写网站地址，邮箱，仓库地址，提交申请。![](https://image.luckyzh.cn/images/algolia_1.webp)
+2. 提交申请之后会收到一封邮件，表示他们已经收到申请并很快会回复！![](https://image.luckyzh.cn/images/algolia_2.webp)
+3. 等几分钟之后就会收到处理完成的邮件，里面有我们需要的 `appId`, `apiKey`, `indexName`，将它们填入组件中。![](https://image.luckyzh.cn/images/algolia_3.webp)
 4. 前往 [爬虫后台](https://crawler.algolia.com/admin), 如果 Records 有数量，说明已经爬取成功了！
-   如果没有也可以点击 Editor，进入查看自己的域名有没有填写正确。![](/images/algolia_4.webp)
+   如果没有也可以点击 Editor，进入查看自己的域名有没有填写正确。![](https://image.luckyzh.cn/images/algolia_4.webp)
 
 ## 最终效果
 
-![](/images/algolia_5.webp)
+![](https://image.luckyzh.cn/images/algolia_5.webp)

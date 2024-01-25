@@ -17,7 +17,7 @@ tags:
 
 可以看出视频和字幕在同一个域下，视频可以正常播放，但是字幕却出现了跨域报错：
 
-![跨域报错](/images/video-track-cors_1.webp)
+![跨域报错](https://image.luckyzh.cn/images/video-track-cors_1.webp)
 
 ## 问题分析
 
@@ -76,4 +76,4 @@ fetch('https://cdn.plyr.io/static/demo/thumbs/240p.vtt')
 
 通过 `fetch` 请求字幕文件，将内容做一层转换，绕过了 `track` 元素对于非同源路径的跨域限制，完美的解决了这个问题。  
 
-![字幕显示效果](/images/video-track-cors_2.webp)
+![字幕显示效果](https://image.luckyzh.cn/images/video-track-cors_2.webp)

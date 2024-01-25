@@ -9,7 +9,7 @@ categories:
 
 当今互联网时代，社交媒体成为了人们分享信息和互动的主要平台之一。为了优化网站在社交媒体上的展示，提高网站内容的可分享性和可访问性，开放图谱协议（The Open Graph Protocol）应运而生。
 
-![Open Graph Protocol](/images/open-graph-protocol_1.webp)
+![Open Graph Protocol](https://image.luckyzh.cn/images/open-graph-protocol_1.webp)
 
 ## 什么是开放图谱协议？
 
@@ -37,7 +37,7 @@ categories:
 参考：[The Open Graph protocol](https://ogp.me/)
 
 在社交媒体上分享链接后的展示效果：
-![效果图](/images/open-graph-protocol_2.webp)
+![效果图](https://image.luckyzh.cn/images/open-graph-protocol_2.webp)
 
 ## 结语
 

@@ -108,7 +108,7 @@ css 样式
 
 效果展示
 
-![](/images/upload-img_1.webp)
+![](https://image.luckyzh.cn/images/upload-img_1.webp)
 
 ### 二、上传图片并展示
 
@@ -135,8 +135,8 @@ upload.onchange = function (value) {
 
 上传成功后展示
 
-![](/images/upload-img_2.webp)
-![](/images/upload-img_3.webp)
+![](https://image.luckyzh.cn/images/upload-img_2.webp)
+![](https://image.luckyzh.cn/images/upload-img_3.webp)
 
 ### 三、实现图片预览
 
@@ -225,4 +225,4 @@ delImg.onclick = function () {
 
 预览效果图
 
-![](/images/upload-img_4.webp)
+![](https://image.luckyzh.cn/images/upload-img_4.webp)

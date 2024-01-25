@@ -12,7 +12,7 @@ tags:
 [Fancybox](https://fancyapps.com/fancybox) 是一个流行的 JavaScript 图片和媒体轻盒效果库，用于在网页中展示图片、视频、内联内容和多媒体内容。
 它提供了一种优雅而灵活的方式来创建响应式的弹出窗口，使用户能够以漂亮的方式浏览和交互。
 
-![](/images/image-zoom_1.webp)
+![](https://image.luckyzh.cn/images/image-zoom_1.webp)
 
 ## 安装
 

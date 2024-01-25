@@ -66,9 +66,9 @@ export default app;
 ## 部署到 Vercel 平台
 
 1. 使用自己的 Github 账号 登陆 [Vercel](https://vercel.com/)
-2. 在 Overview 中点击 Add New Project 创建一个项目。![](/images/vercel_4.webp)
-3. 选择你需要托管的 node 项目，点击 import 。![](/images/vercel_5.webp)
-4. 配置你的项目，都使用默认，然后点击 Deploy 部署就可以了。![](/images/vercel_6.webp)
+2. 在 Overview 中点击 Add New Project 创建一个项目。![](https://image.luckyzh.cn/images/vercel_4.webp)
+3. 选择你需要托管的 node 项目，点击 import 。![](https://image.luckyzh.cn/images/vercel_5.webp)
+4. 配置你的项目，都使用默认，然后点击 Deploy 部署就可以了。![](https://image.luckyzh.cn/images/vercel_6.webp)
 
 ## 或通过 Vercel CLI 部署
 
@@ -106,8 +106,8 @@ vercel build
 > 需要事先花个十几块钱购买一个域名
 
 1. 找到刚刚创建的 Vercel 项目中的 Settings，设置 Domains
-2. 把自己的域名填上去，例如 `blog.luckyzh.cn`，点击 Add，然后会提示报错，因为还没有解析域名。![](/images/vercel_1.webp)
+2. 把自己的域名填上去，例如 `blog.luckyzh.cn`，点击 Add，然后会提示报错，因为还没有解析域名。![](https://image.luckyzh.cn/images/vercel_1.webp)
 3. 可以看到这里提供了两种方式，这里演示第一种 CNAME（Recommended），添加一条记录，也就是解析一个子域名。
-4. 在购买域名的平台，找到域名控制台，点击域名解析，添加记录。![](/images/vercel_2.webp)
-5. 按照之前生成的信息对应填入就可以了。![](/images/vercel_3.webp)
+4. 在购买域名的平台，找到域名控制台，点击域名解析，添加记录。![](https://image.luckyzh.cn/images/vercel_2.webp)
+5. 按照之前生成的信息对应填入就可以了。![](https://image.luckyzh.cn/images/vercel_3.webp)
 6. 返回站点就可以看到已经配置成功了！
