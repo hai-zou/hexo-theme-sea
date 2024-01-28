@@ -1,5 +1,7 @@
 <div class="sea-card-user">
-    {{ image_tag(theme.user.avatar, { width: 100, height: 100, class: 'sea-user-avatar' }) }}
+    {% if theme.user.avatar %}
+        {{ image_tag(theme.user.avatar, { width: 100, height: 100, class: 'sea-user-avatar' }) }}
+    {% endif %}
     <div>{{ theme.user.name }}</div>
     <div>{{ theme.user.intro }}</div>
     <div class="sea-social-media">

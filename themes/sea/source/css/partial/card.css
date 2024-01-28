@@ -40,3 +40,15 @@
     justify-content: space-between;
     line-height: 1.5rem;
 }
+
+.sea-card-recent .post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sea-card-recent .post-list-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5rem;
+}

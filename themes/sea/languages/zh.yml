@@ -4,6 +4,7 @@ page:
   tags: 标签
   tagcloud: 标签云
   archive: 归档
+  recent_articles: 最近文章
   archive_total: 共计 %d 篇文章！
 
 theme:

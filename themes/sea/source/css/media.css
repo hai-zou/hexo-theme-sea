@@ -79,7 +79,8 @@
 
     #sea-article-toc,
     .sea-card-tags,
-    .sea-card-categories {
+    .sea-card-categories,
+    .sea-card-recent {
         margin-top: 1.5rem;
     }
 

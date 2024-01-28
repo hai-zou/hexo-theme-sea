@@ -1,11 +1,15 @@
-<aside class="sea-sidebar-wrapper">
+<aside class="sea-sidebar-wrapper sea-sidebar-sticky">
     <div class="sea-sidebar-card">
         {{ partial('partial/card_user') }}
     </div>
 
     {% if is_post() %}
-        <div class="sea-sidebar-card sea-sidebar-sticky">
+        <div class="sea-sidebar-card">
             {{ partial('partial/anchor') }}
+        </div>
+
+        <div class="sea-sidebar-card">
+            {{ partial('partial/card_recent') }}
         </div>
     {% endif %}
 
