@@ -1,5 +1,5 @@
 ---
-title: 给博客添加一个图片放大功能
+title: 博客搭建 — 添加图片放大功能
 date: 2023-07-02
 categories: 
   - WebSite

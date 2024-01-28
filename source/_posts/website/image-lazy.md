@@ -1,5 +1,5 @@
 ---
-title: 站点优化 — 图片懒加载
+title: 博客搭建 — 站点优化之图片懒加载
 date: 2023-07-07
 categories: 
   - WebSite

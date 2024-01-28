@@ -1,5 +1,5 @@
 ---
-title: 使用 GitHub Pages 部署静态站点
+title: 博客搭建 — GitHub Pages 部署
 date: 2023-06-17
 categories: 
   - WebSite

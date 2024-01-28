@@ -1,8 +1,8 @@
 ---
-title: Algolia DocSearch 实现文档站点搜索
+title: 博客搭建 — Algolia DocSearch 实现站点搜索
 date: 2023-07-01
 categories: 
-  - 前端
+  - WebSite
 tags:
   - Vue
 ---

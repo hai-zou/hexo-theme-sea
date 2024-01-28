@@ -1,5 +1,5 @@
 ---
-title: 如何在博客中接入 giscus 评论插件
+title: 博客搭建 — 接入 giscus 评论插件
 date: 2023-06-05
 categories: 
   - WebSite
@@ -36,7 +36,7 @@ Giscus 是一个基于 GitHub Discussion 的评论系统。
 
 ## 使用
 
-支持 React、Vue 和 Svelte 中使用 giscus，可以参考[giscus 组件库](https://github.com/giscus/giscus-component)
+支持原生JS，React，Vue，Svelte等，可以参考[giscus 组件库](https://github.com/giscus/giscus-component)
 
 本文以 Vue 为例
 
