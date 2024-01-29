@@ -11,3 +11,6 @@ theme:
   auto: 跟随系统
   light: 浅色模式
   dark: 深色模式
+
+footer:
+  site_uv: 本站访客数 %s 人

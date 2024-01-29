@@ -2,4 +2,7 @@
     {% set current = moment().year() %}
     <div>© {% if current > theme.since %} {{ theme.since + '-' + current }} {% else %} {{ current }} {% endif %} | {{ config.title }}</div>
     <div>{{ config.description }}</div>
+    <span id="busuanzi_container_site_uv">
+        {{ _p('footer.site_uv', '<span id="busuanzi_value_site_uv"></span>') }}
+    </span>
 </footer>
