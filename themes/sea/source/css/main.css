@@ -1,6 +1,5 @@
 @import url("base.css");
 @import url("variables.css");
-@import url("docsearch.css");
 @import url("partial/layout.css");
 @import url("partial/header.css");
 @import url("partial/nav.css");
@@ -12,13 +11,14 @@
 @import url("partial/archive.css");
 @import url("partial/post.css");
 @import url("partial/sidebar.css");
-@import url("partial/anchor.css");
 @import url("partial/float_tools.css");
 @import url("partial/card.css");
 @import url("partial/pagination.css");
 @import url("partial/sea_doc.css");
 @import url("partial/highlight.css");
-@import url("partial/waline.css");
 @import url("partial/common.css");
+
+@import url("plug/docsearch.css");
+@import url("plug/waline.css");
 
 @import url("media.css");

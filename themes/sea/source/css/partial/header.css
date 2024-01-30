@@ -5,7 +5,7 @@
     z-index: 11;
     width: 100%;
     height: var(--sea-nav-height);
-    box-shadow: 0 2px 5px var(--sea-color-divider);
+    box-shadow: var(--sea-shadow-header);
     background-color: var(--sea-color-header-bg);
     -webkit-backdrop-filter: saturate(200%) blur(20px);
     backdrop-filter: saturate(200%) blur(20px);

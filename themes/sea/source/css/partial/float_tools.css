@@ -13,7 +13,7 @@
     justify-content: center;
     border-radius: 6px;
     background-color: var(--sea-color-main-bg);
-    box-shadow: 0 1px 15px 0 var(--sea-post-shadow);
+    box-shadow: var(--sea-shadow-card);
     cursor: pointer;
     margin: 5px 0;
     transition: background-color 0.3s;
@@ -32,7 +32,7 @@
     right: 1.5rem;
     background-color: var(--sea-color-main-bg);
     border-radius: 6px;
-    box-shadow: 0 0 15px var(--sea-color-divider);
+    box-shadow: var(--sea-shadow-card);
     border: 1px solid var(--sea-color-gray-1);
     padding: 0.8rem 0;
     width: 100px;

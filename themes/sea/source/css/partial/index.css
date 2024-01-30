@@ -35,7 +35,7 @@
 }
 
 .sea-post-item:hover {
-    box-shadow: 0 1px 15px 0 var(--sea-post-shadow);
+    box-shadow: var(--sea-shadow-card);
 }
 
 .sea-post-item:hover .sea-post-title {
