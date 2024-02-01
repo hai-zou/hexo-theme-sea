@@ -1,3 +1,7 @@
+.sea-article-content {
+    word-break: break-word;
+}
+
 .sea-card-box {
     padding: 1rem 2.5rem;
     border-radius: 5px;

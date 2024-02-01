@@ -118,4 +118,12 @@
     .sea-page-card-wrapper {
         padding: 0;
     }
+
+    .sea-prev-next-wrapper .prev,
+    .sea-prev-next-wrapper .next {
+        border-top: 1px solid var(--sea-color-divider);
+        width: 100%;
+        padding: .5rem;
+        border-radius: 0;
+    }
 }
