@@ -1,5 +1,7 @@
 .sea-prev-next-wrapper {
+    border-top: 1px solid var(--sea-color-divider);
     margin-top: 2rem;
+    padding-top: .5rem;
 }
 
 .sea-prev-next-wrapper::after {
