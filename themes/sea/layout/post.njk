@@ -13,7 +13,9 @@
         {{ render(page.content) }}
     </div>
 
-    {{ partial('partial/prev_next') }}
+    {% if is_post() %}
+        {{ partial('partial/prev_next') }}
+    {% endif %}
 </article>
 
 {{ partial('partial/comment') }}
