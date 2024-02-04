@@ -71,5 +71,5 @@ html[theme=dark] {
 /* 阴影 */
 :root {
     --sea-shadow-card: 0 1px 15px 0 var(--sea-post-shadow);
-    --sea-shadow-header: 0 2px 5px var(--sea-color-divider);
+    --sea-shadow-header: 0 2px 3px rgba(170, 178, 189, 0.2);
 }
