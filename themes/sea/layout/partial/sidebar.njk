@@ -11,13 +11,13 @@
         <div class="sea-sidebar-card">
             {{ partial('partial/card_recent') }}
         </div>
+    {% else %}
+        <div class="sea-sidebar-card">
+            {{ partial('partial/card_categories') }}
+        </div>
+
+        <div class="sea-sidebar-card">
+            {{ partial('partial/card_tags') }}
+        </div>
     {% endif %}
-
-    <div class="sea-sidebar-card">
-        {{ partial('partial/card_categories') }}
-    </div>
-
-    <div class="sea-sidebar-card">
-        {{ partial('partial/card_tags') }}
-    </div>
 </aside>
