@@ -153,11 +153,6 @@
     overflow-x: auto;
 }
 
-.sea-doc tr {
-    border-top: 1px solid var(--sea-color-divider);
-    transition: background-color 0.5s;
-}
-
 .sea-doc tr:nth-child(2n) {
     background-color: var(--sea-color-bg-soft);
 }
