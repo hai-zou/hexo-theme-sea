@@ -61,6 +61,8 @@
 #sea-article-toc .toc {
     margin: 0;
     padding: 0;
+    max-height: 400px;
+    overflow: auto;
 }
 #sea-article-toc .toc-child {
     padding-left: 1.5rem;
