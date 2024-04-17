@@ -1,10 +1,9 @@
 ---
 title: 为什么你的 GitHub Contributions 没有被正确统计
 date: 2023-09-22 09:43:00
-categories:
-  - Other
 tags:
   - GitHub
+  - Git
 ---
 
 ## 问题排查
