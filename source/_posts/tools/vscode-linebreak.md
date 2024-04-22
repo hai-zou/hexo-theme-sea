@@ -1,8 +1,8 @@
 ---
 title: VSCode 换行符问题
 date: 2023-07-04
-categories:
-  - Other
+tags:
+  - VSCode
 ---
 
 ## 换行符格式
