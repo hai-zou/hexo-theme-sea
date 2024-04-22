@@ -1,7 +1,7 @@
 ---
 title: Node.js 实现简单爬虫
 date: 2023-08-05 11:05:00
-categories: 
+categories:
   - 后端
 tags:
   - Node
@@ -24,9 +24,9 @@ npm init -y
 
 2. 安装依赖
 
-使用 [axios](https://axios-http.com/docs/intro) 库来进行 HTTP请求  
+使用 [axios](https://axios-http.com/docs/intro) 库来进行 HTTP 请求  
 使用 [cheerio](https://cheerio.js.org/) 库来解析 HTML 内容  
-使用 [node-xlsx](https://github.com/mgcrea/node-xlsx) 库来将数据写入 Excel 文件  
+使用 [node-xlsx](https://github.com/mgcrea/node-xlsx) 库来将数据写入 Excel 文件
 
 ```bash
 npm install axios cheerio node-xlsx --save
@@ -47,27 +47,27 @@ const targetUrl = "https://www.xiachufang.com/category/40076/";
 
 // 请求目标网页，获取HTML内容
 const getHtml = async () => {
-    const response = await axios.get(targetUrl);
+  const response = await axios.get(targetUrl);
 
-    if (response.status !== 200) {
-        throw new Error("请求失败");
-    }
-    return response.data;
+  if (response.status !== 200) {
+    throw new Error("请求失败");
+  }
+  return response.data;
 };
 
 // 解析HTML内容，获取菜品的标题和图片链接
-const getData = async html => {
-    const $ = cheerio.load(html);
-    const list = [];
-    $(".normal-recipe-list li").each((i, elem) => {
-        const imgUrl = $(elem).find("img").attr("src");
-        const title = $(elem).find("p.name a").text();
-        list.push({
-            title: title.replace(/[\n\s]+/g, ""),
-            imgUrl
-        });
+const getData = async (html) => {
+  const $ = cheerio.load(html);
+  const list = [];
+  $(".normal-recipe-list li").each((i, elem) => {
+    const imgUrl = $(elem).find("img").attr("src");
+    const title = $(elem).find("p.name a").text();
+    list.push({
+      title: title.replace(/[\n\s]+/g, ""),
+      imgUrl,
     });
-    return list;
+  });
+  return list;
 };
 ```
 
@@ -79,34 +79,39 @@ import fs from "fs";
 
 // 根据 表头数据 和 列表数据 转换成二维数组
 const transData = (columns, tableList) => {
-    const data = columns.reduce((acc, cur) => {
-        acc.titles.push(cur.header);
-        acc.keys.push(cur.key);
-        return acc;
-    }, { titles: [], keys: [] });
+  const data = columns.reduce(
+    (acc, cur) => {
+      acc.titles.push(cur.header);
+      acc.keys.push(cur.key);
+      return acc;
+    },
+    { titles: [], keys: [] }
+  );
 
-    const tableBody = tableList.map(item => {
-        return data.keys.map(key => item[key]);
-    });
-    return [ data.titles, ...tableBody ];
+  const tableBody = tableList.map((item) => {
+    return data.keys.map((key) => item[key]);
+  });
+  return [data.titles, ...tableBody];
 };
 
-const writeExcel = list => {
-    // 表头
-    const columns = [
-        { header: "菜名", key: "title" },
-        { header: "图片链接", key: "imgUrl" }
-    ];
+const writeExcel = (list) => {
+  // 表头
+  const columns = [
+    { header: "菜名", key: "title" },
+    { header: "图片链接", key: "imgUrl" },
+  ];
 
-    // 构建表格数据
-    const tableData = transData(columns, list);
-    const workbook = xlsx.build([{
-        name: "菜谱",
-        data: tableData
-    }]);
+  // 构建表格数据
+  const tableData = transData(columns, list);
+  const workbook = xlsx.build([
+    {
+      name: "菜谱",
+      data: tableData,
+    },
+  ]);
 
-    // 写入文件
-    fs.writeFileSync("./菜谱.xlsx", workbook, "binary");
+  // 写入文件
+  fs.writeFileSync("./菜谱.xlsx", workbook, "binary");
 };
 ```
 
@@ -114,10 +119,10 @@ const writeExcel = list => {
 
 ```js
 (async () => {
-    const html = await getHtml();
-    const list = await getData(html);
-    await writeExcel(list);
-    console.log("执行完毕");
+  const html = await getHtml();
+  const list = await getData(html);
+  await writeExcel(list);
+  console.log("执行完毕");
 })();
 ```
 

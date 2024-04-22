@@ -32,7 +32,7 @@ git config --global core.autocrlf false
 ```
 
 2. 修改 VSCode 换行符配置
-   > 文件 - 首选项 - 设置 - 搜索 eol - 修改 eol 为 `\n`(LF) 或者改为 `\r\n`(CRLF)
+> 文件 - 首选项 - 设置 - 搜索 eol - 修改 eol 为 `\n`(LF) 或者改为 `\r\n`(CRLF)
 
 **友情提示**
 

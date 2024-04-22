@@ -1,77 +1,86 @@
 .sea-card-title {
-    display: inline-block;
-    border-bottom: 1px solid var(--sea-color-gray);
-    padding-bottom: .5rem;
-    margin-bottom: .5rem;
-    font-size: 1.2rem;
+  display: inline-block;
+  border-bottom: 1px solid var(--sea-color-gray);
+  padding-bottom: .5rem;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
 }
 
 /* 个人信息卡片 */
 .sea-card-user {
-    text-align: center;
+  text-align: center;
 }
+
 .sea-user-avatar {
-    border-radius: 50%;
+  border-radius: 50%;
 }
+
 .sea-social-media {
-    margin-top: .5rem;
+  margin-top: .5rem;
 }
+
 .sea-social-link {
-    font-size: 1.2rem;
-    line-height: 1;
-    margin: 0 .8rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  margin: 0 .8rem;
 }
 
 /* 分类/标签 卡片 */
 .sea-card-tags .tag-list,
 .sea-card-categories .category-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-    max-height: 300px;
-    overflow: auto;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow: auto;
 }
+
 .sea-card-tags .tag-list-item,
 .sea-card-categories .category-list-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.5rem;
 }
 
 /* 最近文章卡片 */
 .sea-card-recent .post-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
 .sea-card-recent .post-list-item {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
 }
 
 /* 目录卡片 */
 #sea-article-toc .toc,
 #sea-article-toc .toc-child {
-    list-style: none;
-    font-size: 1rem;
+  list-style: none;
+  font-size: 1rem;
 }
+
 #sea-article-toc .toc {
-    margin: 0;
-    padding: 0;
-    max-height: 400px;
-    overflow: auto;
+  margin: 0;
+  padding: 0;
+  max-height: 400px;
+  overflow: auto;
 }
+
 #sea-article-toc .toc-child {
-    padding-left: 1.5rem;
+  padding-left: 1.5rem;
 }
+
 #sea-article-toc .toc-link {
-    display: block;
-    padding: .3rem 0;
-    line-height: 1;
+  display: block;
+  padding: .3rem 0;
+  line-height: 1;
 }
+
 #sea-article-toc .toc-link:hover {
-    color: var(--sea-color-primary);
+  color: var(--sea-color-primary);
 }

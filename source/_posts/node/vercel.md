@@ -1,7 +1,7 @@
 ---
 title: Vercel Serverless 部署 Node API
 date: 2023-06-18
-categories: 
+categories:
   - 后端
 tags:
   - Node
@@ -44,12 +44,12 @@ import express from "express";
 const app = express();
 
 app.get("/api", (req, res) => {
-    res.end(`Hello! Serverless`);
+  res.end(`Hello! Serverless`);
 });
 
 app.get("/api/item/:slug", (req, res) => {
-    const { slug } = req.params;
-    res.end(`Item: ${slug}`);
+  const { slug } = req.params;
+  res.end(`Item: ${slug}`);
 });
 
 export default app;
@@ -59,7 +59,7 @@ export default app;
 
 ```json
 {
-    "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
 }
 ```
 

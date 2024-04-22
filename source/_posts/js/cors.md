@@ -1,7 +1,7 @@
 ---
 title: 解决跨域的几种方式
 date: 2023-05-12
-categories: 
+categories:
   - 前端
 tags:
   - JavaScript
@@ -19,7 +19,7 @@ script.src = "http://example.com/data.js?callback=handleResponse";
 document.body.appendChild(script);
 
 function handleResponse(data) {
-    console.log(data);
+  console.log(data);
 }
 ```
 
@@ -39,12 +39,12 @@ handleResponse({ status: "ok", data: { foo: "bar" } });
 
 ```js
 fetch("http://example.com/data.json", {
-    method: "GET",
-    mode: "cors",
+  method: "GET",
+  mode: "cors",
 })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
 ```
 
 服务端代码：
@@ -52,9 +52,9 @@ fetch("http://example.com/data.json", {
 ```js
 // 允许指定来源的跨域访问，例如允许从http://localhost:8080域名下访问
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    next();
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
 });
 ```
 
@@ -78,16 +78,16 @@ const TARGET_SERVER = "http://example.com";
 
 // 转发请求到目标服务器
 app.use("/", (req, res) => {
-    const targetUrl = TARGET_SERVER + req.url;
-    const proxy = http.request(targetUrl, (response) => {
-        response.pipe(res);
-    });
+  const targetUrl = TARGET_SERVER + req.url;
+  const proxy = http.request(targetUrl, (response) => {
+    response.pipe(res);
+  });
 
-    req.pipe(proxy);
+  req.pipe(proxy);
 });
 
 app.listen(PORT, () => {
-    console.log(`Proxy server is running on port ${PORT}`);
+  console.log(`Proxy server is running on port ${PORT}`);
 });
 ```
 
@@ -97,9 +97,9 @@ app.listen(PORT, () => {
 
 ```js
 fetch("/api/data")
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
 ```
 
 在前端使用 fetch 函数来发送需要跨域的请求，由于代理服务器监听的是 3000 端口，所以这里的请求 URL 应该是代理服务器的路径/api/data。

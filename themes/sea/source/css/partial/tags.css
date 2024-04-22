@@ -1,18 +1,18 @@
 .sea-tags-wrapper .sea-tags-post-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    column-gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .sea-tags-post-item:hover .sea-tags-post-title {
-    color: var(--sea-color-primary);
+  color: var(--sea-color-primary);
 }
 
 .sea-tags-wrapper .sea-tags-post-title {
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

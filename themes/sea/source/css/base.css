@@ -1,41 +1,43 @@
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-    color: inherit;
-    text-decoration: inherit;
+  color: inherit;
+  text-decoration: inherit;
 }
 
 html {
-    font-size: 16px;
-    scroll-padding-top: var(--sea-nav-height);
-    scroll-behavior: smooth;
+  font-size: 16px;
+  scroll-padding-top: var(--sea-nav-height);
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 5px;
+  width: 6px;
+  height: 5px;
 }
+
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: var(--sea-color-gray);
+  border-radius: 10px;
+  background-color: var(--sea-color-gray);
 }
+
 ::-webkit-scrollbar-track {
-    background-color: var(--sea-color-gray-2);
-    border-radius: 3px;
+  background-color: var(--sea-color-gray-2);
+  border-radius: 3px;
 }
 
 body {
-    margin: 0;
-    width: 100%;
-    min-width: 320px;
-    color: var(--sea-color-text-1);
-    background-color: var(--sea-color-bg);
-    font-family: var(--sea-font-family-lxgw);
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  color: var(--sea-color-text-1);
+  background-color: var(--sea-color-bg);
+  font-family: var(--sea-font-family-lxgw);
 
-    /* 解决ios下代码块字体样式偏大问题 */
-    -webkit-text-size-adjust: 100%
+  /* 解决ios下代码块字体样式偏大问题 */
+  -webkit-text-size-adjust: 100%
 }

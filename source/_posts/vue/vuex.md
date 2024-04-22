@@ -1,7 +1,7 @@
 ---
 title: Vue项目中使用 vuex 实现（状态）数据共享
 date: 2021-08-07
-categories: 
+categories:
   - 前端
 tags:
   - Vue
@@ -28,40 +28,40 @@ import { createStore } from "vuex";
 
 // 模拟请求数据
 function getUserInfo() {
-    return new Promise((resolve) => {
-        resolve({ name: "张三" });
-    });
+  return new Promise((resolve) => {
+    resolve({ name: "张三" });
+  });
 }
 
 const store = createStore({
-    // 相当于 vue 中的 data，存放变量
-    state() {
-        return {
-            userInfo: {},
-        };
+  // 相当于 vue 中的 data，存放变量
+  state() {
+    return {
+      userInfo: {},
+    };
+  },
+  // 计算属性，对 state 中的变量进行处理
+  getters: {
+    userName(state) {
+      return state.userInfo.name;
     },
-    // 计算属性，对 state 中的变量进行处理
-    getters: {
-        userName(state) {
-            return state.userInfo.name;
-        },
+  },
+  // 更改 store 中的状态的唯一方式
+  mutations: {
+    setUserInfo(state, value) {
+      state.userInfo = value;
     },
-    // 更改 store 中的状态的唯一方式
-    mutations: {
-        setUserInfo(state, value) {
-            state.userInfo = value;
-        },
+  },
+  /*
+   * action 提交的是 mutation，而不是直接变更状态。
+   * action 可以包含任意异步操作
+   */
+  actions: {
+    async getUserInfo({ commit }) {
+      const userInfo = await getUserInfo();
+      commit("setUserInfo", userInfo);
     },
-    /*
-     * action 提交的是 mutation，而不是直接变更状态。
-     * action 可以包含任意异步操作
-     */
-    actions: {
-        async getUserInfo({ commit }) {
-            const userInfo = await getUserInfo();
-            commit("setUserInfo", userInfo);
-        },
-    },
+  },
 });
 
 export default store;
@@ -86,15 +86,15 @@ app.mount("#app");
 import { mapState, mapGetters, mapActions } from "vuex";
 
 export default {
-    created() {
-        this.getUserInfo();
-    },
-    computed: {
-        ...mapState(["userInfo"]),
-        ...mapGetters(["userName"]),
-    },
-    methods: {
-        ...mapActions(["getUserInfo"]),
-    },
+  created() {
+    this.getUserInfo();
+  },
+  computed: {
+    ...mapState(["userInfo"]),
+    ...mapGetters(["userName"]),
+  },
+  methods: {
+    ...mapActions(["getUserInfo"]),
+  },
 };
 ```

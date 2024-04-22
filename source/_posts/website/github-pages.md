@@ -1,7 +1,7 @@
 ---
 title: 博客搭建 — GitHub Pages 部署
 date: 2023-06-17
-categories: 
+categories:
   - WebSite
 tags:
   - GitHub
@@ -65,11 +65,11 @@ cd -
 
 ```json
 {
-    ...
-    "scripts": {
-        "deploy": "bash scripts/deploy.sh"
-    },
-    ...
+  ...
+  "scripts": {
+    "deploy": "bash scripts/deploy.sh"
+  },
+  ...
 }
 ```
 

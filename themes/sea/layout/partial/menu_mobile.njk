@@ -1,24 +1,24 @@
 <div class="sea-menu-mobile-wrap">
-    <div class="sea-menu-mobile-inner">
-        {{ partial('partial/card_user') }}
+  <div class="sea-menu-mobile-inner">
+    {{ partial('partial/card_user') }}
 
-        {% for menu_item in theme.menu %}
-            <a
-                class="sea-menu-link"
-                href="{{ url_for(menu_item.url) }}"
-            >
-                {{ menu_item.name }}
-            </a>
-        {% endfor %}
+    {% for menu_item in theme.menu %}
+      <a
+        class="sea-menu-link"
+        href="{{ url_for(menu_item.url) }}"
+      >
+        {{ menu_item.name }}
+      </a>
+    {% endfor %}
 
-        {% if is_post() %}
-            {{ partial('partial/card_anchor') }}
+    {% if is_post() %}
+      {{ partial('partial/card_anchor') }}
 
-            {{ partial('partial/card_recent') }}
-        {% endif %}
+      {{ partial('partial/card_recent') }}
+    {% endif %}
 
-        {{ partial('partial/card_categories') }}
-        {{ partial('partial/card_tags') }}
-    </div>
+    {{ partial('partial/card_categories') }}
+    {{ partial('partial/card_tags') }}
+  </div>
 </div>
 <div id="sea-mobile-nav-dimmer"></div>

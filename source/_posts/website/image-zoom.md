@@ -1,7 +1,7 @@
 ---
 title: 博客搭建 — 添加图片放大功能
 date: 2023-07-02
-categories: 
+categories:
   - WebSite
 tags:
   - JavaScript
@@ -41,7 +41,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 ```html
 <a href="image-a.jpeg" data-fancybox data-caption="Single image">
-    <img src="image-a.jpeg" />
+  <img src="image-a.jpeg" />
 </a>
 ```
 
@@ -49,7 +49,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 ```js
 Fancybox.bind("[data-fancybox]", {
-    // Your custom options
+  // Your custom options
 });
 ```
 
@@ -63,17 +63,17 @@ Fancybox.bind("[data-fancybox]", {
 
 ```html
 <a href="image-a.jpeg" data-fancybox="gallery" data-caption="Caption #1">
-    <img src="image-a.jpeg" />
+  <img src="image-a.jpeg" />
 </a>
 
 <a href="image-b.jpeg" data-fancybox="gallery" data-caption="Caption #2">
-    <img src="image-b.jpeg" />
+  <img src="image-b.jpeg" />
 </a>
 ```
 
 ```js
 Fancybox.bind('[data-fancybox="gallery"]', {
-    // Your custom options
+  // Your custom options
 });
 ```
 
@@ -90,16 +90,16 @@ const md = new MarkdownIt();
 const defaultRender = md.renderer.rules.image;
 
 md.renderer.rules.image = (...args) => {
-    const [tokens, idx] = args;
-    const token = tokens[idx];
-    const src = token.attrs[token.attrIndex("src")][1];
-    const alt = token.content || "";
+  const [tokens, idx] = args;
+  const token = tokens[idx];
+  const src = token.attrs[token.attrIndex("src")][1];
+  const alt = token.content || "";
 
-    // 生成新的 a 标签并包裹 img 标签
-    const link = `<a href="${src}" data-fancybox="gallery" data-caption="${alt}">${defaultRender(
-        ...args
-    )}</a>`;
-    return link;
+  // 生成新的 a 标签并包裹 img 标签
+  const link = `<a href="${src}" data-fancybox="gallery" data-caption="${alt}">${defaultRender(
+    ...args
+  )}</a>`;
+  return link;
 };
 ```
 
@@ -111,7 +111,7 @@ md.renderer.rules.image = (...args) => {
 
 ```js
 Fancybox.bind("[data-fancybox]", {
-    Hash: false,
+  Hash: false,
 });
 ```
 
@@ -135,6 +135,6 @@ const { Fancybox } = pkg;
 ```js
 import Fancyapps from "@fancyapps/ui/dist/fancybox/fancybox.umd";
 Fancyapps.Fancybox.bind("[data-fancybox]", {
-    Hash: false,
+  Hash: false,
 });
 ```

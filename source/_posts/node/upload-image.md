@@ -1,7 +1,7 @@
 ---
 title: 用 Node.js 实现一个上传图片接口
 date: 2023-07-15
-categories: 
+categories:
   - 后端
 tags:
   - Node
@@ -37,14 +37,14 @@ const app = express();
 
 // 设置存储路径和文件名称
 const storage = multer.diskStorage({
-    destination: path.join(__dirname, "uploads"),
-    filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-        cb(
-            null,
-            file.fieldname + "-" + uniqueSuffix + path.extname(file.originalname)
-        );
-    },
+  destination: path.join(__dirname, "uploads"),
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(
+      null,
+      file.fieldname + "-" + uniqueSuffix + path.extname(file.originalname)
+    );
+  },
 });
 
 // 创建文件上传中间件
@@ -55,18 +55,18 @@ const upload = multer({ storage: storage });
  * upload.single('image') 函数中 `image` 为接收文件的参数名
  */
 app.post("/upload", upload.single("image"), (req, res, next) => {
-    if (!req.file) {
-        return res.status(400).json({ error: "No file uploaded" });
-    }
+  if (!req.file) {
+    return res.status(400).json({ error: "No file uploaded" });
+  }
 
-    const filePath = req.file.path;
-    res.json({ filePath: filePath });
+  const filePath = req.file.path;
+  res.json({ filePath: filePath });
 });
 
 // 启动服务器
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
 ```
 

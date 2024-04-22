@@ -1,7 +1,7 @@
 ---
 title: CSS 文本超出省略
 date: 2023-05-12
-categories: 
+categories:
   - 前端
 tags:
   - CSS
@@ -35,17 +35,17 @@ text-overflow: ellipsis;
 
 ```js
 function checkOverflow(el) {
-    const curOverflow = el.style.overflow;
+  const curOverflow = el.style.overflow;
 
-    if (!curOverflow || curOverflow === "visible") {
-        el.style.overflow = "hidden";
-    }
+  if (!curOverflow || curOverflow === "visible") {
+    el.style.overflow = "hidden";
+  }
 
-    const isOverflowing =
-        el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
+  const isOverflowing =
+    el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
 
-    el.style.overflow = curOverflow;
+  el.style.overflow = curOverflow;
 
-    return isOverflowing;
+  return isOverflowing;
 }
 ```

@@ -11,6 +11,3 @@ tags:
 
 - [弹幕示例](https://hai-zou.github.io/barrage/)
 - [项目源码](https://github.com/hai-zou/barrage)
-
-## 弹幕设计
-

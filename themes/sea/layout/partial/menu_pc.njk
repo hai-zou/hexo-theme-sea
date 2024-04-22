@@ -1,10 +1,10 @@
 <div class="sea-menu-pc-wrap">
-    {% for menu_item in theme.menu %}
-        <a
-            class="sea-menu-link"
-            href="{{ url_for(menu_item.url) }}"
-        >
-            {{ menu_item.name }}
-        </a>
-    {% endfor %}
+  {% for menu_item in theme.menu %}
+    <a
+      class="sea-menu-link"
+      href="{{ url_for(menu_item.url) }}"
+    >
+      {{ menu_item.name }}
+    </a>
+  {% endfor %}
 </div>

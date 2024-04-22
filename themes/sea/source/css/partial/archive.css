@@ -1,24 +1,24 @@
 .sea-archive-wrapper .sea-archive-total {
-    font-size: 1.375rem;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
+  font-size: 1.375rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
 }
 
 .sea-archive-wrapper .sea-archive-year {
-    font-size: 1.2rem;
-    margin-left: -1.25rem;
+  font-size: 1.2rem;
+  margin-left: -1.25rem;
 }
 
 .sea-archive-list {
-    margin: 0;
-    padding-left: 1.25rem;
-    list-style: disc;
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
 }
 
 .sea-archive-list-item {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 .sea-archive-list-item:hover {
-    color: var(--sea-color-primary);
+  color: var(--sea-color-primary);
 }

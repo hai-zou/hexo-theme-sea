@@ -1,15 +1,15 @@
 .sea-sidebar-wrapper {
-    /* height: 100%; */
+  /* height: 100%; */
 }
 
 .sea-sidebar-card {
-    background-color: var(--sea-color-main-bg);
-    padding: 1rem;
-    border-radius: 5px;
-    margin-bottom: .8rem;
+  background-color: var(--sea-color-main-bg);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: .8rem;
 }
 
 .sea-sidebar-sticky {
-    position: sticky;
-    top: calc(var(--sea-nav-height) + 10px);
+  position: sticky;
+  top: calc(var(--sea-nav-height) + 10px);
 }

@@ -5,12 +5,12 @@
 {% if theme.algolia %}
 <script src="https://unpkg.com/@docsearch/js@3.5.2/dist/umd/index.js"></script>
 <script type="text/javascript">
-    docsearch({
-        container: '#sea-search-input',
-        appId: '{{ theme.algolia.appId }}',
-        apiKey: '{{ theme.algolia.apiKey }}',
-        indexName: '{{ theme.algolia.indexName }}',
-    });
+  docsearch({
+    container: '#sea-search-input',
+    appId: '{{ theme.algolia.appId }}',
+    apiKey: '{{ theme.algolia.apiKey }}',
+    indexName: '{{ theme.algolia.indexName }}',
+  });
 </script>
 {% endif %}
 

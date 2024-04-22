@@ -1,7 +1,7 @@
 ---
 title: 博客搭建 — Algolia DocSearch 实现站点搜索
 date: 2023-07-01
-categories: 
+categories:
   - WebSite
 tags:
   - Vue
@@ -43,12 +43,12 @@ import docsearch from "@docsearch/js";
 import "@docsearch/css";
 
 onMounted(() => {
-    docsearch({
-        container: "#docsearch",
-        appId: "YOUR_APP_ID",
-        indexName: "YOUR_INDEX_NAME",
-        apiKey: "YOUR_SEARCH_API_KEY",
-    });
+  docsearch({
+    container: "#docsearch",
+    appId: "YOUR_APP_ID",
+    indexName: "YOUR_INDEX_NAME",
+    apiKey: "YOUR_SEARCH_API_KEY",
+  });
 });
 ```
 

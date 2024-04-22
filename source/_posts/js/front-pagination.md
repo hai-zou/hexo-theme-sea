@@ -1,7 +1,7 @@
 ---
 title: 前端分页
 date: 2023-07-19
-categories: 
+categories:
   - 前端
 tags:
   - JavaScript
@@ -36,9 +36,9 @@ const totalPages = Math.ceil(length / pageSize);
 
 ```js
 function pagination(page, pageSize) {
-    const startIndex = (page - 1) * pageSize;
-    const endIndex = startIndex + pageSize;
-    return list.slice(startIndex, endIndex);
+  const startIndex = (page - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  return list.slice(startIndex, endIndex);
 }
 ```
 

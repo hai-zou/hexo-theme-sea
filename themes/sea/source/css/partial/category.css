@@ -1,18 +1,18 @@
 .sea-category-wrapper .sea-category-post-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    column-gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .sea-category-post-item:hover .sea-category-post-title {
-    color: var(--sea-color-primary);
+  color: var(--sea-color-primary);
 }
 
 .sea-category-wrapper .sea-category-post-title {
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

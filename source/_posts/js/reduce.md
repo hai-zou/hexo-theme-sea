@@ -1,7 +1,7 @@
 ---
 title: 万能的 reduce
 date: 2023-07-21
-categories: 
+categories:
   - 前端
 tags:
   - JavaScript
@@ -30,8 +30,8 @@ tags:
 ```js
 const numbers = [1, 2, 3, 4, 5];
 const sum = numbers.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
 );
 
 console.log(sum); // 输出：15
@@ -46,8 +46,8 @@ console.log(sum); // 输出：15
 ```js
 const numbers = [1, 2, 3, 4, 5];
 const isExist = numbers.reduce(
-    (includes, cur) => (includes ? includes : cur === 3),
-    false
+  (includes, cur) => (includes ? includes : cur === 3),
+  false
 );
 
 console.log(isExist); // 输出：true
@@ -58,8 +58,8 @@ console.log(isExist); // 输出：true
 ```js
 const numbers = [1, 2, 3, 4, 5];
 const newNums = numbers.reduce(
-    (arr, cur, index) => (index > 0 && index < 4 ? [...arr, cur] : arr),
-    []
+  (arr, cur, index) => (index > 0 && index < 4 ? [...arr, cur] : arr),
+  []
 );
 
 console.log(newNums); // 输出：[2, 3, 4]
@@ -79,8 +79,8 @@ console.log(newNums); // 输出：[100, 200, 300, 400, 500]
 ```js
 const numbers = [1, 2, 3, 4, 5];
 const newNums = numbers.reduce(
-    (arr, cur) => (cur >= 3 ? [...arr, cur] : arr),
-    []
+  (arr, cur) => (cur >= 3 ? [...arr, cur] : arr),
+  []
 );
 
 console.log(newNums); // 输出：[3, 4, 5]
@@ -91,10 +91,10 @@ console.log(newNums); // 输出：[3, 4, 5]
 ```js
 const numbers = [1, 2, 3, 4, 5];
 const findItem = numbers.reduce((acc, cur) => {
-    if (acc === undefined && cur === 3) {
-        return cur;
-    }
-    return acc;
+  if (acc === undefined && cur === 3) {
+    return cur;
+  }
+  return acc;
 }, undefined);
 
 console.log(findItem); // 输出：3
@@ -105,11 +105,11 @@ console.log(findItem); // 输出：3
 ```js
 const numbers = [1, 2, 3, 4, 5];
 const maxAndMin = numbers.reduce(
-    ({ max, min }, cur) => ({
-        max: Math.max(max, cur),
-        min: Math.min(min, cur),
-    }),
-    { max: -Infinity, min: Infinity }
+  ({ max, min }, cur) => ({
+    max: Math.max(max, cur),
+    min: Math.min(min, cur),
+  }),
+  { max: -Infinity, min: Infinity }
 );
 
 console.log(maxAndMin); // 输出：{max: 5, min: 1}

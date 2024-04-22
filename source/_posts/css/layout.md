@@ -1,7 +1,7 @@
 ---
 title: CSS布局：左侧固定，右侧自适应
 date: 2021-08-25
-categories: 
+categories:
   - 前端
 tags:
   - CSS
@@ -18,12 +18,12 @@ tags:
 
 ```html
 <div class="container">
-    <div class="sidebar">
-        <!-- 左侧内容 -->
-    </div>
-    <div class="main-content">
-        <!-- 右侧内容 -->
-    </div>
+  <div class="sidebar">
+    <!-- 左侧内容 -->
+  </div>
+  <div class="main-content">
+    <!-- 右侧内容 -->
+  </div>
 </div>
 ```
 
@@ -35,17 +35,17 @@ tags:
 
 ```css
 .container {
-    display: flex;
+  display: flex;
 }
 
 .sidebar {
-    width: 200px; /* 左侧固定宽度 */
-    background-color: #f1f1f1; /* 左侧背景色 */
+  width: 200px; /* 左侧固定宽度 */
+  background-color: #f1f1f1; /* 左侧背景色 */
 }
 
 .main-content {
-    flex: 1; /* 右侧自适应宽度 */
-    background-color: #e1e1e1; /* 右侧背景色 */
+  flex: 1; /* 右侧自适应宽度 */
+  background-color: #e1e1e1; /* 右侧背景色 */
 }
 ```
 
@@ -53,17 +53,17 @@ tags:
 
 ```css
 .container {
-    display: grid;
-    grid-template-columns: auto 1fr;
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 
 .sidebar {
-    width: 300px;
-    background-color: #f1f1f1;
+  width: 300px;
+  background-color: #f1f1f1;
 }
 
 .main-content {
-    background-color: #e1e1e1;
+  background-color: #e1e1e1;
 }
 ```
 
@@ -71,19 +71,19 @@ tags:
 
 ```css
 .container {
-    display: table;
-    table-layout: fixed; /* 固定设置了宽度的列 */
+  display: table;
+  table-layout: fixed; /* 固定设置了宽度的列 */
 }
 
 .sidebar {
-    width: 300px;
-    display: table-cell;
-    background-color: #f1f1f1;
+  width: 300px;
+  display: table-cell;
+  background-color: #f1f1f1;
 }
 
 .main-content {
-    display: table-cell;
-    background-color: #e1e1e1;
+  display: table-cell;
+  background-color: #e1e1e1;
 }
 ```
 
@@ -91,21 +91,21 @@ tags:
 
 ```css
 .container {
-    width: 1000px;
-    height: 500px;
+  width: 1000px;
+  height: 500px;
 }
 
 .sidebar {
-    width: 300px;
-    height: 100%;
-    float: left;
-    background-color: #f1f1f1;
+  width: 300px;
+  height: 100%;
+  float: left;
+  background-color: #f1f1f1;
 }
 
 .main-content {
-    width: calc(100% - 300px);
-    height: 100%;
-    float: left;
-    background-color: #e1e1e1;
+  width: calc(100% - 300px);
+  height: 100%;
+  float: left;
+  background-color: #e1e1e1;
 }
 ```

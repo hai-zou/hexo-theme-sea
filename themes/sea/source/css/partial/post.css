@@ -1,27 +1,27 @@
 .sea-article-content {
-    word-break: break-word;
+  word-break: break-word;
 }
 
 .sea-card-box {
-    padding: 1rem 2.5rem;
-    border-radius: 5px;
-    background-color: var(--sea-color-main-bg);
-    margin-bottom: 1rem;
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  background-color: var(--sea-color-main-bg);
+  margin-bottom: 1rem;
 }
 
 .sea-post-meta {
-    color: var(--sea-color-gray);
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 1.5rem;
-    row-gap: 0.5rem;
+  color: var(--sea-color-gray);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 0.5rem;
 }
 
 .sea-post-time,
 .sea-post-tags,
 .sea-post-categories {
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
 }

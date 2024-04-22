@@ -1,13 +1,13 @@
 {% if page.comments %}
 <section id="sea-comments" class="sea-card-box">
-    <div id="sea-waline"></div>
+  <div id="sea-waline"></div>
 </section>
 
 <script type="module">
-    import { init } from 'https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.js';
-    init({
-        el: '#sea-waline',
-        serverURL: '{{ theme.waline.serverURL }}',
-    });
+  import { init } from 'https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.js';
+  init({
+    el: '#sea-waline',
+    serverURL: '{{ theme.waline.serverURL }}',
+  });
 </script>
 {% endif %}

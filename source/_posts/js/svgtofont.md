@@ -1,7 +1,7 @@
 ---
 title: SVG To Font 创建自己的字体图标库
 date: 2023-06-22
-categories: 
+categories:
   - 前端
 tags:
   - JavaScript
@@ -39,13 +39,13 @@ import svgtofont from "svgtofont";
 import path from "path";
 
 svgtofont({
-    src: path.resolve(process.cwd(), "./svg"), // svg 图标目录路径
-    dist: path.resolve(process.cwd(), "./fonts"), // 输出到指定目录中
-    fontName: "h-font", // 设置字体名称
-    css: true, // 生成字体文件
-    useNameAsUnicode: true,
+  src: path.resolve(process.cwd(), "./svg"), // svg 图标目录路径
+  dist: path.resolve(process.cwd(), "./fonts"), // 输出到指定目录中
+  fontName: "h-font", // 设置字体名称
+  css: true, // 生成字体文件
+  useNameAsUnicode: true,
 }).then(() => {
-    console.log("done!");
+  console.log("done!");
 });
 ```
 

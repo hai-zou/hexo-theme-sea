@@ -1,7 +1,7 @@
 ---
 title: 搭建一个简单的 Node 服务器
 date: 2022-11-26
-categories: 
+categories:
   - 后端
 tags:
   - Node
@@ -29,13 +29,13 @@ const app = express();
 
 // 路由和处理程序
 app.get("/", (req, res) => {
-    res.send("Hello, World!");
+  res.send("Hello, World!");
 });
 
 // 启动服务器
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
 ```
 
@@ -59,9 +59,9 @@ const cors = require("cors");
  * 详细配置参考：https://github.com/expressjs/cors
  */
 app.use(
-    cors({
-        origin: true,
-        credentials: true,
-    })
+  cors({
+    origin: true,
+    credentials: true,
+  })
 );
 ```

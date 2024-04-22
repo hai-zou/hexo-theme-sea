@@ -1,7 +1,7 @@
 ---
 title: Node.js 写一个登录中间件
 date: 2022-12-01
-categories: 
+categories:
   - 后端
 tags:
   - Node
@@ -38,27 +38,27 @@ npm install express jsonwebtoken
 const jwt = require("jsonwebtoken");
 
 const authMiddleware = (req, res, next) => {
-    // 从请求头中获取JWT
-    const token = req.headers.authorization;
+  // 从请求头中获取JWT
+  const token = req.headers.authorization;
 
-    if (!token) {
-        // 如果没有提供JWT，则返回未授权的错误
-        return res.status(401).json({ message: "Unauthorized" });
-    }
+  if (!token) {
+    // 如果没有提供JWT，则返回未授权的错误
+    return res.status(401).json({ message: "Unauthorized" });
+  }
 
-    try {
-        // 验证JWT并提取用户信息，使用与生成JWT时相同的密钥替换'secretKey'
-        const decoded = jwt.verify(token, "secretKey");
+  try {
+    // 验证JWT并提取用户信息，使用与生成JWT时相同的密钥替换'secretKey'
+    const decoded = jwt.verify(token, "secretKey");
 
-        // 将用户信息存储在请求中，以供后续中间件或路由处理程序使用
-        req.user = decoded;
+    // 将用户信息存储在请求中，以供后续中间件或路由处理程序使用
+    req.user = decoded;
 
-        // 调用下一个中间件或路由处理程序
-        next();
-    } catch (err) {
-        // 如果JWT验证失败，则返回未授权的错误
-        return res.status(401).json({ message: "Unauthorized" });
-    }
+    // 调用下一个中间件或路由处理程序
+    next();
+  } catch (err) {
+    // 如果JWT验证失败，则返回未授权的错误
+    return res.status(401).json({ message: "Unauthorized" });
+  }
 };
 
 module.exports = authMiddleware;
@@ -73,8 +73,8 @@ const authMiddleware = require("./authMiddleware.js");
 
 // 在需要进行登录验证的路由或中间件中使用 authMiddleware
 app.get("/protected", authMiddleware, (req, res) => {
-    // 这里是受保护的资源，只有登录用户才能访问
-    res.json({ message: "Protected resource" });
+  // 这里是受保护的资源，只有登录用户才能访问
+  res.json({ message: "Protected resource" });
 });
 ```
 

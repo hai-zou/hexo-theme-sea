@@ -1,7 +1,7 @@
 ---
 title: JavaScript 中的防抖与节流
 date: 2021-07-14
-categories: 
+categories:
   - 前端
 tags:
   - JavaScript
@@ -17,15 +17,15 @@ tags:
 
 ```js
 function debounce(fn, delay) {
-    let timer;
-    return function (e) {
-        if (timer) {
-            clearTimeout(timer);
-        }
-        timer = setTimeout(() => {
-            fn(e);
-        }, delay);
-    };
+  let timer;
+  return function (e) {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(() => {
+      fn(e);
+    }, delay);
+  };
 }
 ```
 
@@ -39,15 +39,15 @@ function debounce(fn, delay) {
 
 ```js
 function control(fn, delay) {
-    let timer;
-    return function (e) {
-        if (timer) {
-            return;
-        }
-        timer = setTimeout(() => {
-            fn(e);
-            timer = null;
-        }, delay);
-    };
+  let timer;
+  return function (e) {
+    if (timer) {
+      return;
+    }
+    timer = setTimeout(() => {
+      fn(e);
+      timer = null;
+    }, delay);
+  };
 }
 ```
