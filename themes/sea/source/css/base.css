@@ -39,5 +39,26 @@ body {
   font-family: var(--sea-font-family-lxgw);
 
   /* 解决ios下代码块字体样式偏大问题 */
-  -webkit-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 淡出动画 */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

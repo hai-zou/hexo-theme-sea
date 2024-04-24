@@ -5,4 +5,5 @@
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  animation: show .6s .3s backwards;
 }

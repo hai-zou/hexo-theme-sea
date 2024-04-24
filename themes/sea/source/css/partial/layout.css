@@ -11,8 +11,10 @@
 .sea-main-left {
   flex: 1;
   overflow: hidden;
+  animation: fade-up .4s backwards;
 }
 
 .sea-main-right {
   width: 240px;
+  animation: fade-up .4s backwards;
 }

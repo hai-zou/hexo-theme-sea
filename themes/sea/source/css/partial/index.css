@@ -5,6 +5,7 @@
   transition: all .3s;
   border-radius: 5px;
   background-color: var(--sea-color-main-bg);
+  animation: fade-up .4s backwards;
 }
 
 .sea-post-title {

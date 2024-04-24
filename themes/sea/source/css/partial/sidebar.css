@@ -7,6 +7,7 @@
   padding: 1rem;
   border-radius: 5px;
   margin-bottom: .8rem;
+  animation: fade-up .4s backwards;
 }
 
 .sea-sidebar-sticky {
