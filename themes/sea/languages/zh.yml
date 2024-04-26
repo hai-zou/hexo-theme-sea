@@ -13,4 +13,5 @@ theme:
   dark: 深色模式
 
 footer:
+  home: 首页
   site_uv: 本站访客数 %s 人

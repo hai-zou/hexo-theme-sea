@@ -1,8 +1,36 @@
 <footer id="sea-footer-container">
+  <div>
+    <a
+      class="sea-footer-link"
+      href="/"
+    >
+      {{ __('footer.home') }}
+    </a>
+    {% for menu_item in theme.menu %}
+      <span>·</span>
+      <a
+        class="sea-footer-link"
+        href="{{ url_for(menu_item.url) }}"
+      >
+        {{ menu_item.name }}
+      </a>
+    {% endfor %}
+    <span class="split-line">|</span>
+    <span id="busuanzi_container_site_uv">
+      {{ _p('footer.site_uv', '<span id="busuanzi_value_site_uv"></span>') }}
+    </span>
+  </div>
   {% set current = moment().year() %}
-  <div>© {% if current > theme.since %} {{ theme.since + '-' + current }} {% else %} {{ current }} {% endif %} | {{ config.title }}</div>
-  <div>{{ config.description }}</div>
-  <span id="busuanzi_container_site_uv">
-    {{ _p('footer.site_uv', '<span id="busuanzi_value_site_uv"></span>') }}
-  </span>
+  <div>
+    <span>©</span>
+    {% if current > theme.since %}
+      {{ theme.since + '-' + current }}
+    {% else %}
+      {{ current }}
+    {% endif %}
+    <span>·</span>
+    {{ config.title }}
+    <span class="split-line">|</span>
+    {{ config.description }}
+  </div>
 </footer>

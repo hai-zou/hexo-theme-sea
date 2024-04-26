@@ -7,3 +7,11 @@
   gap: .5rem;
   animation: show .6s .3s backwards;
 }
+
+#sea-footer-container .sea-footer-link:hover {
+  color: var(--sea-color-primary);
+}
+
+#sea-footer-container .split-line {
+  margin: 0 8px;
+}
