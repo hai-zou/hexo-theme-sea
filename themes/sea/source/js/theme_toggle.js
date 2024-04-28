@@ -59,6 +59,50 @@
     document.documentElement.setAttribute("theme", themeMode);
   }
 
+  // View Transitions API | 添加主题切换过渡效果
+  function toggleTheme(key, event) {
+    // 为不支持此 API 的浏览器提供回退方案：
+    if (!document.startViewTransition) {
+      setTheme(key);
+      return;
+    }
+
+    // 获取点击位置，或者回退到屏幕中间
+    const x = event.clientX ?? innerWidth / 2;
+    const y = event.clientY ?? innerHeight / 2;
+    // 获取到最远角的距离
+    const endRadius = Math.hypot(
+      Math.max(x, innerWidth - x),
+      Math.max(y, innerHeight - y),
+    );
+
+    // 开始一次视图过渡：
+    const transition = document.startViewTransition(() => {
+      setTheme(key);
+    });
+
+    // 等待伪元素创建完成：
+    transition.ready.then(() => {
+      const clipPath = [
+        `circle(0 at ${x}px ${y}px)`,
+        `circle(${endRadius}px at ${x}px ${y}px)`,
+      ];
+      const isDark = key === THEME_MODE_DARK;
+      // 新视图的根元素动画
+      document.documentElement.animate(
+        {
+          clipPath: isDark ? clipPath.reverse() : clipPath,
+        },
+        {
+          duration: 500,
+          easing: "ease-in",
+          // 指定要附加动画的伪元素
+          pseudoElement: isDark ? "::view-transition-old(root)" : "::view-transition-new(root)",
+        },
+      );
+    });
+  }
+
   // 初始化主题
   const themeVal = getThemeKey();
   setTheme(themeVal);
@@ -68,18 +112,18 @@
     e.preventDefault();
     e.stopPropagation();
     saveThemeKey(THEME_MODE_AUTO);
-    setTheme(THEME_MODE_AUTO);
+    toggleTheme(THEME_MODE_AUTO, e);
   });
   lightEle.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
     saveThemeKey(THEME_MODE_LIGHT);
-    setTheme(THEME_MODE_LIGHT);
+    toggleTheme(THEME_MODE_LIGHT, e);
   });
   darkEle.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
     saveThemeKey(THEME_MODE_DARK);
-    setTheme(THEME_MODE_DARK);
+    toggleTheme(THEME_MODE_DARK, e);
   });
 }());
