@@ -5,3 +5,6 @@ hexo.extend.injector.register('head_end', '<meta name="keywords" content="前端
 // 谷歌分析
 hexo.extend.injector.register('head_end', '<script async src="https://www.googletagmanager.com/gtag/js?id=G-WW5WXCXDFX"></script>');
 hexo.extend.injector.register('head_end', "<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-WW5WXCXDFX');</script>");
+
+// umami 分析
+hexo.extend.injector.register('head_end', '<script defer src="https://analytics.luckyzh.cn/script.js" data-website-id="823ca8ce-2d88-4db4-b9a0-c3681fb69421"></script>');
