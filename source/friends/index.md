@@ -4,10 +4,7 @@ title: 友链
 
 ## 大佬们
 
-- [左眼会陪右眼哭の博客](https://qkongtao.cn/) 另一个世界
-- [阮一峰的网络日志](https://www.ruanyifeng.com/blog/)
-- [wallleap](//myblog.wallleap.cn) Luwang's blog
-- [Wcowin’s Web](https://wcowin.work/) 循此苦旅，以达星辰
+{% friends %}
 
 ## 友链申请
 

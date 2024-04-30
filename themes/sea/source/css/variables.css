@@ -31,6 +31,8 @@
   --sea-color-bg-alt: #f6f6f7;
   --sea-color-text-code: #476582;
   --sea-color-mute: #f6f6f7;
+
+  --sea-friend-border: #e3e8f7;
 }
 
 /* 暗色主题 */
@@ -53,6 +55,8 @@ html[theme=dark] {
   --sea-color-bg-alt: #161618;
   --sea-color-text-code: #c9def1;
   --sea-color-mute: #313136;
+
+  --sea-friend-border: #3d3d3f;
 }
 
 :root {

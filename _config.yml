@@ -108,3 +108,22 @@ feed:
   content_limit: 200
   content_limit_delim: ' '
   order_by: -date
+
+# friends
+friends:
+  - name: 阮一峰的网络日志
+    avatar: //avatars.githubusercontent.com/u/905434?v=4
+    link: //www.ruanyifeng.com/blog/
+    desc: 互联网科技博主
+  - name: 左眼会陪右眼哭の博客
+    avatar: //qkongtao.cn/file/images/favicon.png
+    link: //qkongtao.cn/
+    desc: 干嘛这么想不开，要在脸上贴个输字！
+  - name: wallleap
+    avatar: //gravatar.wallleap.cn/avatar/be1ccdcf025a92b98a92e331e1b3662a?size=256
+    link: //myblog.wallleap.cn
+    desc: Luwang's blog
+  - name: Wcowin’s Web
+    avatar: //s1.imagehub.cc/images/2024/02/02/91a767e93d1a344e44c69936464c583e.png
+    link: //wcowin.work/
+    desc: 循此苦旅，以达星辰
