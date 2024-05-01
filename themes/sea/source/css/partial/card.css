@@ -43,6 +43,11 @@
   line-height: 1.5rem;
 }
 
+.sea-card-tags .tag-list-link:hover,
+.sea-card-categories .category-list-link:hover {
+  color: var(--sea-color-primary);
+}
+
 /* 最近文章卡片 */
 .sea-card-recent .post-list {
   list-style: none;
@@ -55,6 +60,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.5rem;
+}
+
+.sea-card-recent .post-list-link:hover {
+  color: var(--sea-color-primary);
 }
 
 /* 目录卡片 */
