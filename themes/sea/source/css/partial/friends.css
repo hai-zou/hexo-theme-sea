@@ -1,6 +1,6 @@
 .sea-friend-wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
 }
 
@@ -25,9 +25,16 @@
   border-radius: 50%;
 }
 
+.sea-friend-wrapper .sea-friend-content {
+  overflow: hidden;
+}
+
 .sea-friend-wrapper .sea-friend-name {
   color: var(--sea-color-primary);
   margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sea-friend-wrapper .sea-friend-desc {
