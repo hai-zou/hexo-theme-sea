@@ -8,6 +8,13 @@
   animation: show .6s .3s backwards;
 }
 
+#sea-footer-container .sea-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 #sea-footer-container .sea-footer-link:hover {
   color: var(--sea-color-primary);
 }
