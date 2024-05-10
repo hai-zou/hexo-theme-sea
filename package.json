@@ -23,5 +23,8 @@
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0"
+  },
+  "devDependencies": {
+    "svgtofont": "^4.2.0"
   }
 }
