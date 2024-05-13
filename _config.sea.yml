@@ -17,11 +17,13 @@ user:
 
 
 socialLink:
-  - icon: <i class="fa fa-github-square"></i>
-    link: https://github.com/hai-zou
-  - icon: <i class="fa fa-envelope-square"></i>
+  - icon: <i class="sea-font">email</i>
     link: mailto:zou.hai@outlook.com
-  - icon: <i class="fa fa-rss-square"></i>
+  - icon: <i class="sea-font">github</i>
+    link: https://github.com/hai-zou
+  - icon: <i class="sea-font">juejin</i>
+    link: https://juejin.cn/user/202789929622183
+  - icon: <i class="sea-font">rss</i>
     link: https://luckyzh.cn/rss.xml
 
 waline:

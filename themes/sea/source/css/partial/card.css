@@ -17,12 +17,21 @@
 
 .sea-social-media {
   margin-top: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
 }
 
 .sea-social-link {
-  font-size: 1.2rem;
   line-height: 1;
-  margin: 0 .8rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--sea-color-border);
+  border-radius: 4px;
+  padding: 3px;
 }
 
 /* 分类/标签 卡片 */
