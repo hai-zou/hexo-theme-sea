@@ -31,10 +31,11 @@ jobs:
             echo "major" > bumpfile
           else
             echo "No version bump needed"
-            exit 0
+            exit 1
           fi
 
       - name: Set Git Config
+        if: success()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
