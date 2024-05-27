@@ -18,17 +18,42 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
-          
-      - name: Push changes
+
+      - name: Determine version bump
+        run: |
+          LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "Last commit message: $LAST_COMMIT_MSG"
+          if [[ "$LAST_COMMIT_MSG" == *"fix"* ]]; then
+            echo "patch" > bumpfile
+          elif [[ "$LAST_COMMIT_MSG" == *"feat"* ]]; then
+            echo "minor" > bumpfile
+          elif [[ "$LAST_COMMIT_MSG" == *"refactor"* ]]; then
+            echo "major" > bumpfile
+          else
+            echo "No version bump needed"
+            exit 0
+          fi
+
+      - name: Set Git Config
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          npm version patch -m "chore(release): %s"
+
+      - name: Bump version and create changelog
+        if: success()
+        run: |
+          BUMP_TYPE=$(cat bumpfile)
+          npm version $BUMP_TYPE -m "chore(release): %s"
+
+      - name: Push changes
+        if: success()
+        run: |
           git push --follow-tags origin main
 
       - name: Publish to npm
+        if: success()
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
