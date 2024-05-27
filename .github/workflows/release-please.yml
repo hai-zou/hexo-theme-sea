@@ -23,11 +23,11 @@ jobs:
         run: |
           LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
           echo "Last commit message: $LAST_COMMIT_MSG"
-          if [[ "$LAST_COMMIT_MSG" == *"fix"* ]]; then
+          if [[ "$LAST_COMMIT_MSG" =~ ^fix(\([^\)]+\))?: ]]; then
             echo "patch" > bumpfile
-          elif [[ "$LAST_COMMIT_MSG" == *"feat"* ]]; then
+          elif [[ "$LAST_COMMIT_MSG" =~ ^feat(\([^\)]+\))?: ]]; then
             echo "minor" > bumpfile
-          elif [[ "$LAST_COMMIT_MSG" == *"refactor"* ]]; then
+          elif [[ "$LAST_COMMIT_MSG" =~ ^refactor(\([^\)]+\))?: ]]; then
             echo "major" > bumpfile
           else
             echo "No version bump needed"
