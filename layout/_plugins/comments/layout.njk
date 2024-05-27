@@ -1,0 +1,5 @@
+{% if page.comments %}
+  {% if theme.waline and theme.waline.enable %}
+    {{ partial('_plugins/comments/waline') }}
+  {% endif %}
+{% endif %}

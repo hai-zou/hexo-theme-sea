@@ -1,0 +1,17 @@
+page:
+  contents: Contents
+  categories: Categories
+  tags: Tags
+  tagcloud: Tag Cloud
+  archive: Archive
+  recent_articles: Recent Articles
+  archive_total: Total %d articles!
+
+theme:
+  auto: Follow System
+  light: Light Mode
+  dark: Dark Mode
+
+footer:
+  home: Home
+  site_uv: Site Visitors %s people

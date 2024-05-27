@@ -1,0 +1,16 @@
+<section id="sea-comments" class="sea-card-box">
+  <div id="sea-waline"></div>
+</section>
+
+<script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.js';
+  import { loadCSS } from '/js/utils.js';
+
+  loadCSS('https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.css');
+  loadCSS('/css/plugins/waline.css');
+
+  init({
+    el: '#sea-waline',
+    serverURL: '{{ theme.waline.serverURL }}',
+  });
+</script>

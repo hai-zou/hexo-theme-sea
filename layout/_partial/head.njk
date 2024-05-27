@@ -1,0 +1,16 @@
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ config.title }}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {# 字体图标 #}
+  <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
+  {{ css('fonts/sea-font') }}
+
+  {# CSS #}
+  {{ css('css/main') }}
+
+  {# Open Graph #}
+  {{ open_graph() }}
+</head>

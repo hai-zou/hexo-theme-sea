@@ -1,0 +1,28 @@
+<section class="sea-post-list">
+  {% for post in page.posts.toArray() %}
+    <div class="sea-post-item" style="animation-delay: 0.{{ loop.index0 }}s;">
+      <h2 class="sea-post-title">
+        <a class="sea-post-link" href="{{ url_for(post.path) }}">
+          {{ truncate(post.title, {length: 120, separator: ' '}) }}
+        </a>
+      </h2>
+      <div class="sea-post-line"></div>
+      <div class="sea-post-abstract">
+        {% set content = truncate(post.content, {length: 300, separator: ' '}) %}
+        {{ strip_html(content) }}
+      </div>
+      <div class="sea-post-meta">
+        {{ partial('_partial/post-meta/post_date', {post_date: post.date}) }}
+        {{ partial('_partial/post-meta/post_categories', {post_categories: post.categories}) }}
+        {{ partial('_partial/post-meta/post_tags', {post_tags: post.tags}) }}
+      </div>
+      {% if post.sticky %}
+        <div class="sea-post-top-flag">
+          <i class="sea-font">top-post</i>
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  {{ partial('_partial/main/pagination') }}
+</section>

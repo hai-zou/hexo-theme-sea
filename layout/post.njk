@@ -1,0 +1,21 @@
+<article class="sea-card-box sea-doc">
+  <header class="sea-article-header">
+    <h1 class="sea-article-title">{{ page.title }}</h1>
+    {% if is_post() %}
+      <div class="sea-post-meta">
+        {{ partial('_partial/post-meta/post_date', {post_date: page.date}) }}
+        {{ partial('_partial/post-meta/post_categories', {post_categories: page.categories}) }}
+        {{ partial('_partial/post-meta/post_tags', {post_tags: page.tags}) }}
+      </div>
+    {% endif %}
+  </header>
+  <div class="sea-article-content">
+    {{ render(page.content) }}
+  </div>
+
+  {% if is_post() %}
+    {{ partial('_partial/main/prev_next') }}
+  {% endif %}
+</article>
+
+{{ partial('_plugins/comments/layout') }}

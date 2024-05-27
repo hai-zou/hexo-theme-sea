@@ -1,133 +1,42 @@
-# Hexo Configuration
+# 菜单栏
+menu:
+  # - name: 归档
+  #   url: /archives/
+  # - name: 友链
+  #   url: /friends/
+  # - name: 留言
+  #   url: /messages/
+  # - name: 关于
+  #   url: /about/
 
-# Site
-title: 旧梦
-subtitle: ''
-description: '冰冻三尺非一日之寒，滴水穿石非一日之功。'
-keywords:
-author: Hai Zou
-language: zh
-timezone: ''
+user:
+  avatar: # https://xx.com/avatar.png
+  name: haizou
+  intro: 一介凡人
 
-# URL
-url: https://www.luckyzh.cn
-permalink: :title/
-permalink_defaults:
-pretty_urls:
-  trailing_index: false
-  trailing_html: false
+# 社交链接
+socialLink:
+  # - icon: <i>email</i>
+  #   link: mailto:xx@xx.com
 
-# Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
-
-# Writing
-new_post_name: :title.md
-default_layout: post
-titlecase: false
-external_link:
-  enable: true
-  field: site
-  exclude: ''
-filename_case: 0
-render_drafts: false
-post_asset_folder: false
-relative_link: false
-future: true
-highlight:
-  enable: true
-  line_number: true
-  auto_detect: false
-  tab_replace: '  '
-  wrap: true
-  hljs: false
-prismjs:
+# Waline https://waline.js.org/
+waline:
   enable: false
-  preprocess: true
-  line_number: true
-  tab_replace: '  '
+  serverURL: 
 
-# Home page setting
-index_generator:
-  path: ''
-  per_page: 5
-  order_by: -date
+# Docsearch https://docsearch.algolia.com/apply/
+algolia:
+  enable: false
+  appId: 
+  apiKey: 
+  indexName: 
 
-# 标签分页设置
-tag_generator:
-  per_page: 20
-
-# 归档分页配置
-archive_generator:
-  per_page: 20
-
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
-
-# Metadata elements
-meta_generator: true
-
-# Date / Time format
-date_format: YYYY-MM-DD
-time_format: HH:mm:ss
-updated_option: 'mtime'
-
-# Pagination
-per_page: 10
-pagination_dir: page
-
-# Include / Exclude file(s)
-include:
-exclude:
-ignore:
-
-# Extensions
-theme: sea
-
-# Deployment
-deploy:
-  type: ''
-
-sitemap:
-  path: sitemap.xml
-
-feed:
-  type: atom
-  path: rss.xml
-  limit: 10
-  hub:
-  content:
-  content_limit: 200
-  content_limit_delim: ' '
-  order_by: -date
-
-# friends
+# 友链模块
 friends:
-  - name: 阮一峰的网络日志
-    avatar: //avatars.githubusercontent.com/u/905434?v=4
-    link: //www.ruanyifeng.com/blog/
-    desc: 互联网科技博主
-  - name: 左眼会陪右眼哭の博客
-    avatar: //qkongtao.cn/file/images/favicon.png
-    link: //qkongtao.cn/
-    desc: 干嘛这么想不开，要在脸上贴个输字！
-  - name: wallleap
-    avatar: //gravatar.wallleap.cn/avatar/be1ccdcf025a92b98a92e331e1b3662a?size=256
-    link: //myblog.wallleap.cn
-    desc: Luwang's blog
-  - name: Wcowin’s Web
-    avatar: //s1.imagehub.cc/images/2024/02/02/91a767e93d1a344e44c69936464c583e.png
-    link: //wcowin.work/
-    desc: 循此苦旅，以达星辰
-  - name: Gholts
-    avatar: https://avatars.githubusercontent.com/u/104642670?v=4
-    desc: A Normal Blog
-    link: https://blog.gholts.top/
+  # - name: xxx's blog
+  #   avatar: https://xx.png
+  #   link: https://blog.xxx.com
+  #   desc: xxx
+
+footer:
+  builtUpTime: # 2020-05-20 13:14:00

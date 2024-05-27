@@ -1,0 +1,23 @@
+<aside class="sea-sidebar-wrapper sea-sidebar-sticky">
+  <div class="sea-sidebar-card">
+    {{ partial('_partial/card/user') }}
+  </div>
+
+  {% if is_post() %}
+    <div class="sea-sidebar-card" style="animation-delay: 0.1s;">
+      {{ partial('_partial/card/anchor') }}
+    </div>
+
+    <div class="sea-sidebar-card" style="animation-delay: 0.2s;">
+      {{ partial('_partial/card/recent') }}
+    </div>
+  {% else %}
+    <div class="sea-sidebar-card" style="animation-delay: 0.1s;">
+      {{ partial('_partial/card/categories') }}
+    </div>
+
+    <div class="sea-sidebar-card" style="animation-delay: 0.2s;">
+      {{ partial('_partial/card/tags') }}
+    </div>
+  {% endif %}
+</aside>

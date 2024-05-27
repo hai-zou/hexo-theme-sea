@@ -1,1 +1,1 @@
-# Hexo Blog
+# Hexo Theme Sea

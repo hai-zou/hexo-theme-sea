@@ -1,0 +1,62 @@
+.sea-post-item {
+  position: relative;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.8rem;
+  transition: all .3s;
+  border-radius: 5px;
+  background-color: var(--sea-color-main-bg);
+  animation: fade-up .4s backwards;
+}
+
+.sea-post-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: all .3s ease-out 0s;
+  margin: 0.5rem 0;
+  border: none;
+  cursor: pointer;
+}
+
+.sea-post-link {
+  display: block;
+}
+
+.sea-post-line {
+  transition: all 0.3s ease-out;
+  border-top: 2px solid var(--sea-color-text-1);
+  display: block;
+  width: 2rem;
+}
+
+.sea-post-abstract {
+  line-height: 1.5;
+  margin: 1rem 0;
+  color: var(--sea-color-text-2);
+  letter-spacing: .5px;
+}
+
+.sea-post-item:hover {
+  box-shadow: var(--sea-shadow-card);
+}
+
+.sea-post-item:hover .sea-post-title {
+  color: var(--sea-color-primary);
+}
+
+.sea-post-item:hover .sea-post-line {
+  width: 5rem;
+  border-color: var(--sea-color-primary);
+}
+
+.sea-post-top-flag {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.sea-post-top-flag .sea-font {
+  font-size: 2.5rem;
+  color: var(--sea-color-danger);
+}

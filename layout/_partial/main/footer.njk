@@ -1,0 +1,43 @@
+<footer id="sea-footer-container">
+  <div class="sea-footer-row">
+    <div class="sea-footer-menu-link">
+      <a
+        class="sea-footer-link"
+        href="/"
+      >
+        {{ __('footer.home') }}
+      </a>
+      {% for menu_item in theme.menu %}
+        <span>·</span>
+        <a
+          class="sea-footer-link"
+          href="{{ url_for(menu_item.url) }}"
+        >
+          {{ menu_item.name }}
+        </a>
+      {% endfor %}
+    </div>
+    <span class="split-line">|</span>
+    <span id="busuanzi_container_site_uv">
+      {{ _p('footer.site_uv', '<span id="busuanzi_value_site_uv"></span>') }}
+    </span>
+  </div>
+  {% set current = moment().year() %}
+  {% set since = moment(theme.footer.builtUpTime).year() %}
+  <div class="sea-footer-row">
+    <div class="sea-footer-copyright">
+      <span>©</span>
+      {% if current > since %}
+        {{ since + '-' + current }}
+      {% else %}
+        {{ current }}
+      {% endif %}
+      <span>·</span>
+      {{ config.title }}
+    </div>
+    <span class="split-line">|</span>
+    <div class="sea-footer-site-desc">
+      {{ config.description }}
+    </div>
+  </div>
+</footer>
