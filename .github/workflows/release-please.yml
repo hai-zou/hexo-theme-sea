@@ -18,18 +18,14 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
-
-      - name: Bump version and create changelog
-        id: bump_version
-        run: |
-          npm version patch -m "chore(release): %s"
-
+          
       - name: Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.email "action-bot@github.com"
           git config --global user.name "GitHubActionBot"
+          npm version patch -m "chore(release): %s"
           git push --follow-tags origin main
 
       - name: Publish to npm
