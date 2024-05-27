@@ -26,16 +26,16 @@ jobs:
           echo "Last commit message: $LAST_COMMIT_MSG"
           if [[ "$LAST_COMMIT_MSG" =~ ^fix(\([^\)]+\))?: ]]; then
             echo "patch" > bumpfile
-            echo "::set-output name=bump::patch"
+            echo "bump=patch" >> $GITHUB_OUTPUT
           elif [[ "$LAST_COMMIT_MSG" =~ ^feat(\([^\)]+\))?: ]]; then
             echo "minor" > bumpfile
-            echo "::set-output name=bump::minor"
+            echo "bump=minor" >> $GITHUB_OUTPUT
           elif [[ "$LAST_COMMIT_MSG" =~ ^refactor(\([^\)]+\))?: ]]; then
             echo "major" > bumpfile
-            echo "::set-output name=bump::major"
+            echo "bump=major" >> $GITHUB_OUTPUT
           else
             echo "No version bump needed"
-            echo "::set-output name=bump::none"
+            echo "bump=none" >> $GITHUB_OUTPUT
           fi
 
       - name: Set Git Config
