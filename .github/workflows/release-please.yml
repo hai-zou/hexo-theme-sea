@@ -20,21 +20,26 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Determine version bump
+        id: determine_version
         run: |
           LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
           echo "Last commit message: $LAST_COMMIT_MSG"
           if [[ "$LAST_COMMIT_MSG" =~ ^fix(\([^\)]+\))?: ]]; then
             echo "patch" > bumpfile
+            echo "::set-output name=bump::patch"
           elif [[ "$LAST_COMMIT_MSG" =~ ^feat(\([^\)]+\))?: ]]; then
             echo "minor" > bumpfile
+            echo "::set-output name=bump::minor"
           elif [[ "$LAST_COMMIT_MSG" =~ ^refactor(\([^\)]+\))?: ]]; then
             echo "major" > bumpfile
+            echo "::set-output name=bump::major"
           else
             echo "No version bump needed"
+            echo "::set-output name=bump::none"
           fi
 
       - name: Set Git Config
-        if: ${{ files.exists('bumpfile') }}
+        if: steps.determine_version.outputs.bump != 'none'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -42,18 +47,18 @@ jobs:
           git config --global user.name "github-actions[bot]"
 
       - name: Bump version and create changelog
-        if: ${{ files.exists('bumpfile') }}
+        if: steps.determine_version.outputs.bump != 'none'
         run: |
           BUMP_TYPE=$(cat bumpfile)
           npm version $BUMP_TYPE -m "chore(release): %s"
 
       - name: Push changes
-        if: ${{ files.exists('bumpfile') }}
+        if: steps.determine_version.outputs.bump != 'none'
         run: |
           git push --follow-tags origin main
 
       - name: Publish to npm
-        if: ${{ files.exists('bumpfile') }}
+        if: steps.determine_version.outputs.bump != 'none'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
