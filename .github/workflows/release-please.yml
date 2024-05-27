@@ -1,26 +1,38 @@
+name: Release and Publish
+
 on:
   push:
     branches:
       - main
-name: release-please
+
 jobs:
-  release-please:
+  release:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: googleapis/release-please-action@v4
-        id: release
-        with:
-          release-type: node
-      # The logic below handles the npm publication:
-      - uses: actions/checkout@v4
-        # these if statements ensure that a publication only occurs when a new release is created:
-        if: ${{ steps.release.outputs.release_created }}
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
-        if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish
+
+      - name: Bump version and create changelog
+        id: bump_version
+        run: |
+          npm version patch -m "chore(release): %s"
+
+      - name: Push changes
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        if: ${{ steps.release.outputs.release_created }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.email "action-bot@github.com"
+          git config --global user.name "GitHubActionBot"
+          git push --follow-tags origin main
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
