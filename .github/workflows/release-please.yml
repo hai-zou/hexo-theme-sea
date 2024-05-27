@@ -31,11 +31,10 @@ jobs:
             echo "major" > bumpfile
           else
             echo "No version bump needed"
-            exit 1
           fi
 
       - name: Set Git Config
-        if: success()
+        if: ${{ files.exists('bumpfile') }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -43,18 +42,18 @@ jobs:
           git config --global user.name "github-actions[bot]"
 
       - name: Bump version and create changelog
-        if: success()
+        if: ${{ files.exists('bumpfile') }}
         run: |
           BUMP_TYPE=$(cat bumpfile)
           npm version $BUMP_TYPE -m "chore(release): %s"
 
       - name: Push changes
-        if: success()
+        if: ${{ files.exists('bumpfile') }}
         run: |
           git push --follow-tags origin main
 
       - name: Publish to npm
-        if: success()
+        if: ${{ files.exists('bumpfile') }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
