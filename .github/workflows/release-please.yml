@@ -25,13 +25,10 @@ jobs:
           LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
           echo "Last commit message: $LAST_COMMIT_MSG"
           if [[ "$LAST_COMMIT_MSG" =~ ^fix(\([^\)]+\))?: ]]; then
-            echo "patch" > bumpfile
             echo { "bump=patch" "commit_msg=$LAST_COMMIT_MSG" } >> $GITHUB_OUTPUT
           elif [[ "$LAST_COMMIT_MSG" =~ ^feat(\([^\)]+\))?: ]]; then
-            echo "minor" > bumpfile
             echo { "bump=minor" "commit_msg=$LAST_COMMIT_MSG" } >> $GITHUB_OUTPUT
           elif [[ "$LAST_COMMIT_MSG" =~ ^refactor(\([^\)]+\))?: ]]; then
-            echo "major" > bumpfile
             echo { "bump=major" "commit_msg=$LAST_COMMIT_MSG" } >> $GITHUB_OUTPUT
           else
             echo "No version bump needed"
@@ -50,7 +47,7 @@ jobs:
         id: bump_version
         if: ${{ steps.determine_version.outputs.bump != 'none' }}
         run: |
-          BUMP_TYPE=$(cat bumpfile)
+          BUMP_TYPE=${{ steps.determine_version.outputs.bump }}
           NEW_VERSION=$(npm version $BUMP_TYPE -m "chore(release): %s" | tail -1)
           echo "New version: $NEW_VERSION"
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
@@ -66,7 +63,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           NEW_VERSION=${{ steps.bump_version.outputs.new_version }}
-          RELEASE_DATA=$(jq -n --arg tag "$NEW_VERSION" --arg name "Release $NEW_VERSION" --arg body "Release notes for version $NEW_VERSION" '{ tag_name: $tag, name: $name, body: $body, draft: false, prerelease: false }')
+          LAST_COMMIT_MSG=${{ steps.determine_version.outputs.commit_msg }}
+          RELEASE_DATA=$(jq -n --arg tag "$NEW_VERSION" --arg name "$NEW_VERSION" --arg body "$LAST_COMMIT_MSG" '{ tag_name: $tag, name: $name, body: $body, draft: false, prerelease: false }')
           curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
                -H "Content-Type: application/json" \
                -d "$RELEASE_DATA" \
