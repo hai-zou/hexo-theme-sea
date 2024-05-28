@@ -1,69 +1,21 @@
 (function () {
   'use strict';
 
-  const POSEIDON_THEME = "poseidon_theme";
-  const THEME_ACTIVE_CLASS = 'active';
+  const THEME_ACTIVE_CLASS = window.THEME_ACTIVE_CLASS;
   // 主题模式
-  const THEME_MODE_AUTO = 'auto';
-  const THEME_MODE_LIGHT = 'light';
-  const THEME_MODE_DARK = 'dark';
+  const THEME_MODE_AUTO = window.THEME_MODE_AUTO;
+  const THEME_MODE_LIGHT = window.THEME_MODE_LIGHT;
+  const THEME_MODE_DARK = window.THEME_MODE_DARK;
 
-  function getThemeKey() {
-    const localTheme = window.localStorage.getItem(POSEIDON_THEME);
-    return localTheme || THEME_MODE_AUTO;
-  }
-
-  function saveThemeKey(val) {
-    window.localStorage.setItem(POSEIDON_THEME, val);
-  }
-
-  const autoEle = document.getElementById('sea-theme-auto');
-  const lightEle = document.getElementById('sea-theme-light');
-  const darkEle = document.getElementById('sea-theme-dark');
-  if (!autoEle || !lightEle || !darkEle) return;
-
-  function setActive(key) {
-    switch (key) {
-      case THEME_MODE_AUTO:
-        autoEle.classList.add(THEME_ACTIVE_CLASS);
-        lightEle.classList.remove(THEME_ACTIVE_CLASS);
-        darkEle.classList.remove(THEME_ACTIVE_CLASS);
-        break;
-      case THEME_MODE_LIGHT:
-        lightEle.classList.add(THEME_ACTIVE_CLASS);
-        autoEle.classList.remove(THEME_ACTIVE_CLASS);
-        darkEle.classList.remove(THEME_ACTIVE_CLASS);
-        break;
-      case THEME_MODE_DARK:
-        darkEle.classList.add(THEME_ACTIVE_CLASS);
-        autoEle.classList.remove(THEME_ACTIVE_CLASS);
-        lightEle.classList.remove(THEME_ACTIVE_CLASS);
-        break;
-      default:
-        break;
-    }
-  }
-
-  function setTheme(key) {
-    setActive(key);
-    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-    let themeMode = '';
-    if (key !== THEME_MODE_AUTO) {
-      themeMode = key;
-    } else if (darkThemeMq.matches) {
-      // 如果系统是暗黑模式
-      themeMode = THEME_MODE_DARK;
-    } else {
-      themeMode = THEME_MODE_LIGHT;
-    }
-    document.documentElement.setAttribute("theme", themeMode);
-  }
+  const getThemeKey = window.getThemeKey;
+  const saveThemeKey = window.saveThemeKey;
+  const setThemeKey = window.setThemeKey;
 
   // View Transitions API | 添加主题切换过渡效果
   function toggleTheme(key, event) {
     // 为不支持此 API 的浏览器提供回退方案：
     if (!document.startViewTransition) {
-      setTheme(key);
+      setThemeKey(key);
       return;
     }
 
@@ -78,7 +30,7 @@
 
     // 开始一次视图过渡：
     const transition = document.startViewTransition(() => {
-      setTheme(key);
+      setThemeKey(key);
     });
 
     // 等待伪元素创建完成：
@@ -103,27 +55,61 @@
     });
   }
 
-  // 初始化主题
-  const themeVal = getThemeKey();
-  setTheme(themeVal);
+  function onThemeChange() {
+    const autoEle = document.getElementById('sea-theme-auto');
+    const lightEle = document.getElementById('sea-theme-light');
+    const darkEle = document.getElementById('sea-theme-dark');
+    if (!autoEle || !lightEle || !darkEle) return;
 
-  // 切换主题
-  autoEle.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    saveThemeKey(THEME_MODE_AUTO);
-    toggleTheme(THEME_MODE_AUTO, e);
-  });
-  lightEle.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    saveThemeKey(THEME_MODE_LIGHT);
-    toggleTheme(THEME_MODE_LIGHT, e);
-  });
-  darkEle.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    saveThemeKey(THEME_MODE_DARK);
-    toggleTheme(THEME_MODE_DARK, e);
-  });
+    function setActive(key) {
+      switch (key) {
+        case THEME_MODE_AUTO:
+          autoEle.classList.add(THEME_ACTIVE_CLASS);
+          lightEle.classList.remove(THEME_ACTIVE_CLASS);
+          darkEle.classList.remove(THEME_ACTIVE_CLASS);
+          break;
+        case THEME_MODE_LIGHT:
+          lightEle.classList.add(THEME_ACTIVE_CLASS);
+          autoEle.classList.remove(THEME_ACTIVE_CLASS);
+          darkEle.classList.remove(THEME_ACTIVE_CLASS);
+          break;
+        case THEME_MODE_DARK:
+          darkEle.classList.add(THEME_ACTIVE_CLASS);
+          autoEle.classList.remove(THEME_ACTIVE_CLASS);
+          lightEle.classList.remove(THEME_ACTIVE_CLASS);
+          break;
+        default:
+          break;
+      }
+    }
+
+    // 初始化主题
+    const themeVal = getThemeKey();
+    setThemeKey(themeVal);
+    setActive(themeVal);
+
+    autoEle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      saveThemeKey(THEME_MODE_AUTO);
+      toggleTheme(THEME_MODE_AUTO, e);
+      setActive(THEME_MODE_AUTO);
+    });
+    lightEle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      saveThemeKey(THEME_MODE_LIGHT);
+      toggleTheme(THEME_MODE_LIGHT, e);
+      setActive(THEME_MODE_LIGHT);
+    });
+    darkEle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      saveThemeKey(THEME_MODE_DARK);
+      toggleTheme(THEME_MODE_DARK, e);
+      setActive(THEME_MODE_DARK);
+    });
+  }
+
+  onThemeChange();
 }());
