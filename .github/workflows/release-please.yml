@@ -26,13 +26,13 @@ jobs:
           echo "Last commit message: $LAST_COMMIT_MSG"
           if [[ "$LAST_COMMIT_MSG" =~ ^fix(\([^\)]+\))?: ]]; then
             echo "patch" > bumpfile
-            echo "bump=patch" >> $GITHUB_OUTPUT
+            echo { "bump=patch" "commit_msg=$LAST_COMMIT_MSG" } >> $GITHUB_OUTPUT
           elif [[ "$LAST_COMMIT_MSG" =~ ^feat(\([^\)]+\))?: ]]; then
             echo "minor" > bumpfile
-            echo "bump=minor" >> $GITHUB_OUTPUT
+            echo { "bump=minor" "commit_msg=$LAST_COMMIT_MSG" } >> $GITHUB_OUTPUT
           elif [[ "$LAST_COMMIT_MSG" =~ ^refactor(\([^\)]+\))?: ]]; then
             echo "major" > bumpfile
-            echo "bump=major" >> $GITHUB_OUTPUT
+            echo { "bump=major" "commit_msg=$LAST_COMMIT_MSG" } >> $GITHUB_OUTPUT
           else
             echo "No version bump needed"
             echo "bump=none" >> $GITHUB_OUTPUT
@@ -47,15 +47,30 @@ jobs:
           git config --global user.name "github-actions[bot]"
 
       - name: Bump version and create changelog
+        id: bump_version
         if: steps.determine_version.outputs.bump != 'none'
         run: |
           BUMP_TYPE=$(cat bumpfile)
-          npm version $BUMP_TYPE -m "chore(release): %s"
+          NEW_VERSION=$(npm version $BUMP_TYPE -m "chore(release): %s" | tail -1)
+          echo "New version: $NEW_VERSION"
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
 
       - name: Push changes
         if: steps.determine_version.outputs.bump != 'none'
         run: |
           git push --follow-tags origin main
+
+      - name: Create or update GitHub Release
+        if: steps.determine_version.outputs.bump != 'none'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.bump_version.outputs.new_version }}
+          release_name: Release ${{ steps.bump_version.outputs.new_version }}
+          body: ${{ steps.determine_version.outputs.commit_msg }}
+          draft: false
+          prerelease: false
 
       - name: Publish to npm
         if: steps.determine_version.outputs.bump != 'none'
