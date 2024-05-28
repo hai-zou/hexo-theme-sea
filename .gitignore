@@ -1,2 +1,8 @@
 node_modules/
 package-lock.json
+yarn.lock
+
+example/node_modules/
+example/package-lock.json
+example/yarn.lock
+example/db.json
