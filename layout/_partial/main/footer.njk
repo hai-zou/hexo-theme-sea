@@ -35,9 +35,11 @@
       <span>·</span>
       {{ config.title }}
     </div>
-    <span class="split-line">|</span>
-    <div class="sea-footer-site-desc">
-      {{ config.description }}
-    </div>
+    {% if config.description %}
+      <span class="split-line">|</span>
+      <div class="sea-footer-site-desc">
+        {{ config.description }}
+      </div>
+    {% endif %}
   </div>
 </footer>

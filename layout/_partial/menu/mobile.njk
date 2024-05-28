@@ -13,12 +13,15 @@
 
     {% if is_post() %}
       {{ partial('_partial/card/anchor') }}
-
       {{ partial('_partial/card/recent') }}
+    {% else %}
+      {% if site.categories.length %}
+        {{ partial('_partial/card/categories') }}
+      {% endif %}
+      {% if site.tags.length %}
+        {{ partial('_partial/card/tags') }}
+      {% endif %}
     {% endif %}
-
-    {{ partial('_partial/card/categories') }}
-    {{ partial('_partial/card/tags') }}
   </div>
 </div>
 <div id="sea-mobile-nav-dimmer"></div>

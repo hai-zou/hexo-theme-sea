@@ -12,12 +12,16 @@
       {{ partial('_partial/card/recent') }}
     </div>
   {% else %}
-    <div class="sea-sidebar-card" style="animation-delay: 0.1s;">
-      {{ partial('_partial/card/categories') }}
-    </div>
+    {% if site.categories.length %}
+      <div class="sea-sidebar-card" style="animation-delay: 0.1s;">
+        {{ partial('_partial/card/categories') }}
+      </div>
+    {% endif %}
 
-    <div class="sea-sidebar-card" style="animation-delay: 0.2s;">
-      {{ partial('_partial/card/tags') }}
-    </div>
+    {% if site.tags.length %}
+      <div class="sea-sidebar-card" style="animation-delay: 0.2s;">
+        {{ partial('_partial/card/tags') }}
+      </div>
+    {% endif %}
   {% endif %}
 </aside>

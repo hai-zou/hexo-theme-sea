@@ -35,7 +35,7 @@
   box-shadow: var(--sea-shadow-card);
   border: 1px solid var(--sea-color-gray-1);
   padding: 0.8rem 0;
-  width: 100px;
+  width: 120px;
   transition: transform .2s ease-in-out;
 }
 
@@ -44,7 +44,7 @@
 }
 
 #sea-theme-mode .sea-theme-select-item {
-  line-height: 2rem;
+  padding: .5rem;
   text-align: center;
 }
 
