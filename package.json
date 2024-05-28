@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-sea",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Simple theme for Hexo.",
   "scripts": {
     "test": "echo test",
