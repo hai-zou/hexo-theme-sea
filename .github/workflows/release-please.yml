@@ -25,11 +25,14 @@ jobs:
           LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
           echo "Last commit message: $LAST_COMMIT_MSG"
           if [[ "$LAST_COMMIT_MSG" =~ ^fix(\([^\)]+\))?: ]]; then
-            echo { "bump=patch" "commit_msg=$LAST_COMMIT_MSG" } >> $GITHUB_OUTPUT
+            echo "bump=patch" >> $GITHUB_OUTPUT
+            echo "commit_msg=$LAST_COMMIT_MSG" >> $GITHUB_OUTPUT
           elif [[ "$LAST_COMMIT_MSG" =~ ^feat(\([^\)]+\))?: ]]; then
-            echo { "bump=minor" "commit_msg=$LAST_COMMIT_MSG" } >> $GITHUB_OUTPUT
+            echo "bump=minor" >> $GITHUB_OUTPUT
+            echo "commit_msg=$LAST_COMMIT_MSG" >> $GITHUB_OUTPUT
           elif [[ "$LAST_COMMIT_MSG" =~ ^refactor(\([^\)]+\))?: ]]; then
-            echo { "bump=major" "commit_msg=$LAST_COMMIT_MSG" } >> $GITHUB_OUTPUT
+            echo "bump=major" >> $GITHUB_OUTPUT
+            echo "commit_msg=$LAST_COMMIT_MSG" >> $GITHUB_OUTPUT
           else
             echo "No version bump needed"
             echo "bump=none" >> $GITHUB_OUTPUT
@@ -57,6 +60,12 @@ jobs:
         run: |
           git push --follow-tags origin main
 
+      - name: Publish to npm
+        if: ${{ steps.determine_version.outputs.bump != 'none' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+
       - name: Create or update GitHub Release
         if: ${{ steps.determine_version.outputs.bump != 'none' && steps.bump_version.outputs.new_version }}
         env:
@@ -69,9 +78,3 @@ jobs:
                -H "Content-Type: application/json" \
                -d "$RELEASE_DATA" \
                "https://api.github.com/repos/${{ github.repository }}/releases"
-
-      - name: Publish to npm
-        if: ${{ steps.determine_version.outputs.bump != 'none' }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish
