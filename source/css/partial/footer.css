@@ -15,6 +15,10 @@
   flex-wrap: wrap;
 }
 
+#sea-footer-container .sea-footer-menu-link:last-child {
+  display: none;
+}
+
 #sea-footer-container .sea-footer-link:hover {
   color: var(--sea-color-primary);
 }

@@ -1,20 +1,14 @@
 <footer id="sea-footer-container">
   <div class="sea-footer-row">
     <div class="sea-footer-menu-link">
-      <a
-        class="sea-footer-link"
-        href="/"
-      >
-        {{ __('footer.home') }}
-      </a>
       {% for menu_item in theme.menu %}
-        <span>·</span>
         <a
           class="sea-footer-link"
           href="{{ url_for(menu_item.url) }}"
         >
           {{ menu_item.name }}
         </a>
+        <span>·</span>
       {% endfor %}
     </div>
     <span class="split-line">|</span>
