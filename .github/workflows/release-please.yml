@@ -39,7 +39,7 @@ jobs:
           fi
 
       - name: Set Git Config
-        if: steps.determine_version.outputs.bump != 'none'
+        if: ${{ steps.determine_version.outputs.bump != 'none' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -48,7 +48,7 @@ jobs:
 
       - name: Bump version and create changelog
         id: bump_version
-        if: steps.determine_version.outputs.bump != 'none'
+        if: ${{ steps.determine_version.outputs.bump != 'none' }}
         run: |
           BUMP_TYPE=$(cat bumpfile)
           NEW_VERSION=$(npm version $BUMP_TYPE -m "chore(release): %s" | tail -1)
@@ -56,24 +56,24 @@ jobs:
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
 
       - name: Push changes
-        if: steps.determine_version.outputs.bump != 'none'
+        if: ${{ steps.determine_version.outputs.bump != 'none' }}
         run: |
           git push --follow-tags origin main
 
       - name: Create or update GitHub Release
-        if: steps.determine_version.outputs.bump != 'none'
-        uses: actions/create-release@v1
+        if: ${{ steps.determine_version.outputs.bump != 'none' && steps.bump_version.outputs.new_version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.bump_version.outputs.new_version }}
-          release_name: Release ${{ steps.bump_version.outputs.new_version }}
-          body: ${{ steps.determine_version.outputs.commit_msg }}
-          draft: false
-          prerelease: false
+        run: |
+          NEW_VERSION=${{ steps.bump_version.outputs.new_version }}
+          RELEASE_DATA=$(jq -n --arg tag "$NEW_VERSION" --arg name "Release $NEW_VERSION" --arg body "Release notes for version $NEW_VERSION" '{ tag_name: $tag, name: $name, body: $body, draft: false, prerelease: false }')
+          curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+               -H "Content-Type: application/json" \
+               -d "$RELEASE_DATA" \
+               "https://api.github.com/repos/${{ github.repository }}/releases"
 
       - name: Publish to npm
-        if: steps.determine_version.outputs.bump != 'none'
+        if: ${{ steps.determine_version.outputs.bump != 'none' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
