@@ -15,7 +15,7 @@
   flex-wrap: wrap;
 }
 
-#sea-footer-container .sea-footer-menu-link:last-child {
+.sea-footer-menu-link .sea-footer-link__dot:last-child {
   display: none;
 }
 

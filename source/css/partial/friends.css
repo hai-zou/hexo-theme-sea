@@ -29,6 +29,7 @@
 }
 
 .sea-friend-wrapper .sea-friend-content {
+  flex: 1;
   overflow: hidden;
 }
 
