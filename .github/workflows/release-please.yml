@@ -72,7 +72,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           NEW_VERSION=${{ steps.bump_version.outputs.new_version }}
-          LAST_COMMIT_MSG=${{ steps.determine_version.outputs.commit_msg }}
+          LAST_COMMIT_MSG="${{ steps.determine_version.outputs.commit_msg }}"
           RELEASE_DATA=$(jq -n --arg tag "$NEW_VERSION" --arg name "$NEW_VERSION" --arg body "$LAST_COMMIT_MSG" '{ tag_name: $tag, name: $name, body: $body, draft: false, prerelease: false }')
           curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
                -H "Content-Type: application/json" \
