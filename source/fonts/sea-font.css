@@ -1,11 +1,11 @@
 @font-face {
   font-family: "sea-font";
-  src: url('sea-font.eot?t=1716789798499'); /* IE9*/
-  src: url('sea-font.eot?t=1716789798499#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url("sea-font.woff2?t=1716789798499") format("woff2"),
-  url("sea-font.woff?t=1716789798499") format("woff"),
-  url('sea-font.ttf?t=1716789798499') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('sea-font.svg?t=1716789798499#sea-font') format('svg'); /* iOS 4.1- */
+  src: url('sea-font.eot?t=1716965798400'); /* IE9*/
+  src: url('sea-font.eot?t=1716965798400#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("sea-font.woff2?t=1716965798400") format("woff2"),
+  url("sea-font.woff?t=1716965798400") format("woff"),
+  url('sea-font.ttf?t=1716965798400') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('sea-font.svg?t=1716965798400#sea-font') format('svg'); /* iOS 4.1- */
 }
 
 .sea-font {
