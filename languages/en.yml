@@ -14,4 +14,6 @@ theme:
 
 footer:
   home: Home
-  site_uv: Site Visitors %s people
+  site_pv: 'PV: %s'
+  site_uv: 'UV: %s'
+  rss: RSS

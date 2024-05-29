@@ -10,6 +10,16 @@
         </a>
         <span class="sea-footer-link__dot">·</span>
       {% endfor %}
+      {% if theme.footer.rss %}
+        <a
+          class="sea-footer-link"
+          href="{{ url_for(theme.footer.rss) }}"
+          target="_blank"
+        >
+          {{ __('footer.rss') }}
+        </a>
+        <span class="sea-footer-link__dot">·</span>
+      {% endif %}
     </div>
     <span class="split-line">|</span>
     <span id="busuanzi_container_site_uv">
