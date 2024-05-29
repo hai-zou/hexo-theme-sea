@@ -14,6 +14,18 @@
   <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
   {{ css('fonts/sea-font') }}
 
+  {# Waline 样式 #}
+  {% if theme.waline and theme.waline.enable %}
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.css">
+    <link rel="stylesheet" href="/css/plugins/waline.css">
+  {% endif %}
+
+  {# Docsearch 样式 #}
+  {% if theme.algolia and theme.algolia.enable %}
+    <link rel="stylesheet" href="https://unpkg.com/@docsearch/css@3.5.2/dist/style.css">
+    <link rel="stylesheet" href="/css/plugins/docsearch.css">
+  {% endif %}
+
   {# CSS #}
   {{ css('css/main') }}
 
