@@ -1,7 +1,7 @@
 ---
-title: 友链
+title: Friend Link
 ---
 
-## 大佬们
+## My friends
 
 {% friends %}
