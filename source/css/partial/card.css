@@ -54,12 +54,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  column-gap: 1rem;
   line-height: 1.5rem;
+}
+
+.sea-card-tags .tag-list-link,
+.sea-card-categories .category-list-link {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sea-card-tags .tag-list-link:hover,
 .sea-card-categories .category-list-link:hover {
   color: var(--sea-color-primary);
+}
+
+.sea-card-categories .category-list-item {
+  flex-wrap: wrap;
+}
+.sea-card-categories .category-list-child {
+  width: 100%;
+  padding-left: 1.5rem;
 }
 
 /* 最近文章卡片 */
