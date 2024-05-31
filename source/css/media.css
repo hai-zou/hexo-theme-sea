@@ -11,10 +11,6 @@
     background-color: var(--sea-color-main-bg);
   }
 
-  .sea-main-right {
-    display: none;
-  }
-
   #sea-mobile-nav-toggle {
     display: inline-flex;
     justify-content: center;
@@ -88,6 +84,11 @@
 
   #sea-main-wrapper {
     padding-top: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .sea-main-right {
+    display: none;
   }
 
   .sea-header {
@@ -139,6 +140,10 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1000px) {
+  #sea-main-wrapper {
+		grid-template-columns: 1fr;
+	}
+
   .sea-main-right {
     display: none;
   }
