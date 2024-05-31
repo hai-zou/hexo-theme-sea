@@ -26,15 +26,12 @@ jobs:
         run: |
           LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
           echo "Last commit message: $LAST_COMMIT_MSG"
-          if [[ "$LAST_COMMIT_MSG" =~ ^fix(\([^\)]+\))?: ]]; then
+          if [[ "$LAST_COMMIT_MSG" =~ fix(\([^\)]+\))?: ]]; then
             echo "bump=patch" >> $GITHUB_OUTPUT
-            echo "commit_msg=$LAST_COMMIT_MSG" >> $GITHUB_OUTPUT
-          elif [[ "$LAST_COMMIT_MSG" =~ ^feat(\([^\)]+\))?: ]]; then
+          elif [[ "$LAST_COMMIT_MSG" =~ feat(\([^\)]+\))?: ]]; then
             echo "bump=minor" >> $GITHUB_OUTPUT
-            echo "commit_msg=$LAST_COMMIT_MSG" >> $GITHUB_OUTPUT
-          elif [[ "$LAST_COMMIT_MSG" =~ ^refactor(\([^\)]+\))?: ]]; then
+          elif [[ "$LAST_COMMIT_MSG" =~ refactor(\([^\)]+\))?: ]]; then
             echo "bump=major" >> $GITHUB_OUTPUT
-            echo "commit_msg=$LAST_COMMIT_MSG" >> $GITHUB_OUTPUT
           else
             echo "No version bump needed"
             echo "bump=none" >> $GITHUB_OUTPUT
@@ -74,8 +71,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           NEW_VERSION=${{ steps.bump_version.outputs.new_version }}
-          LAST_COMMIT_MSG="${{ steps.determine_version.outputs.commit_msg }}"
-          RELEASE_DATA=$(jq -n --arg tag "$NEW_VERSION" --arg name "$NEW_VERSION" --arg body "$LAST_COMMIT_MSG" '{ tag_name: $tag, name: $name, body: $body, draft: false, prerelease: false }')
+          PR_DESCRIPTION="${{ github.event.pull_request.body }}"
+          RELEASE_DATA=$(jq -n --arg tag "$NEW_VERSION" --arg name "$NEW_VERSION" --arg body "$PR_DESCRIPTION" '{ tag_name: $tag, name: $name, body: $body, draft: false, prerelease: false }')
           curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
                -H "Content-Type: application/json" \
                -d "$RELEASE_DATA" \
