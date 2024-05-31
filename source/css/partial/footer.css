@@ -26,3 +26,11 @@
 #sea-footer-container .split-line {
   margin: 0 8px;
 }
+
+.sea-footer-theme-by .theme {
+  font-weight: bold;
+}
+
+.sea-footer-theme-by .theme:hover {
+  color: var(--sea-color-primary);
+}

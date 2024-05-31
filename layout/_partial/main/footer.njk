@@ -37,13 +37,11 @@
         {{ current }}
       {% endif %}
       <span>·</span>
-      {{ config.title }}
+      {{ theme.user.name }}
     </div>
-    {% if config.description %}
-      <span class="split-line">|</span>
-      <div class="sea-footer-site-desc">
-        {{ config.description }}
-      </div>
-    {% endif %}
+    <span class="split-line">|</span>
+    <div class="sea-footer-theme-by">
+      {{ _p('footer.theme_source', '<a class="theme" href="https://github.com/hai-zou/hexo-theme-sea" target="_blank">Sea</a>') }}
+    </div>
   </div>
 </footer>
