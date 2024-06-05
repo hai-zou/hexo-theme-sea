@@ -1,0 +1,59 @@
+name: Example Deploy to GitHub Pages
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-and-deploy:
+    if: ${{ github.event.pull_request.merged == true }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Get package details
+        id: get_details
+        run: |
+          NAME=$(jq -r '.name' package.json)
+          VERSION=$(jq -r '.version' package.json)
+          echo "Package name is $NAME"
+          echo "Package version is $VERSION"
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Switch to example directory and Deploy to GitHub Pages
+        run: |
+          cd example
+          PACKAGE_NAME="${{ steps.get_details.outputs.name }}"
+          PACKAGE_VERSION="${{ steps.get_details.outputs.version }}"
+          npm install "$PACKAGE_NAME@$PACKAGE_VERSION"
+          npm install
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Installed $PACKAGE_NAME@$PACKAGE_VERSION"
+          git push
+          npm run build
+          cd public
+          git init
+          git checkout -b gh-pages
+          git add .
+          git commit -m 'ci: deploy'
+          git remote add origin git@github.com:hai-zou/hexo-theme-sea.git
+          git push -f origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cleanup
+        run: cd -
