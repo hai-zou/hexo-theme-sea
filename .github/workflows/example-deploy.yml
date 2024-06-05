@@ -1,6 +1,7 @@
 name: Example Deploy to GitHub Pages
 
 on:
+  workflow_dispatch:
   release:
     types: [created]
 
