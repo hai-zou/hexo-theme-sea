@@ -50,8 +50,8 @@ jobs:
           git checkout -b gh-pages
           git add .
           git commit -m 'ci: deploy'
-          git remote add origin git@github.com:hai-zou/hexo-theme-sea.git
-          git push -f origin gh-pages
+          git remote add origin https://github.com/hai-zou/hexo-theme-sea.git
+          git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/hai-zou/hexo-theme-sea.git gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
