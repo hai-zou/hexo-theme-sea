@@ -2,13 +2,6 @@
   word-break: break-word;
 }
 
-.sea-card-box {
-  padding: 1rem 2.5rem;
-  border-radius: 5px;
-  background-color: var(--sea-color-main-bg);
-  margin-bottom: 1rem;
-}
-
 .sea-post-meta {
   color: var(--sea-color-gray);
   display: flex;
@@ -22,6 +15,7 @@
 .sea-post-tags,
 .sea-post-categories {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: .5rem;
 }

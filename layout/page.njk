@@ -1,0 +1,9 @@
+{% set type = page.type %}
+
+{% if type == 'categories' %}
+  {{ partial('_partial/page/categories') }}
+{% elif type == 'tags' %}
+  {{ partial('_partial/page/tags') }}
+{% else %}
+  {{ partial('_partial/page/default') }}
+{% endif %}

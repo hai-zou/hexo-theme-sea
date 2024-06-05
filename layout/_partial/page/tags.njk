@@ -1,0 +1,18 @@
+<div class="sea-page-card-wrapper">
+  <h1 class="sea-page-card-title">
+    {{ __('page.tags') }}
+  </h1>
+
+  <div class="sea-page-tags">
+    {% for tagItem in site.tags.toArray() %}
+      <a
+        class="sea-page-tags__item"
+        href="{{ url_for(tagItem.path) }}"
+      >
+        <span class="icon">#</span>
+        <span class="name">{{ tagItem.name }}</span>
+        <span class="num">{{ tagItem.length}}</span>
+      </a>
+    {% endfor %}
+  </div>
+</div>
