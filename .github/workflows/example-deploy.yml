@@ -32,18 +32,42 @@ jobs:
           echo "name=$NAME" >> $GITHUB_OUTPUT
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-      - name: Switch to example directory and Deploy to GitHub Pages
+      - name: Set Git Info
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Switch to example directory
         run: |
           cd example
           PACKAGE_NAME="${{ steps.get_details.outputs.name }}"
           PACKAGE_VERSION="${{ steps.get_details.outputs.version }}"
           npm install "$PACKAGE_NAME@$PACKAGE_VERSION"
           npm install
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            echo "Changes detected"
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Push example changes
+        if: ${{ steps.check_changes.outputs.changes == 'true' }}
+        run: |
+          cd example
           git add .
-          git commit -m "Installed $PACKAGE_NAME@$PACKAGE_VERSION"
+          git commit -m "chore: Update theme version: $PACKAGE_NAME@$PACKAGE_VERSION"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to GitHub Pages
+        run: |
+          cd example
           npm run build
           cd public
           git init
@@ -52,8 +76,6 @@ jobs:
           git commit -m 'ci: deploy'
           git remote add origin https://github.com/hai-zou/hexo-theme-sea.git
           git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/hai-zou/hexo-theme-sea.git gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cleanup
         run: cd -
