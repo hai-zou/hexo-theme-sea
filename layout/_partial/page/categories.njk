@@ -1,0 +1,18 @@
+<div class="sea-page-card-wrapper">
+  <h1 class="sea-page-card-title">
+    {{ __('page.categories') }}
+  </h1>
+
+  <div class="sea-page-categories">
+    {% for cateItem in site.categories.toArray() %}
+      <a
+        class="sea-page-categories__item"
+        href="{{ url_for(cateItem.path) }}"
+      >
+        <i class="sea-font">folder</i>
+        <span class="name">{{ cateItem.name }}</span>
+        <span class="num">{{ cateItem.length}}</span>
+      </a>
+    {% endfor %}
+  </div>
+</div>

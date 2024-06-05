@@ -40,22 +40,46 @@
 }
 
 /* 分类/标签 卡片 */
+.sea-card-show-more {
+  display: block;
+  width: 100%;
+  font-size: .875rem;
+  margin-top: 1rem;
+  color: var(--sea-color-primary);
+}
+
 .sea-card-tags .tag-list,
 .sea-card-categories .category-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  max-height: 300px;
-  overflow: auto;
+  max-height: 200px;
+  overflow: hidden;
 }
 
-.sea-card-tags .tag-list-item,
 .sea-card-categories .category-list-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   column-gap: 1rem;
   line-height: 1.5rem;
+}
+
+.sea-card-tags .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1.2rem;
+}
+
+.sea-card-tags .tag-list-item {
+  display: inline-block;
+}
+
+.tag-list-count {
+  vertical-align: super;
+  font-size: .8rem;
+  margin-left: 2px;
+  opacity: .6;
 }
 
 .sea-card-tags .tag-list-link,
@@ -105,8 +129,9 @@
 }
 
 .sea-article-toc__wrap {
-	max-height: 400px;
+  max-height: 70vh;
   overflow: auto;
+  padding-right: 4px;
 }
 
 #sea-article-toc ol.toc {

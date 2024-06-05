@@ -1,21 +1,19 @@
-<div class="sea-category-wrapper">
-  <div class="sea-page-card-wrapper">
-    <div class="sea-page-card-title">
-      {{ page.category }}
+<div class="sea-page-card-wrapper">
+  <h1 class="sea-page-card-title">
+    {{ page.category }}
+  </h1>
+
+  {% for post in page.posts.toArray() %}
+    <div class="sea-category-post-item">
+      <a
+        class="sea-category-post-title"
+        href="{{ url_for(post.path) }}"
+      >
+        {{ post.title }}
+      </a>
+      {{ time_tag(post.date) }}
     </div>
-
-    {% for post in page.posts.toArray() %}
-      <div class="sea-category-post-item">
-        <a
-          class="sea-category-post-title"
-          href="{{ url_for(post.path) }}"
-        >
-          {{ post.title }}
-        </a>
-        {{ time_tag(post.date) }}
-      </div>
-    {% endfor %}
-  </div>
-
-  {{ partial('_partial/main/pagination') }}
+  {% endfor %}
 </div>
+
+{{ partial('_partial/main/pagination') }}

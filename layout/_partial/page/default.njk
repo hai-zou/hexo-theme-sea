@@ -1,0 +1,10 @@
+<article class="sea-doc sea-page-card-wrapper">
+  <h1 class="sea-page-card-title">
+    {{ page.title }}
+  </h1>
+  <div class="sea-article-content sea-page-default">
+    {{ render(page.content) }}
+  </div>
+</article>
+
+{{ partial('_plugins/comments/layout') }}

@@ -9,7 +9,7 @@
   padding: 12px;
   border-radius: 10px;
   background-color: var(--sea-color-main-bg);
-  border: 1px solid var(--sea-friend-border);
+  border: 1px solid var(--sea-color-border-1);
   cursor: pointer;
   display: flex;
   gap: 15px;

@@ -1,4 +1,4 @@
-.sea-category-wrapper .sea-category-post-item {
+.sea-category-post-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +10,7 @@
   color: var(--sea-color-primary);
 }
 
-.sea-category-wrapper .sea-category-post-title {
+.sea-category-post-title {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;

@@ -3,6 +3,10 @@
   padding-top: 2rem;
   max-width: var(--sea-main-max-width);
   margin: var(--sea-nav-height) auto 0;
+  animation: fade-up .4s backwards;
+}
+
+.sea-main-grid {
   display: grid;
   grid-template-columns: 1fr 240px;
   gap: 0 20px;
