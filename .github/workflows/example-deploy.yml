@@ -76,6 +76,3 @@ jobs:
           git commit -m 'ci: deploy'
           git remote add origin https://github.com/hai-zou/hexo-theme-sea.git
           git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/hai-zou/hexo-theme-sea.git gh-pages
-
-      - name: Cleanup
-        run: cd -
