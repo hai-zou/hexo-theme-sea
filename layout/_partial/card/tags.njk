@@ -1,7 +1,7 @@
 <div class="sea-card-tags">
   <strong class="sea-card-title">{{ __('page.tags') }}</strong>
   {{ list_tags(site.tags, { orderby: 'length', order: -1 }) }}
-  <a class="sea-card-show-more" href="/tags/">
+  <a class="sea-card-show-more" href="{{ url_for("/tags/") }}">
     {{ __('page.more') }}
   </a>
 </div>
