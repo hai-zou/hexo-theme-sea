@@ -1,6 +1,6 @@
 <nav class="sea-nav-wrap">
   <h1 class="sea-nav-logo" title="{{config.description}}">
-    <a href="/">{{ config.title }}</a>
+    <a href="{{ url_for("/") }}">{{ config.title }}</a>
   </h1>
   <div class="sea-nav-menus">
     {{ partial('_plugins/search/layout') }}

@@ -39,13 +39,13 @@
   {# Waline 样式 #}
   {% if theme.waline and theme.waline.enable %}
     <link rel="stylesheet" href="https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.css">
-    <link rel="stylesheet" href="/css/plugins/waline.css">
+    {{ css('/css/plugins/waline.css') }}
   {% endif %}
 
   {# Docsearch 样式 #}
   {% if theme.algolia and theme.algolia.enable %}
     <link rel="stylesheet" href="https://unpkg.com/@docsearch/css@3.5.2/dist/style.css">
-    <link rel="stylesheet" href="/css/plugins/docsearch.css">
+    {{ css('/css/plugins/docsearch.css') }}
   {% endif %}
 
   {# 字体图标 #}
