@@ -44,7 +44,7 @@
   display: block;
   width: 100%;
   font-size: .875rem;
-  margin-top: 1rem;
+  margin-top: .6rem;
   color: var(--sea-color-primary);
 }
 
@@ -57,12 +57,18 @@
   overflow: hidden;
 }
 
+.sea-card-categories .category-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: .6rem;
+}
+
 .sea-card-categories .category-list-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   column-gap: 1rem;
-  line-height: 1.5rem;
+  line-height: 1;
 }
 
 .sea-card-tags .tag-list {
@@ -72,7 +78,8 @@
 }
 
 .sea-card-tags .tag-list-item {
-  display: inline-block;
+  display: inline-flex;
+  max-width: 150px;
 }
 
 .tag-list-count {
@@ -85,6 +92,7 @@
 .sea-card-tags .tag-list-link,
 .sea-card-categories .category-list-link {
   flex: 1;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
