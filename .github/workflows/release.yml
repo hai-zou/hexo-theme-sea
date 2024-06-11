@@ -28,11 +28,11 @@ jobs:
         run: |
           LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
           echo "Last commit message: $LAST_COMMIT_MSG"
-          if [[ "$LAST_COMMIT_MSG" =~ ^PATCH: ]]; then
+          if [[ "$LAST_COMMIT_MSG" =~ PATCH: ]]; then
             echo "bump=patch" >> $GITHUB_OUTPUT
-          elif [[ "$LAST_COMMIT_MSG" =~ ^MINOR: ]]; then
+          elif [[ "$LAST_COMMIT_MSG" =~ MINOR: ]]; then
             echo "bump=minor" >> $GITHUB_OUTPUT
-          elif [[ "$LAST_COMMIT_MSG" =~ ^MAJOR: ]]; then
+          elif [[ "$LAST_COMMIT_MSG" =~ MAJOR: ]]; then
             echo "bump=major" >> $GITHUB_OUTPUT
           else
             echo "No version bump needed"
