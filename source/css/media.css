@@ -15,8 +15,11 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
     cursor: pointer;
+  }
+
+  #sea-mobile-nav-toggle .sea-font {
+    font-size: 1.5rem;
   }
 
   .sea-menu-pc-wrap {

@@ -1,0 +1,132 @@
+name: Publish and Release and Deploy
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  publish-npm:
+    if: ${{ github.event.pull_request.merged == true }}
+    runs-on: ubuntu-latest
+    outputs:
+      pkg_name: ${{ steps.publish_push.outputs.name }}
+      pkg_version: ${{ steps.publish_push.outputs.new_version }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Determine version bump
+        id: determine_version
+        run: |
+          LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "Last commit message: $LAST_COMMIT_MSG"
+          if [[ "$LAST_COMMIT_MSG" =~ ^PATCH: ]]; then
+            echo "bump=patch" >> $GITHUB_OUTPUT
+          elif [[ "$LAST_COMMIT_MSG" =~ ^MINOR: ]]; then
+            echo "bump=minor" >> $GITHUB_OUTPUT
+          elif [[ "$LAST_COMMIT_MSG" =~ ^MAJOR: ]]; then
+            echo "bump=major" >> $GITHUB_OUTPUT
+          else
+            echo "No version bump needed"
+            echo "bump=none" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish and Push
+        id: publish_push
+        env:
+          BUMP_TYPE: ${{ steps.determine_version.outputs.bump }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: ${{ $BUMP_TYPE != 'none' }}
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          NEW_VERSION=$(npm version $BUMP_TYPE -m "chore(release): %s" | tail -1)
+          npm publish
+          git push --follow-tags origin main
+          NAME=$(jq -r '.name' package.json)
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "New version: $NEW_VERSION"
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+
+  create-release:
+    needs: publish-npm
+    runs-on: ubuntu-latest
+    env:
+      PKG_VERSION: ${{ needs.publish-npm.outputs.pkg_version }}
+    if: $PKG_VERSION
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create or update GitHub Release
+        env:
+          PR_DESCRIPTION: ${{ github.event.pull_request.body }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
+        run: |
+          RELEASE_DATA=$(jq -n --arg tag "$PKG_VERSION" --arg name "$PKG_VERSION" --arg body "$PR_DESCRIPTION" '{ tag_name: $tag, name: $name, body: $body, draft: false, prerelease: false }')
+          curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+               -H "Content-Type: application/json" \
+               -d "$RELEASE_DATA" \
+               "https://api.github.com/repos/$GITHUB_REPO/releases"
+
+  deploy-example:
+    needs: create-release
+    runs-on: ubuntu-latest
+    env:
+      PKG_NAME: ${{ needs.publish-npm.outputs.pkg_name }}
+      PKG_VERSION: ${{ needs.publish-npm.outputs.pkg_version }}
+    if: $PKG_VERSION
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Update Theme Version
+        id: update_theme
+        working-directory: ./example
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install
+          npm install "$PKG_NAME@$PKG_VERSION"
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git add .
+            git commit -m "chore: Update theme version: $PKG_VERSION"
+            git push
+            echo "Changes detected"
+            echo "isChange=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to GitHub Pages
+        working-directory: ./example
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          IS_CHANGE: ${{ steps.update_theme.outputs.isChange }}
+        if: $IS_CHANGE
+        run: |
+          npm run build
+          cd public
+          git init
+          git checkout -b gh-pages
+          git add .
+          git commit -m 'ci: deploy'
+          git remote add origin https://github.com/hai-zou/hexo-theme-sea.git
+          git push -f https://x-access-token:$GITHUB_TOKEN@github.com/hai-zou/hexo-theme-sea.git gh-pages
