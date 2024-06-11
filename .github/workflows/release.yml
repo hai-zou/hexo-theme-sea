@@ -41,34 +41,36 @@ jobs:
       - name: Publish and Push
         id: publish_push
         env:
-          BUMP_TYPE: ${{ steps.determine_version.outputs.bump }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: ${{ env.BUMP_TYPE }}
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          NEW_VERSION=$(npm version $BUMP_TYPE -m "chore(release): %s" | tail -1)
-          npm publish
-          git push --follow-tags origin main
-          NAME=$(jq -r '.name' package.json)
-          echo "name=$NAME" >> $GITHUB_OUTPUT
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "New version: $NEW_VERSION"
-          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          BUMP_TYPE=${{ steps.determine_version.outputs.bump }}
+          if [ -n "$BUMP_TYPE" ]; then
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git config --global user.name "github-actions[bot]"
+            NEW_VERSION=$(npm version $BUMP_TYPE -m "chore(release): %s" | tail -1)
+            npm publish
+            git push --follow-tags origin main
+            NAME=$(jq -r '.name' package.json)
+            echo "name=$NAME" >> $GITHUB_OUTPUT
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "New version: $NEW_VERSION"
+            echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "No version bump needed."
+          fi
 
   create-release:
     needs: publish-npm
     runs-on: ubuntu-latest
-    env:
-      PKG_VERSION: ${{ needs.publish-npm.outputs.pkg_version }}
-    if: ${{ env.PKG_VERSION }}
+    if: ${{ needs.publish-npm.outputs.pkg_version }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Create or update GitHub Release
         env:
+          PKG_VERSION: ${{ needs.publish-npm.outputs.pkg_version }}
           PR_DESCRIPTION: ${{ github.event.pull_request.body }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPO: ${{ github.repository }}
@@ -82,10 +84,7 @@ jobs:
   deploy-example:
     needs: create-release
     runs-on: ubuntu-latest
-    env:
-      PKG_NAME: ${{ needs.publish-npm.outputs.pkg_name }}
-      PKG_VERSION: ${{ needs.publish-npm.outputs.pkg_version }}
-    if: ${{ env.PKG_VERSION }}
+    if: ${{ needs.publish-npm.outputs.pkg_version }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -100,6 +99,8 @@ jobs:
         id: update_theme
         working-directory: ./example
         env:
+          PKG_NAME: ${{ needs.publish-npm.outputs.pkg_name }}
+          PKG_VERSION: ${{ needs.publish-npm.outputs.pkg_version }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install
@@ -118,8 +119,7 @@ jobs:
         working-directory: ./example
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          IS_CHANGE: ${{ steps.update_theme.outputs.isChange }}
-        if: ${{ env.IS_CHANGE }}
+        if: ${{ steps.update_theme.outputs.isChange }}
         run: |
           npm run build
           cd public
