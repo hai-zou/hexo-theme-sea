@@ -50,9 +50,25 @@ socialLink:
     link: # 跳转链接
 ```
 
+#### 主题内置图标
+
+```html
+<i class="sea-font">arrow-up</i>
+<i class="sea-font">bars.svg</i>
+<i class="sea-font">date</i>
+<i class="sea-font">email</i>
+<i class="sea-font">folder</i>
+<i class="sea-font">github</i>
+<i class="sea-font">juejin</i>
+<i class="sea-font">rss</i>
+<i class="sea-font">tag</i>
+<i class="sea-font">theme</i>
+<i class="sea-font">top-post</i>
+```
+
 ### 评论
 
-> 目前只支持 [Waine](https://waline.js.org/)
+> 目前只支持 [Waine](https://waline.js.org/)  
 > 后续再新增
 
 ```yml
@@ -63,7 +79,7 @@ waline:
 
 ### 搜索
 
-> 目前只支持 [algolia](https://docsearch.algolia.com/apply/)
+> 目前只支持 [algolia](https://docsearch.algolia.com/apply/)  
 > 后续再新增
 
 ```yml
@@ -103,14 +119,14 @@ title: # 文章标题
 date: # 文章发布日期 2024-03-27 09:22:23
 categories: # 文章分类
 tags: # 文章标签
-comment: # 是否展示评论
+comment: # 是否展示评论，默认 true
 ```
 
 ### 内置页面
 
 - 归档页面：/archives/
-- 分类页面：/categories/\*\*/
-- 标签页面：/tags/\*\*/
+- 分类页面：/categories/
+- 标签页面：/tags/
 
 ### 友链模块
 
@@ -130,4 +146,35 @@ This is an info box.
 {% note danger %}
 This is an info box.
 {% endnote %}
+```
+
+## 其它
+
+在 `scripts/inject.js` 中可以实现一些自定义操作
+
+### 使用自定义字体
+
+```js
+// 霞骛文楷字体
+hexo.extend.injector.register('head_end', '<link rel="stylesheet" href="https://unpkg.com/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css">');
+hexo.extend.injector.register('head_end', '<style>body { font-family: "LXGW WenKai Screen", sans-serif; }</style>');
+```
+
+### 引入自定义图标
+
+```js
+hexo.extend.injector.register('head_end', '<link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">');
+```
+
+```yml
+# 在用户卡片中使用自定义图标
+socialLink:
+  - icon: <i class="fa fa-github"></i>
+    link: https://github.com/hai-zou
+```
+
+### 修改主题色
+
+```js
+hexo.extend.injector.register('head_end', '<style>:root { --sea-color-primary: skyblue; }</style>');
 ```
