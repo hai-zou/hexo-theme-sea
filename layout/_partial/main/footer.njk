@@ -1,25 +1,16 @@
 <footer id="sea-footer-container">
   <div class="sea-footer-row">
     <div class="sea-footer-menu-link">
-      {% for menu_item in theme.menu %}
+      {% for item in theme.socialLink %}
         <a
           class="sea-footer-link"
-          href="{{ url_for(menu_item.url) }}"
+          target="_blank"
+          href="{{ url_for(item.link) }}"
         >
-          {{ menu_item.name }}
+          {{ item.name }}
         </a>
         <span class="sea-footer-link__dot">·</span>
       {% endfor %}
-      {% if theme.footer.rss %}
-        <a
-          class="sea-footer-link"
-          href="{{ url_for(theme.footer.rss) }}"
-          target="_blank"
-        >
-          {{ __('footer.rss') }}
-        </a>
-        <span class="sea-footer-link__dot">·</span>
-      {% endif %}
     </div>
     <span class="split-line">|</span>
     <span id="busuanzi_container_site_uv">
@@ -37,7 +28,7 @@
         {{ current }}
       {% endif %}
       <span>·</span>
-      {{ theme.user.name }}
+      {{ config.author }}
     </div>
     <span class="split-line">|</span>
     <div class="sea-footer-theme-by">

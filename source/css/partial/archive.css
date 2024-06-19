@@ -4,21 +4,6 @@
   font-weight: 500;
 }
 
-.sea-archive-year {
-  font-size: 1.2rem;
-  margin-left: -1.25rem;
-}
-
-.sea-archive-list {
-  margin: 0;
-  padding-left: 1.25rem;
-  list-style: disc;
-}
-
-.sea-archive-list-item {
-  margin: 1rem 0;
-}
-
 .sea-archive-list-item:hover {
   color: var(--sea-color-primary);
 }

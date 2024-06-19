@@ -1,7 +1,5 @@
 <div class="sea-menu-mobile-wrap">
   <div class="sea-menu-mobile-inner">
-    {{ partial('_partial/card/user') }}
-
     {% for menu_item in theme.menu %}
       <a
         class="sea-menu-link"
@@ -10,18 +8,6 @@
         {{ menu_item.name }}
       </a>
     {% endfor %}
-
-    {% if is_post() %}
-      {{ partial('_partial/card/anchor') }}
-      {{ partial('_partial/card/recent') }}
-    {% else %}
-      {% if site.categories.length %}
-        {{ partial('_partial/card/categories') }}
-      {% endif %}
-      {% if site.tags.length %}
-        {{ partial('_partial/card/tags') }}
-      {% endif %}
-    {% endif %}
   </div>
 </div>
 <div id="sea-mobile-nav-dimmer"></div>

@@ -1,5 +1,11 @@
 .sea-article-content {
   word-break: break-word;
+  margin-top: 1.5rem;
+}
+
+.sea-article-title {
+  font-size: 1.75rem;
+  text-align: center;
 }
 
 .sea-post-meta {
@@ -18,4 +24,8 @@
   flex-wrap: wrap;
   align-items: center;
   gap: .5rem;
+}
+
+.sea-post-meta__center {
+  justify-content: center;
 }

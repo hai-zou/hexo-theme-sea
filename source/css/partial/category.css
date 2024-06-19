@@ -1,18 +1,7 @@
 .sea-category-post-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.sea-category-post-item:hover .sea-category-post-title {
+.sea-category-post-item:hover {
   color: var(--sea-color-primary);
-}
-
-.sea-category-post-title {
-  flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }

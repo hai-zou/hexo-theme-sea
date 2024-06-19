@@ -4,16 +4,14 @@
     {{ _p('page.archive_total', site.posts.length) }}
   </h2>
 
-  <ul class="sea-archive-list">
-    {% set year = '' %}
-    {% for post in page.posts.toArray() %}
-      {% set postYear = date(post.date, 'YYYY') %}
-      {% if postYear !== year %}
-        {% set year = postYear %}
-        <div class="sea-archive-year">
-          {{ year }}
-        </div>
-      {% endif %}
+  {% set year = '' %}
+  {% for post in page.posts.toArray() %}
+    {% set postYear = date(post.date, 'YYYY') %}
+    {% if postYear !== year %}
+      {% set year = postYear %}
+      <h3>{{ year }}</h3>
+    {% endif %}
+    <ul class="sea-archive-list">
       <li class="sea-archive-list-item">
         <a
           href="{{ url_for(post.path) }}"
@@ -21,8 +19,8 @@
           {{ post.title }}
         </a>
       </li>
-    {% endfor %}
-  </ul>
+    </ul>
+  {% endfor %}
 </div>
 
 {{ partial('_partial/main/pagination') }}

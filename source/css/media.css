@@ -7,8 +7,12 @@
     font-size: 14px;
   }
 
-  body {
-    background-color: var(--sea-color-main-bg);
+  .sea-header {
+    padding: 0 1rem;
+  }
+
+  #sea-main-wrapper {
+    padding: 1rem;
   }
 
   #sea-mobile-nav-toggle {
@@ -78,51 +82,6 @@
     border-bottom: 1px solid var(--sea-color-divider);
   }
 
-  #sea-article-toc,
-  .sea-card-tags,
-  .sea-card-categories,
-  .sea-card-recent {
-    margin-top: 1.5rem;
-  }
-
-  .sea-main-grid {
-    padding-top: 0;
-    grid-template-columns: 1fr;
-  }
-
-  .sea-main-right {
-    display: none;
-  }
-
-  .sea-header {
-    padding: 0 2rem;
-  }
-
-  #sea-main-wrapper {
-    padding: 1rem 2.5rem;
-  }
-
-  .sea-page-card-wrapper {
-    padding: 0;
-  }
-
-  .sea-post-item {
-    border-radius: 0;
-    padding: 0 0 1rem 0;
-    border-bottom: 1px solid var(--sea-color-divider);
-  }
-
-  .sea-post-item:hover {
-    box-shadow: none;
-  }
-
-  .sea-pagination .page-number,
-  .sea-pagination .prev,
-  .sea-pagination .next,
-  .sea-pagination .space {
-    box-shadow: var(--sea-shadow-card);
-  }
-
   .sea-prev-next-wrapper .prev,
   .sea-prev-next-wrapper .next {
     width: 100%;
@@ -136,15 +95,5 @@
   .sea-footer-row #busuanzi_container_site_uv,
   .sea-footer-row .sea-footer-theme-by {
     width: 100%;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1000px) {
-  .sea-main-grid {
-		grid-template-columns: 1fr;
-	}
-
-  .sea-main-right {
-    display: none;
   }
 }
