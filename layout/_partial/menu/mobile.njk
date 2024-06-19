@@ -3,6 +3,9 @@
     {% for menu_item in theme.menu %}
       <a
         class="sea-menu-link"
+        {% if menu_item.url.startsWith("http") %}
+          target="_blank"
+        {% endif %}
         href="{{ url_for(menu_item.url) }}"
       >
         {{ menu_item.name }}
