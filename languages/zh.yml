@@ -6,7 +6,6 @@ page:
   archive: 归档
   recent_articles: 最近文章
   archive_total: 共计 %d 篇文章！
-  more: 更多 >
 
 theme:
   auto: 跟随系统

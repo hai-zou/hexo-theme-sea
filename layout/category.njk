@@ -3,17 +3,16 @@
     {{ page.category }}
   </h1>
 
-  {% for post in page.posts.toArray() %}
-    <div class="sea-category-post-item">
-      <a
-        class="sea-category-post-title"
-        href="{{ url_for(post.path) }}"
-      >
-        {{ post.title }}
-      </a>
-      {{ time_tag(post.date) }}
-    </div>
-  {% endfor %}
+  <ul>
+    {% for post in page.posts.toArray() %}
+      <li class="sea-category-post-item">
+        <a href="{{ url_for(post.path) }}">
+          【{{ time_tag(post.date) }}】
+          {{ post.title }}
+        </a>
+      </li>
+    {% endfor %}
+  <ul>
 </div>
 
 {{ partial('_partial/main/pagination') }}

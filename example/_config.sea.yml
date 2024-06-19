@@ -1,19 +1,18 @@
-user:
-  avatar: /logo.svg
-  name: John Doe
-  intro: this is a slogan
-
 menu:
   - name: Home
     url: /
+  - name: Categories
+    url: /categories/
+  - name: Tags
+    url: /tags/
   - name: Archives
     url: /archives/
   - name: Friends
     url: /friends/
 
 socialLink:
-  - icon: <i class="sea-font">github</i>
-    link: https://github.com/hai-zou/hexo-theme-sea
+  - name: Github
+    link: https://github.com/hai-zou/
 
 friends:
   - name: 旧梦

@@ -35,37 +35,6 @@ menu:
     url: # 链接
 ```
 
-### 用户卡片
-
-```yml
-# 基本信息
-user:
-  avatar: # 头像
-  name: # 名称
-  intro: # 简介
-
-# 社交链接
-socialLink:
-  - icon: # 图标 | 可引入自定义图标
-    link: # 跳转链接
-```
-
-#### 主题内置图标
-
-```html
-<i class="sea-font">arrow-up</i>
-<i class="sea-font">bars.svg</i>
-<i class="sea-font">date</i>
-<i class="sea-font">email</i>
-<i class="sea-font">folder</i>
-<i class="sea-font">github</i>
-<i class="sea-font">juejin</i>
-<i class="sea-font">rss</i>
-<i class="sea-font">tag</i>
-<i class="sea-font">theme</i>
-<i class="sea-font">top-post</i>
-```
-
 ### 评论
 
 > 目前只支持 [Waine](https://waline.js.org/)  
@@ -100,12 +69,25 @@ friends:
     desc: # 描述
 ```
 
+### 社交链接
+
+```yml
+socialLink:
+  - name: # 名称
+    link: # 跳转链接
+```
+
 ### Footer
 
 ```yml
 footer:
   builtUpTime: # 建站时间 2020-05-20 13:14:00
-  rss: # rss link
+```
+
+### 主题色
+
+```yml
+primaryColor: '#10b981'
 ```
 
 ## 页面配置
@@ -146,35 +128,4 @@ This is an info box.
 {% note danger %}
 This is an info box.
 {% endnote %}
-```
-
-## 其它
-
-在 `scripts/inject.js` 中可以实现一些自定义操作
-
-### 使用自定义字体
-
-```js
-// 霞骛文楷字体
-hexo.extend.injector.register('head_end', '<link rel="stylesheet" href="https://unpkg.com/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css">');
-hexo.extend.injector.register('head_end', '<style>body { font-family: "LXGW WenKai Screen", sans-serif; }</style>');
-```
-
-### 引入自定义图标
-
-```js
-hexo.extend.injector.register('head_end', '<link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">');
-```
-
-```yml
-# 在用户卡片中使用自定义图标
-socialLink:
-  - icon: <i class="fa fa-github"></i>
-    link: https://github.com/hai-zou
-```
-
-### 修改主题色
-
-```js
-hexo.extend.injector.register('head_end', '<style>:root { --sea-color-primary: skyblue; }</style>');
 ```

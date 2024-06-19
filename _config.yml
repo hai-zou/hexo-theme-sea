@@ -9,16 +9,6 @@ menu:
   # - name: 关于
   #   url: /about/
 
-user:
-  avatar: # https://xx.com/avatar.png
-  name: Dust
-  intro: this is a slogan
-
-# 社交链接
-socialLink:
-  # - icon: <i>email</i>
-  #   link: mailto:xx@xx.com
-
 # Waline https://waline.js.org/
 waline:
   enable: false
@@ -40,4 +30,13 @@ friends:
 
 footer:
   builtUpTime: # 2020-05-20 13:14:00
-  rss: # rss link
+
+# 社交链接
+socialLink:
+  # - name: Email
+  #   link: mailto:xx@xx.com
+  # - name: RSS
+  #   link: rss link
+
+# 主题色
+primaryColor: '#10b981'

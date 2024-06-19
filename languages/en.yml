@@ -6,7 +6,6 @@ page:
   archive: Archive
   recent_articles: Recent Articles
   archive_total: Total %d articles!
-  more: More >
 
 theme:
   auto: Follow System
