@@ -1,6 +1,10 @@
 # Hexo Theme Sea
 一款简约的 Hexo 主题
 
+## 在线预览
+- Example: <https://hai-zou.github.io/hexo-theme-sea/>
+- My Blog: <https://blog.izou.top/>
+
 ## 特性
 
 - 响应式，适配移动端
