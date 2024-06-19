@@ -4,7 +4,9 @@
       {% for item in theme.socialLink %}
         <a
           class="sea-footer-link"
-          target="_blank"
+          {% if item.link.startsWith("http") %}
+            target="_blank"
+          {% endif %}
           href="{{ url_for(item.link) }}"
         >
           {{ item.name }}
