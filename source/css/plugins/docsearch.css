@@ -1,3 +1,7 @@
+#sea-search-input {
+  display: none;
+}
+
 .DocSearch {
   --docsearch-primary-color: var(--sea-color-primary);
   --docsearch-highlight-color: var(--sea-color-primary);
