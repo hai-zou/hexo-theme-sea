@@ -12,7 +12,8 @@ menu:
 # Waline https://waline.js.org/
 waline:
   enable: false
-  serverURL: 
+  serverURL:
+  options:
 
 # Docsearch https://docsearch.algolia.com/apply/
 algolia:

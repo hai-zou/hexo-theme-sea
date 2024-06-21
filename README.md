@@ -47,7 +47,8 @@ menu:
 ```yml
 waline:
   enable: # 是否启用
-  serverURL: 
+  serverURL:
+  options: # 配置项参考：https://waline.js.org/reference/client/props.html
 ```
 
 ### 搜索

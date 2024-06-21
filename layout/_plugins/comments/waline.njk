@@ -5,8 +5,12 @@
 <script type="module">
   import { init } from 'https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.js';
 
+  const walineServerURL = '{{ theme.waline.serverURL }}';
+  const walineOptions = {{ theme.waline.options | default({}) | dump }};
+
   init({
     el: '#sea-waline',
-    serverURL: '{{ theme.waline.serverURL }}',
+    serverURL: walineServerURL,
+    ...walineOptions,
   });
 </script>
