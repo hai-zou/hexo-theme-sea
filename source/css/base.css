@@ -25,13 +25,11 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
   background-color: var(--sea-color-gray);
 }
 
 ::-webkit-scrollbar-track {
   background-color: var(--sea-color-gray-2);
-  border-radius: 3px;
 }
 
 body {

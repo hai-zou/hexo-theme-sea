@@ -97,6 +97,36 @@ primaryColor: '#10b981'
 
 ## 页面配置
 
+### 代码高亮
+
+移除原先的 `highlight`，改为使用 `prismjs`
+
+v7.0.0以下：
+
+```yml
+# _config.yml
+highlight:
+  enable: false
+prismjs:
+  enable: true
+  preprocess: true
+  line_number: true
+  line_threshold: 0
+  tab_replace: ''
+```
+
+v7.0.0及以上：
+
+```yml
+# _config.yml
+syntax_highlighter: prismjs
+prismjs:
+  preprocess: true
+  line_number: true
+  line_threshold: 0
+  tab_replace: ''
+```
+
 ### 文章基本信息
 
 在每个 `md` 文件头部添加以下配置
