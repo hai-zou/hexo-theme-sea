@@ -8,9 +8,9 @@ page:
   archive_total: Total %d articles!
 
 theme:
-  auto: Follow System
-  light: Light Mode
-  dark: Dark Mode
+  auto: System
+  light: Light
+  dark: Dark
 
 footer:
   home: Home

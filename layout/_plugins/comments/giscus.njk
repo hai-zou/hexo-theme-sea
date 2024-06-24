@@ -3,7 +3,7 @@
 <script>
   function createGusicScript() {
     const container = document.querySelector("#giscus-comment");
-    const giscus_theme = window.themeMode;
+    const giscus_theme = themeMode || THEME_MODE_LIGHT;
     const giscus_lang = "{{ config.language }}" || "en";
     const giscus_repo = "{{ theme.giscus.repo }}";
     const giscus_repo_id = "{{ theme.giscus.repoid }}";
