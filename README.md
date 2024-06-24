@@ -41,24 +41,39 @@ menu:
 
 ### 评论
 
-> 目前只支持 [Waine](https://waline.js.org/)  
-> 后续再新增
-
 ```yml
-waline:
+comment:
   enable: # 是否启用
+  type: # waline | giscus
+
+# Waline https://waline.js.org/
+waline:
   serverURL:
   options: # 配置项参考：https://waline.js.org/reference/client/props.html
+
+# Giscus https://giscus.app/zh-CN
+giscus:
+  repo:
+  repoid:
+  category:
+  categoryid:
+  mapping:
+  term:
+  reactionsenabled:
+  emitmetadata:
+  inputposition:
+  loading:
 ```
 
 ### 搜索
 
-> 目前只支持 [algolia](https://docsearch.algolia.com/apply/)  
-> 后续再新增
-
 ```yml
-algolia:
+search:
   enable: # 是否启用
+  type: # algolia
+
+# Docsearch https://docsearch.algolia.com/apply/
+algolia:
   appId: 
   apiKey: 
   indexName: 

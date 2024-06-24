@@ -2,7 +2,7 @@
 {{ js('js/theme_toggle') }}
 {{ js('js/index') }}
 
-{% if theme.algolia and theme.algolia.enable %}
+{% if theme.search.enable and theme.search.type === 'algolia' %}
   <script type="module">
     import "https://unpkg.com/@docsearch/js@3.5.2/dist/umd/index.js";
 

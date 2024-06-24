@@ -9,15 +9,34 @@ menu:
   # - name: 关于
   #   url: /about/
 
+comment:
+  enable: false
+  type: # waline | giscus
+
 # Waline https://waline.js.org/
 waline:
-  enable: false
   serverURL:
   options:
 
+# Giscus https://giscus.app/zh-CN
+giscus:
+  repo:
+  repoid:
+  category:
+  categoryid:
+  mapping:
+  term:
+  reactionsenabled:
+  emitmetadata:
+  inputposition:
+  loading:
+
+search:
+  enable: false
+  type: # algolia
+
 # Docsearch https://docsearch.algolia.com/apply/
 algolia:
-  enable: false
   appId: 
   apiKey: 
   indexName: 

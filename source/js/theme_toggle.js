@@ -16,6 +16,7 @@
     // 为不支持此 API 的浏览器提供回退方案：
     if (!document.startViewTransition) {
       setThemeKey(key);
+      toggleGiscusTheme();
       return;
     }
 
@@ -31,6 +32,7 @@
     // 开始一次视图过渡：
     const transition = document.startViewTransition(() => {
       setThemeKey(key);
+      toggleGiscusTheme();
     });
 
     // 等待伪元素创建完成：
@@ -53,6 +55,16 @@
         },
       );
     });
+  }
+
+  function toggleGiscusTheme() {
+    const iframe = document.querySelector("iframe.giscus-frame");
+    if (!iframe || !iframe.contentWindow) return;
+    iframe.contentWindow.postMessage({
+      giscus: {
+        setConfig: { theme: window.themeMode }
+      }
+    }, "https://giscus.app");
   }
 
   function onThemeChange() {
@@ -85,7 +97,6 @@
 
     // 初始化主题
     const themeVal = getThemeKey();
-    setThemeKey(themeVal);
     setActive(themeVal);
 
     autoEle.addEventListener('click', function (e) {

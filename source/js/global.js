@@ -5,6 +5,7 @@
   const THEME_MODE_AUTO = 'auto';
   const THEME_MODE_LIGHT = 'light';
   const THEME_MODE_DARK = 'dark';
+  let themeMode = '';
 
   const getThemeKey = () => {
     const localTheme = window.localStorage.getItem(POSEIDON_THEME);
@@ -15,7 +16,6 @@
   }
   const setThemeKey = (key) => {
     const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-    let themeMode = '';
     if (key !== THEME_MODE_AUTO) {
       themeMode = key;
     } else if (darkThemeMq.matches) {
@@ -25,6 +25,7 @@
       themeMode = THEME_MODE_LIGHT;
     }
     document.documentElement.setAttribute("theme", themeMode);
+    global.themeMode = themeMode;
   }
   const initThemeKey = () => {
     const themeVal = getThemeKey();

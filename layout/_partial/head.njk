@@ -31,19 +31,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="{{ config.keywords }}">
 
-  {# Waline 样式 #}
-  {% if theme.waline and theme.waline.enable %}
-    <link rel="stylesheet" href="https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.css">
-    {{ css('/css/plugins/waline.css') }}
-  {% endif %}
+  <link rel="stylesheet" href="https://unpkg.com/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css">
 
   {# Docsearch 样式 #}
-  {% if theme.algolia and theme.algolia.enable %}
+  {% if theme.search.enable and theme.search.type === 'algolia' %}
     <link rel="stylesheet" href="https://unpkg.com/@docsearch/css@3.5.2/dist/style.css">
     {{ css('/css/plugins/docsearch.css') }}
   {% endif %}
-
-  <link rel="stylesheet" href="https://unpkg.com/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css">
 
   {# 字体图标 #}
   {{ css('fonts/sea-font') }}
