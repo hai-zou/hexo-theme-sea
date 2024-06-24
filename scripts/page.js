@@ -8,6 +8,7 @@ hexo.extend.generator.register('tags', function () {
     }
   };
 });
+
 hexo.extend.generator.register('categories', function () {
   return {
     path: 'categories/index.html',
