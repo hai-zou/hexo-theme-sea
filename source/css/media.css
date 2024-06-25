@@ -8,11 +8,16 @@
   }
 
   .sea-header {
-    padding: 0 1rem;
+    padding: 0 1.2rem;
   }
 
-  #sea-main-wrapper {
-    padding: 1rem;
+  .sea-page-card-wrapper {
+    border-radius: 0;
+    padding: 1rem 1.5rem;
+  }
+
+  .sea-post-item {
+    border-radius: 0;
   }
 
   #sea-mobile-nav-toggle {
