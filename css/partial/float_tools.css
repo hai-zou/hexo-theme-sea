@@ -1,0 +1,58 @@
+.sea-float-tools-wrapper {
+  position: fixed;
+  z-index: 20;
+  right: 1rem;
+  bottom: 2rem;
+}
+
+.sea-float-tools-btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: var(--sea-color-main-bg);
+  box-shadow: var(--sea-shadow-card);
+  cursor: pointer;
+  margin: 5px 0;
+  transition: background-color 0.3s;
+}
+
+#sea-theme-mode {
+  position: relative;
+}
+
+#sea-theme-mode .sea-theme-select-box {
+  list-style: none;
+  transform: scale(0);
+  transform-origin: bottom right;
+  position: absolute;
+  bottom: 0;
+  right: 1.5rem;
+  background-color: var(--sea-color-main-bg);
+  border-radius: 6px;
+  box-shadow: var(--sea-shadow-card);
+  border: 1px solid var(--sea-color-gray-1);
+  padding: 0.8rem 0;
+  width: 120px;
+  transition: transform .2s ease-in-out;
+}
+
+#sea-theme-mode:hover .sea-theme-select-box {
+  transform: scale(1);
+}
+
+#sea-theme-mode .sea-theme-select-item {
+  padding: .5rem;
+  text-align: center;
+}
+
+#sea-theme-mode .sea-theme-select-item:hover {
+  color: var(--sea-color-primary);
+}
+
+#sea-theme-mode .sea-theme-select-item.active {
+  color: var(--sea-color-primary);
+  background-color: var(--sea-color-gray-2);
+}

@@ -1,0 +1,9 @@
+.sea-archive-total {
+  font-size: 1.375rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.sea-archive-list-item:hover {
+  color: var(--sea-color-primary);
+}

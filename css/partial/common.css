@@ -1,0 +1,15 @@
+.sea-page-card-wrapper {
+  background-color: var(--sea-color-main-bg);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  margin-bottom: .8rem;
+}
+
+.sea-page-card-title {
+  line-height: 2.5rem;
+  font-size: 1.75rem;
+  border-bottom: 1px solid var(--sea-color-divider);
+  padding-bottom: 1rem;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
