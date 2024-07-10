@@ -5,16 +5,16 @@
 # Site
 title: Hexo
 subtitle: ''
-description: 'blog theme'
-keywords: 'Hexo Theme'
+description: 'This a simple and beautiful theme'
+keywords: 'hexo theme,blog,hexo,blog theme'
 author: John Doe
 language: en
 timezone: ''
+favicon: /logo.svg
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://hai-zou.github.io/
-root: /hexo-theme-sea/
+url: https://hai-zou.github.io/hexo-theme-sea/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:

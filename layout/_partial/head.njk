@@ -4,8 +4,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="{{ config.keywords }}">
+  <meta name="theme-color" content="{{ theme.primaryColor }}">
 
   <link rel="stylesheet" href="https://unpkg.com/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css">
+
+  <link rel="canonical" href="{{ config.url }}" />
+
+  {{ favicon_tag(config.favicon) }}
 
   {# 字体图标 #}
   {{ css('fonts/sea-font') }}

@@ -3,7 +3,7 @@
 hexo.extend.helper.register('generatePageTitle', function(page) {
   const config = this.config;
   const siteTitle = config.title || '';
-  const siteDesc = config.description || '';
+  const subtitle = config.subtitle || '';
   let pageTitle = '';
 
   if (this.is_archive()) {
@@ -17,12 +17,12 @@ hexo.extend.helper.register('generatePageTitle', function(page) {
   }
 
   if (this.is_home()) {
-    if (siteTitle && siteDesc) {
-      return `${siteTitle} | ${siteDesc}`;
+    if (siteTitle && subtitle) {
+      return `${siteTitle} | ${subtitle}`;
     } else if (siteTitle) {
       return siteTitle;
-    } else if (siteDesc) {
-      return siteDesc;
+    } else if (subtitle) {
+      return subtitle;
     }
   } else {
     if (pageTitle) {
