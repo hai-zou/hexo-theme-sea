@@ -1,0 +1,36 @@
+.sea-page-tags,
+.sea-page-categories {
+  padding: 2rem 0 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.sea-page-tags__item,
+.sea-page-categories__item {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: .5em;
+  padding: .8rem;
+  border-radius: 16px;
+  background-color: var(--sea-color-main-bg);
+  border: 1px solid var(--sea-color-border-1);
+  transition: all .3s;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.sea-page-tags__item:hover,
+.sea-page-categories__item:hover {
+  box-shadow: 0 8px 16px -4px var(--sea-post-shadow);
+  transform: translate3d(0, -2px, 0);
+  color: var(--sea-color-primary);
+}
+
+.sea-page-tags__item .name,
+.sea-page-categories__item .name {
+  margin: 0 .5rem;
+}

@@ -1,0 +1,8 @@
+.sea-menu-pc-wrap {
+  display: flex;
+  column-gap: 1.5rem;
+}
+
+.sea-menu-mobile-wrap {
+  display: none;
+}

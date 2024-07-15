@@ -1,0 +1,7 @@
+.sea-tags-post-item {
+  margin-bottom: 1rem;
+}
+
+.sea-tags-post-item:hover {
+  color: var(--sea-color-primary);
+}

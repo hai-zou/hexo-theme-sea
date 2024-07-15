@@ -1,0 +1,7 @@
+.sea-category-post-item {
+  margin-bottom: 1rem;
+}
+
+.sea-category-post-item:hover {
+  color: var(--sea-color-primary);
+}

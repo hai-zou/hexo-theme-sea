@@ -1,0 +1,20 @@
+.sea-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  height: var(--sea-nav-height);
+  box-shadow: var(--sea-shadow-header);
+  background-color: var(--sea-color-header-bg);
+  -webkit-backdrop-filter: saturate(200%) blur(20px);
+  backdrop-filter: saturate(200%) blur(20px);
+}
+
+#sea-main-wrapper {
+  width: var(--sea-main-width);
+  padding-top: 1rem;
+  max-width: var(--sea-main-max-width);
+  margin: var(--sea-nav-height) auto 0;
+  animation: fade-up .4s backwards;
+}
