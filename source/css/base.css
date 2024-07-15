@@ -17,6 +17,7 @@ html {
 
 .sea-font {
   line-height: 1;
+  font-display: swap;
 }
 
 ::-webkit-scrollbar {
