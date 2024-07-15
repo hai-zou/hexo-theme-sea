@@ -10,7 +10,7 @@
 
   {{ favicon_tag(config.favicon) }}
 
-  <link rel="canonical" href="{{ config.url }}" />
+  <link rel="canonical" href="{{ full_url_for(page.path) }}">
 
   {{ favicon_tag(config.favicon) }}
 
