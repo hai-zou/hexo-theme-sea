@@ -1,0 +1,24 @@
+<section class="sea-post-list">
+  {% for post in post_list %}
+    <div class="sea-post-item">
+      <h2 class="sea-post-title">
+        <a class="sea-post-link" href="{{ url_for(post.path) }}">
+          {{ truncate(post.title, {length: 120, separator: '「」 '}) }}
+          {% if post.sticky %}
+            <span class="sea-post-top-flag">「置顶」</span>
+          {% endif %}
+        </a>
+      </h2>
+      <div class="sea-post-line"></div>
+      <div class="sea-post-abstract">
+        {% set content = truncate(post.content, {length: 300, separator: ' '}) %}
+        {{ strip_html(content) }}
+      </div>
+      <div class="sea-post-meta">
+        {{ partial('_partial/post/post_date', {post_date: post.date}) }}
+        {{ partial('_partial/post/post_categories', {post_categories: post.categories}) }}
+        {{ partial('_partial/post/post_tags', {post_tags: post.tags}) }}
+      </div>
+    </div>
+  {% endfor %}
+</section>

@@ -1,0 +1,5 @@
+{% if theme.search and theme.search.enable %}
+  {% if theme.search.type === 'algolia' %}
+    {{ partial('_plugins/search/docsearch') }}
+  {% endif %}
+{% endif %}

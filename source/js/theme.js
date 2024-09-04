@@ -1,11 +1,9 @@
 // View Transitions API | 添加主题切换过渡效果
 function toggleTheme(key, event) {
-  const mode = getThemeMode(key);
 
   // 为不支持此 API 的浏览器提供回退方案：
   if (!document.startViewTransition) {
-    setThemeMode(mode);
-    toggleGiscusTheme(mode);
+    setThemeMode(key);
     return;
   }
 
@@ -20,8 +18,7 @@ function toggleTheme(key, event) {
 
   // 开始一次视图过渡：
   const transition = document.startViewTransition(() => {
-    setThemeMode(mode);
-    toggleGiscusTheme(mode);
+    setThemeMode(key);
   });
 
   // 等待伪元素创建完成：
@@ -30,7 +27,7 @@ function toggleTheme(key, event) {
       `circle(0 at ${x}px ${y}px)`,
       `circle(${endRadius}px at ${x}px ${y}px)`,
     ];
-    const isDark = mode === THEME_MODE_DARK;
+    const isDark = key === THEME_MODE_DARK;
     // 新视图的根元素动画
     document.documentElement.animate(
       {
@@ -46,67 +43,60 @@ function toggleTheme(key, event) {
   });
 }
 
-function toggleGiscusTheme(themeMode) {
+function toggleGiscusTheme(key) {
   const iframe = document.querySelector("iframe.giscus-frame");
   if (!iframe || !iframe.contentWindow) return;
   iframe.contentWindow.postMessage({
     giscus: {
-      setConfig: { theme: themeMode }
+      setConfig: { theme: key }
     }
   }, "https://giscus.app");
 }
 
 function onThemeChange() {
-  const autoEle = document.getElementById('sea-theme-auto');
   const lightEle = document.getElementById('sea-theme-light');
   const darkEle = document.getElementById('sea-theme-dark');
-  if (!autoEle || !lightEle || !darkEle) return;
+  if (!lightEle || !darkEle) return;
 
   function setActive(key) {
     switch (key) {
-      case THEME_MODE_AUTO:
-        autoEle.classList.add(THEME_ACTIVE_CLASS);
-        lightEle.classList.remove(THEME_ACTIVE_CLASS);
-        darkEle.classList.remove(THEME_ACTIVE_CLASS);
-        break;
       case THEME_MODE_LIGHT:
-        lightEle.classList.add(THEME_ACTIVE_CLASS);
-        autoEle.classList.remove(THEME_ACTIVE_CLASS);
-        darkEle.classList.remove(THEME_ACTIVE_CLASS);
+        lightEle.style.display = 'none';
+        darkEle.style.display = 'block';
         break;
       case THEME_MODE_DARK:
-        darkEle.classList.add(THEME_ACTIVE_CLASS);
-        autoEle.classList.remove(THEME_ACTIVE_CLASS);
-        lightEle.classList.remove(THEME_ACTIVE_CLASS);
+        lightEle.style.display = 'block';
+        darkEle.style.display = 'none';
         break;
       default:
         break;
     }
   }
 
-  // 初始化主题
+  const themeKey = getThemeKey();
   setActive(themeKey);
 
-  autoEle.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    saveThemeKey(THEME_MODE_AUTO);
-    toggleTheme(THEME_MODE_AUTO, e);
-    setActive(THEME_MODE_AUTO);
-  });
   lightEle.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
-    saveThemeKey(THEME_MODE_LIGHT);
-    toggleTheme(THEME_MODE_LIGHT, e);
     setActive(THEME_MODE_LIGHT);
+    toggleTheme(THEME_MODE_LIGHT, e);
+    toggleGiscusTheme(THEME_MODE_LIGHT);
   });
   darkEle.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
-    saveThemeKey(THEME_MODE_DARK);
-    toggleTheme(THEME_MODE_DARK, e);
     setActive(THEME_MODE_DARK);
+    toggleTheme(THEME_MODE_DARK, e);
+    toggleGiscusTheme(THEME_MODE_DARK);
+  });
+
+  // 添加事件监听器来监测主题切换
+  darkThemeMq.addEventListener('change', () => {
+    handleThemeChange();
+    const themeKey = getThemeKey();
+    setActive(themeKey);
+    toggleGiscusTheme(themeKey);
   });
 }
 

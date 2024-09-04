@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://unpkg.com/@docsearch/css@3.5.2/dist/style.css">
+{{ css('/css/plugins/docsearch.css') }}
+
+<span class="sea-menu-icon" id="sea-search-icon">
+  {{ partial('svg/search') }}
+</span>
+<div id="sea-search-input"></div>
+
+<script type="module">
+  import "https://unpkg.com/@docsearch/js@3.5.2/dist/umd/index.js";
+  docsearch({
+    container: '#sea-search-input',
+    appId: '{{ theme.algolia.appId }}',
+    apiKey: '{{ theme.algolia.apiKey }}',
+    indexName: '{{ theme.algolia.indexName }}',
+  });
+
+  function onDocSearch() {
+    const searchIconEle = document.getElementById('sea-search-icon');
+    const searchInputEle = document.getElementById('sea-search-input');
+    if (!searchIconEle) return;
+    searchIconEle.addEventListener('click', () => {
+      const btnEle = searchInputEle.querySelector('.DocSearch');
+      btnEle.click();
+    });
+  }
+  onDocSearch();
+</script>

@@ -3,16 +3,7 @@
     {{ page.tag }}
   </h1>
 
-  <ul>
-    {% for post in page.posts.toArray() %}
-      <li class="sea-tags-post-item">
-        <a href="{{ url_for(post.path) }}">
-          【{{ time_tag(post.date) }}】
-          {{ post.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+  {{ partial('_partial/post/post_list', {post_list: page.posts.toArray()}) }}
 </div>
 
 {{ partial('_partial/main/pagination') }}
