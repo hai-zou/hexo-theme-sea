@@ -3,7 +3,7 @@ function toggleTheme(key, event) {
 
   // 为不支持此 API 的浏览器提供回退方案：
   if (!document.startViewTransition) {
-    setThemeMode(key);
+    setThemeKey(key);
     return;
   }
 
@@ -18,7 +18,7 @@ function toggleTheme(key, event) {
 
   // 开始一次视图过渡：
   const transition = document.startViewTransition(() => {
-    setThemeMode(key);
+    setThemeKey(key);
   });
 
   // 等待伪元素创建完成：
@@ -79,24 +79,35 @@ function onThemeChange() {
   lightEle.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
+    saveThemeKey(THEME_MODE_LIGHT);
     setActive(THEME_MODE_LIGHT);
-    toggleTheme(THEME_MODE_LIGHT, e);
     toggleGiscusTheme(THEME_MODE_LIGHT);
+    toggleTheme(THEME_MODE_LIGHT, e);
   });
   darkEle.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
+    saveThemeKey(THEME_MODE_DARK);
     setActive(THEME_MODE_DARK);
-    toggleTheme(THEME_MODE_DARK, e);
     toggleGiscusTheme(THEME_MODE_DARK);
+    toggleTheme(THEME_MODE_DARK, e);
   });
 
   // 添加事件监听器来监测主题切换
+  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
   darkThemeMq.addEventListener('change', () => {
-    handleThemeChange();
-    const themeKey = getThemeKey();
-    setActive(themeKey);
-    toggleGiscusTheme(themeKey);
+    if (darkThemeMq.matches) {
+      // 如果系统是暗黑模式
+      saveThemeKey(THEME_MODE_DARK);
+      setActive(THEME_MODE_DARK);
+      toggleGiscusTheme(THEME_MODE_DARK);
+      setThemeKey(THEME_MODE_DARK);
+    } else {
+      saveThemeKey(THEME_MODE_LIGHT);
+      setActive(THEME_MODE_LIGHT);
+      toggleGiscusTheme(THEME_MODE_LIGHT);
+      setThemeKey(THEME_MODE_LIGHT);
+    }
   });
 }
 
