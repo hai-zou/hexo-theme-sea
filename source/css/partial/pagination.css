@@ -10,7 +10,7 @@
   width: 2.5rem;
   height: 2.5rem;
   line-height: 2.5rem;
-  background-color: var(--sea-color-main-bg);
+  background-color: var(--sea-color-bg);
   margin: .3rem;
   border-radius: 5px;
   text-align: center;
@@ -18,5 +18,5 @@
 
 .sea-pagination .page-number.current {
   background-color: var(--sea-color-primary);
-  color: var(--sea-color-main-bg);
+  color: var(--sea-color-white);
 }

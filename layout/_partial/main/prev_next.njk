@@ -2,7 +2,7 @@
   <div class="sea-prev-next-wrapper">
     {% if page.prev %}
       <div class="prev">
-        <span>←</span>
+        <span><</span>
         <a class="link" href="{{ url_for(page.prev.path) }}">
           {{ page.prev.title }}
         </a>
@@ -13,7 +13,7 @@
         <a class="link" href="{{ url_for(page.next.path) }}">
           {{ page.next.title }}
         </a>
-        <span>→</span>
+        <span>></span>
       </div>
     {% endif %}
   </div>

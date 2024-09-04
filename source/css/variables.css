@@ -13,7 +13,7 @@
 
 /* 亮色主题 */
 :root {
-  --sea-color-main-bg: #ffffff;
+  --sea-color-main-bg: rgba(251, 254, 251);
   --sea-color-bg: #f4f4f4;
   --sea-color-header-bg: hsla(0, 0%, 100%, 0.9);
   --sea-post-shadow: rgba(0, 0, 0, .1);
@@ -70,7 +70,7 @@ html[theme=dark] {
 :root {
   --sea-main-width: 85%;
   --sea-main-max-width: 800px;
-  --sea-nav-height: 64px;
+  --sea-nav-height: 100px;
 }
 
 /* 字体 */
@@ -78,7 +78,6 @@ html[theme=dark] {
   --sea-font-family-code: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco,
     Consolas, 'Liberation Mono', 'Courier New', monospace;
   --sea-font-family-microsoft: "Microsoft YaHei";
-  --sea-font-family-lxgw: "LXGW WenKai Screen", sans-serif;
 }
 
 /* 阴影 */

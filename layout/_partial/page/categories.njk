@@ -9,7 +9,7 @@
         class="sea-page-categories__item"
         href="{{ url_for(cateItem.path) }}"
       >
-        <i class="sea-font">folder</i>
+        {{ partial('svg/folder') }}
         <span class="name">{{ cateItem.name }}</span>
         <span class="num">{{ cateItem.length}}</span>
       </a>
