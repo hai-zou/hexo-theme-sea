@@ -13,6 +13,9 @@
 - 评论（Waline）
 - 搜索（Algolia）
 
+## 评分
+![image](https://github.com/user-attachments/assets/b9761fed-789b-4738-ba11-d49baddddb02)
+
 ## 应用
 
 1. 安装 npm 包
