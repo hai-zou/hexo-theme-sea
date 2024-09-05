@@ -1,0 +1,87 @@
+/* 中性色 */
+:root {
+  --sea-color-white: #ffffff;
+  --sea-color-black: #000000;
+  --sea-color-primary: #10b981;
+  --sea-color-warning: #f59e0b;
+  --sea-color-danger: #ef4444;
+
+  --sea-color-gray: #8e8e93;
+  --sea-color-gray-1: #ccc;
+  --sea-color-gray-2: #eee;
+}
+
+/* 亮色主题 */
+:root {
+  --sea-color-main-bg: rgba(251, 254, 251);
+  --sea-color-bg: #f4f4f4;
+  --sea-color-header-bg: hsla(0, 0%, 100%, 0.9);
+  --sea-post-shadow: rgba(0, 0, 0, .1);
+  --sea-post-shadow-1: rgba(0, 0, 0, .5);
+
+  --sea-color-text-1: rgba(60, 60, 67);
+  --sea-color-text-2: rgba(60, 60, 67, 0.75);
+  --sea-color-text-3: rgba(60, 60, 67, 0.33);
+
+  --sea-color-divider: rgba(60, 60, 67, 0.12);
+  --sea-color-border: rgba(60, 60, 67, 0.29);
+  --sea-color-gutter: rgba(60, 60, 67, 0.42);
+
+  --sea-color-bg-soft: #f6f6f7;
+  --sea-color-bg-alt: #f6f6f7;
+  --sea-color-text-code: #476582;
+  --sea-color-mute: #f6f6f7;
+
+  --sea-color-border-1: #e3e8f7;
+
+  --sea-code-color: var(--sea-color-black);
+  --sea-code-selection: #b3d4fc;
+  --sea-code-bg: #f4f4f4;
+}
+
+/* 暗色主题 */
+html[theme=dark] {
+  --sea-color-main-bg: #1e1e22;
+  --sea-color-bg: #27272b;
+  --sea-color-header-bg: rgba(30, 30, 34, 0.8);
+  --sea-post-shadow: rgba(255, 255, 255, .1);
+  --sea-post-shadow-1: rgba(255, 255, 255, .5);
+
+  --sea-color-text-1: rgba(255, 255, 245, 0.86);
+  --sea-color-text-2: rgba(235, 235, 245, 0.6);
+  --sea-color-text-3: rgba(235, 235, 245, 0.38);
+
+  --sea-color-divider: rgba(82, 82, 89, 0.32);
+  --sea-color-border: rgba(82, 82, 89, 0.68);
+  --sea-color-gutter: rgba(60, 60, 67, 0.62);
+
+  --sea-color-bg-soft: #252529;
+  --sea-color-bg-alt: #161618;
+  --sea-color-text-code: #c9def1;
+  --sea-color-mute: #313136;
+
+  --sea-color-border-1: #3d3d3f;
+
+  --sea-code-color: var(--sea-color-white);
+  --sea-code-selection: #3b82f680;
+  --sea-code-bg: #2d2d2d;
+}
+
+:root {
+  --sea-main-width: 85%;
+  --sea-main-max-width: 800px;
+  --sea-nav-height: 100px;
+}
+
+/* 字体 */
+:root {
+  --sea-font-family-code: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --sea-font-family-microsoft: "Microsoft YaHei";
+}
+
+/* 阴影 */
+:root {
+  --sea-shadow-card: 0 1px 15px 0 var(--sea-post-shadow);
+  --sea-shadow-header: 0 2px 3px rgba(170, 178, 189, 0.2);
+}

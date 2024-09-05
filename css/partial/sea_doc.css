@@ -1,0 +1,180 @@
+/**
+ * Headings
+ * -------------------------------------------------------------------------- */
+
+.sea-doc h1 {
+  line-height: 2.5rem;
+  font-size: 1.75rem;
+}
+
+.sea-doc h2 {
+  line-height: 2rem;
+  font-size: 1.5rem;
+}
+
+.sea-doc h3 {
+  line-height: 1.75rem;
+  font-size: 1.25rem;
+}
+
+.sea-doc .headerlink {
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  opacity: 0;
+  transition: color 0.25s, opacity 0.25s;
+}
+
+.sea-doc .headerlink::before {
+  content: "#";
+  color: var(--sea-color-primary);
+}
+
+.sea-doc h1:hover .headerlink,
+.sea-doc h1 .headerlink:focus,
+.sea-doc h2:hover .headerlink,
+.sea-doc h2 .headerlink:focus,
+.sea-doc h3:hover .headerlink,
+.sea-doc h3 .headerlink:focus,
+.sea-doc h4:hover .headerlink,
+.sea-doc h4 .headerlink:focus,
+.sea-doc h5:hover .headerlink,
+.sea-doc h5 .headerlink:focus,
+.sea-doc h6:hover .headerlink,
+.sea-doc h6 .headerlink:focus {
+  opacity: 1;
+}
+
+/**
+ * Paragraph and inline elements
+ * -------------------------------------------------------------------------- */
+
+.sea-doc p {
+  margin: 1rem 0;
+  line-height: 1.75rem;
+}
+
+.sea-doc strong {
+  font-weight: 600;
+}
+
+.sea-doc em {
+  font-style: italic;
+}
+
+.sea-doc blockquote {
+  margin: 1rem 0;
+  border-left: 2px solid var(--sea-color-divider);
+  padding-left: 1rem;
+  transition: border-color 0.5s;
+}
+
+.sea-doc blockquote>p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--sea-color-text-2);
+  transition: color 0.5s;
+}
+
+.sea-doc blockquote.note.info {
+  border-color: var(--sea-color-primary);
+}
+
+.sea-doc blockquote.note.warning {
+  border-color: var(--sea-color-warning);
+}
+
+.sea-doc blockquote.note.danger {
+  border-color: var(--sea-color-danger);
+}
+
+.sea-doc blockquote.note .note-title {
+  margin-bottom: .5rem;
+  display: block;
+  font-size: 1.3em;
+}
+
+.sea-doc a {
+  font-weight: 500;
+  color: var(--sea-color-primary);
+  text-decoration-style: dotted;
+  transition: color 0.25s;
+}
+
+.sea-doc a:hover {
+  text-decoration: underline;
+}
+
+/**
+ * Lists
+ * -------------------------------------------------------------------------- */
+
+.sea-doc ul {
+  list-style: disc;
+}
+
+.sea-doc ol {
+  list-style: decimal;
+}
+
+.sea-doc dl {
+  list-style: square
+}
+
+.sea-doc li+li {
+  margin-top: .5rem;
+}
+
+.sea-doc li>ol,
+.sea-doc li>ul,
+.sea-doc li>dl {
+  margin: .5rem 0 0;
+}
+
+/**
+ * Table
+ * -------------------------------------------------------------------------- */
+
+.sea-doc table {
+  display: block;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+}
+
+.sea-doc tr:nth-child(2n) {
+  background-color: var(--sea-color-bg-soft);
+}
+
+.sea-doc th,
+.sea-doc td {
+  border: 1px solid var(--sea-color-divider);
+  padding: .5rem 1rem;
+}
+
+.sea-doc th {
+  text-align: left;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--sea-color-text-2);
+  background-color: var(--sea-color-bg-soft);
+}
+
+.sea-doc td {
+  font-size: .875rem;
+}
+
+/**
+ * Decorational elements
+ * -------------------------------------------------------------------------- */
+
+.sea-doc hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid var(--sea-color-divider);
+}
+
+.sea-doc img,
+.sea-doc video {
+  max-width: 100%
+}

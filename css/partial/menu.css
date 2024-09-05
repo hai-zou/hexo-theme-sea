@@ -1,0 +1,24 @@
+.sea-menu-wrap {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+
+.sea-menu-icon {
+  cursor: pointer;
+}
+
+.sea-menu-icon .sea-svg-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+#sea-menu-close-icon {
+  cursor: pointer;
+  display: none;
+}
+
+#sea-menu-close-icon .sea-svg-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
