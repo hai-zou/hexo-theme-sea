@@ -6,11 +6,10 @@
 - My Blog: <https://blog.izou.top/>
 
 ## 特性
-
 - 响应式，适配移动端
 - 国际化，支持中英文
 - 主题切换，支持暗黑主题模式
-- 评论（Waline）
+- 评论（Waline、Giscus）
 - 搜索（Algolia）
 
 ## 评分
@@ -182,3 +181,6 @@ This is an info box.
 This is an info box.
 {% endnote %}
 ```
+
+## TodoList
+- [ ] 本地搜索
