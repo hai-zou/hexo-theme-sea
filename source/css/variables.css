@@ -36,6 +36,7 @@
 
   --sea-code-color: var(--sea-color-black);
   --sea-code-selection: #b3d4fc;
+  --sea-pre-code-bg: rgba(0, 0, 0, 0.03);
   --sea-code-bg: rgba(0, 0, 0, 0.06);
 }
 
@@ -64,7 +65,8 @@ html[theme=dark] {
 
   --sea-code-color: var(--sea-color-white);
   --sea-code-selection: #3b82f680;
-  --sea-code-bg: #2d2d2d;
+  --sea-pre-code-bg: rgba(255, 255, 255, 0.04);
+  --sea-code-bg: rgba(255, 255, 255, 0.08);
 }
 
 :root {
