@@ -36,7 +36,7 @@
 
   --sea-code-color: var(--sea-color-black);
   --sea-code-selection: #b3d4fc;
-  --sea-code-bg: #f4f4f4;
+  --sea-code-bg: rgba(0, 0, 0, 0.06);
 }
 
 /* 暗色主题 */
