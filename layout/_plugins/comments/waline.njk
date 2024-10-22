@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.css">
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css">
 {{ css('/css/plugins/waline.css') }}
 
 <section id="sea-comments" class="sea-page-card-wrapper">
@@ -6,7 +6,7 @@
 </section>
 
 <script type="module">
-  import { init } from 'https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.js';
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
 
   const walineServerURL = '{{ theme.waline.serverURL }}';
   const walineOptions = {{ theme.waline.options | default({}) | dump }};
