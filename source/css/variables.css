@@ -13,7 +13,7 @@
 
 /* 亮色主题 */
 :root {
-  --sea-color-main-bg: rgba(251, 254, 251);
+  --sea-color-main-bg: rgba(255, 255, 255);
   --sea-color-bg: #f4f4f4;
   --sea-color-header-bg: hsla(0, 0%, 100%, 0.9);
   --sea-post-shadow: rgba(0, 0, 0, .1);

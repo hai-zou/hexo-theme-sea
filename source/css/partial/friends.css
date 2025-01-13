@@ -18,8 +18,6 @@
 
 .sea-friend-wrapper .sea-friend-card:hover {
   text-decoration: none;
-  box-shadow: 0 12px 20px -4px var(--sea-post-shadow);
-  transform: translate3d(0, -2px, 0);
 }
 
 .sea-friend-wrapper .sea-friend-avatar {
