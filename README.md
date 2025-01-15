@@ -116,7 +116,7 @@ primaryColor: '#10b981'
 ## 基本配置
 
 > 修改 `_config.yml` 配置文件  
-> 参考 [Hexo 官方文档](https://hexo.io/zh-cn/)
+> 参考 [Hexo 官方文档](https://hexo.io/zh-cn/docs/configuration)
 
 ### 代码高亮
 
