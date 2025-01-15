@@ -1,3 +1,8 @@
+hero:
+  enable: true
+  name: Hexo Theme Sea
+  intro: Hexo Theme Sea is a simple and elegant Hexo blog theme with built-in support for internationalization, light and dark modes, customizable themes, and seamless integration of comments (Waline, Giscus) and search (Algolia).
+
 menu:
   - name: Home
     url: /
@@ -12,11 +17,17 @@ menu:
 
 socialLink:
   - name: Github
-    link: https://github.com/hai-zou/
+    link: https://github.com/hai-zou/hexo-theme-sea
+  - name: Facebook
+    link: https://github.com/hai-zou/hexo-theme-sea
+  - name: Telegram
+    link: https://github.com/hai-zou/hexo-theme-sea
+  - name: Instagram
+    link: https://github.com/hai-zou/hexo-theme-sea
 
 friends:
   - name: 旧梦
-    avatar: //imgs.izou.top/user/avatar.jpg
+    avatar: //imgs.izou.top/images/userInfo/avatar.jpg
     link: //blog.izou.top
     desc: 冰冻三尺非一日之寒，滴水穿石非一日之功
 

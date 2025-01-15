@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+#sea-theme-light {
+  display: none;
+}
+
 .sea-menu-icon .sea-svg-icon {
   width: 1.2rem;
   height: 1.2rem;

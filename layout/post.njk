@@ -9,8 +9,17 @@
       </div>
     {% endif %}
   </header>
-  <div class="sea-article-content sea-doc">
-    {{ render(page.content) }}
+  <div class="sea-doc">
+    {% set tocContent = toc(page.content) %}
+    {% if tocContent %}
+      <div class="sea-article-catalog">
+        <h2>{{ __('page.contents') }}</h2>
+        {{ tocContent }}
+      </div>
+    {% endif %}
+    <div class="sea-article-content">
+      {{ render(page.content) }}
+    </div>
   </div>
 
   {% if is_post() %}

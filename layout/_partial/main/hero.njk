@@ -1,0 +1,20 @@
+<section id="sea-hero-info">
+  <h1>{{ theme.hero.name }}</h1>
+
+  <p class="sea-hero-info__intro">{{ theme.hero.intro }}</p>
+
+  <div class="sea-hero-info__links">
+    {% for item in theme.socialLink %}
+      <a
+        class="sea-hero-info__link-item"
+        {% if item.link.startsWith("http") %}
+          target="_blank"
+        {% endif %}
+        href="{{ url_for(item.link) }}"
+      >
+        {{ item.name }}
+      </a>
+      <span class="sea-hero-info__dot">·</span>
+    {% endfor %}
+  </div>
+</section>

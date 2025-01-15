@@ -11,8 +11,12 @@
       </h2>
       <div class="sea-post-line"></div>
       <div class="sea-post-abstract">
-        {% set content = truncate(post.content, {length: 300, separator: ' '}) %}
-        {{ strip_html(content) }}
+        {% if post.abstract %}
+          {{ post.abstract }}
+        {% else %}
+          {% set content = truncate(post.content, {length: 300, separator: ' '}) %}
+          {{ strip_html(content) }}
+        {% endif %}
       </div>
       <div class="sea-post-meta">
         {{ partial('_partial/post/post_date', {post_date: post.date}) }}

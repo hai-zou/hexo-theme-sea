@@ -25,8 +25,6 @@
 
 .sea-page-tags__item:hover,
 .sea-page-categories__item:hover {
-  box-shadow: 0 8px 16px -4px var(--sea-post-shadow);
-  transform: translate3d(0, -2px, 0);
   color: var(--sea-color-primary);
 }
 

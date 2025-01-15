@@ -159,6 +159,7 @@ title: # 文章标题
 date: # 文章发布日期 2024-03-27 09:22:23
 categories: # 文章分类
 tags: # 文章标签
+abstract: # 摘要
 comments: # 是否展示评论，默认 true
 sticky: # 置顶，按数值大小排序
 ```

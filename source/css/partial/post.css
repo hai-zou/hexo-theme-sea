@@ -29,3 +29,28 @@
 .sea-post-meta__center {
   justify-content: center;
 }
+
+.sea-article-catalog .toc,
+.sea-article-catalog .toc-child {
+  list-style-type: disc;
+  padding-left: 1.8rem;
+}
+
+.sea-article-catalog .toc-number {
+  display: none;
+}
+
+.sea-article-catalog .toc-item {
+  margin-top: 1rem;
+}
+
+.sea-article-catalog .toc-link {
+  text-decoration: none;
+  color: inherit;
+  padding: .5rem 0;
+  font-weight: 500;
+}
+
+.sea-article-catalog .toc-link:hover {
+  color: var(--sea-color-primary);
+}

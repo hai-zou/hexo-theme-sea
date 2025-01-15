@@ -8,3 +8,12 @@
   padding-bottom: 1rem;
   text-align: center;
 }
+
+.sea-hover-list-item {
+  transition: all .3s;
+}
+
+.sea-hover-list-item:hover {
+  box-shadow: 0 8px 16px -4px var(--sea-post-shadow);
+  transform: translate3d(0, -2px, 0);
+}
