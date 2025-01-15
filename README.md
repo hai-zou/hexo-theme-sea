@@ -42,6 +42,15 @@ menu:
     url: # 链接
 ```
 
+### 首页个人信息模块
+
+```yml
+hero:
+  enable: false # 默认不展示
+  name: # 名称
+  intro: # 个人简介
+```
+
 ### 评论
 
 ```yml
