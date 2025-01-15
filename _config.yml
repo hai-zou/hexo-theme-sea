@@ -1,3 +1,8 @@
+hero:
+  enable: false
+  name: # 名称
+  intro: # 个人简介
+
 # 菜单栏
 menu:
   # - name: 归档

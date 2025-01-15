@@ -1,3 +1,7 @@
+{% if theme.hero.enable %}
+  {{ partial('_partial/main/hero') }}
+{% endif %}
+
 {{ partial('_partial/post/post_list', {post_list: page.posts.toArray()}) }}
 
 {{ partial('_partial/main/pagination') }}
