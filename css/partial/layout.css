@@ -1,0 +1,12 @@
+.sea-header {
+  width: 100%;
+  height: var(--sea-nav-height);
+  border-bottom: 1px solid var(--sea-color-divider);
+}
+
+#sea-main-wrapper {
+  width: var(--sea-main-width);
+  padding: 1rem 1.2rem 0;
+  max-width: var(--sea-main-max-width);
+  margin: 0 auto;
+}
