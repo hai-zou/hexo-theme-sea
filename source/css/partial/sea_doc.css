@@ -179,3 +179,10 @@
 .sea-doc video {
   max-width: 100%
 }
+
+.sea-doc img {
+  border: 2px solid var(--sea-color-divider);
+  -moz-border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+}
