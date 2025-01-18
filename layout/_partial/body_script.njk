@@ -1,19 +1,2 @@
-{{ js('js/mobile_nav') }}
-{{ js('js/theme_toggle') }}
-{{ js('js/index') }}
-
-{% if theme.algolia and theme.algolia.enable %}
-  <script type="module">
-    import "https://unpkg.com/@docsearch/js@3.5.2/dist/umd/index.js";
-
-    docsearch({
-      container: '#sea-search-input',
-      appId: '{{ theme.algolia.appId }}',
-      apiKey: '{{ theme.algolia.apiKey }}',
-      indexName: '{{ theme.algolia.indexName }}',
-    });
-  </script>
-{% endif %}
-
-{# 不蒜子站点计数 #}
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+{{ js('js/main') }}
+{{ js('js/theme') }}

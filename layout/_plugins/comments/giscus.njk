@@ -1,0 +1,38 @@
+<section id="giscus-comment" class="sea-page-card-wrapper"></section>
+
+<script>
+  function createGusicScript() {
+    const container = document.querySelector("#giscus-comment");
+    const themeKey = getThemeKey();
+    const giscus_theme = themeKey || THEME_MODE_LIGHT;
+    const giscus_lang = "{{ config.language }}" || "en";
+    const giscus_repo = "{{ theme.giscus.repo }}";
+    const giscus_repo_id = "{{ theme.giscus.repoid }}";
+    const giscus_category = "{{ theme.giscus.category }}";
+    const giscus_category_id = "{{ theme.giscus.categoryid }}";
+    const giscus_mapping = "{{ theme.giscus.mapping }}";
+    const giscus_strict = "{{ theme.giscus.strict }}";
+    const giscus_reactions_enabled = "{{ theme.giscus.reactionsenabled }}";
+    const giscus_emit_metadata = "{{ theme.giscus.emitmetadata }}";
+    const giscus_input_position = "{{ theme.giscus.inputposition }}";
+    const giscus_loading = "{{ theme.giscus.loading }}";
+    let script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", giscus_repo);
+    script.setAttribute("data-repo-id", giscus_repo_id);
+    script.setAttribute("data-category", giscus_category);
+    script.setAttribute("data-category-id", giscus_category_id);
+    script.setAttribute("data-mapping", giscus_mapping);
+    script.setAttribute("data-strict", giscus_strict);
+    script.setAttribute("data-reactions-enabled", giscus_reactions_enabled);
+    script.setAttribute("data-emit-metadata", giscus_emit_metadata);
+    script.setAttribute("data-input-position", giscus_input_position);
+    script.setAttribute("data-theme", giscus_theme);
+    script.setAttribute("data-lang", giscus_lang);
+    script.setAttribute("data-loading", giscus_loading);
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
+    container && container.appendChild(script);
+  }
+  createGusicScript();
+</script>

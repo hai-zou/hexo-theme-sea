@@ -1,0 +1,6 @@
+{% if post_categories.length %}
+  <div class="sea-post-categories">
+    {{ partial('svg/folder') }}
+    {{ list_categories(post_categories, { show_count: false, style: false, separator: ' , ' }) }}
+  </div>
+{% endif %}

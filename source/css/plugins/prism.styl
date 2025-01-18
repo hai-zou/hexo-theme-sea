@@ -1,9 +1,9 @@
-code[class*=language-],
-pre[class*=language-] {
+code,
+pre {
   color: var(--sea-code-color);
   background: 0 0;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
+  font-size: .875rem;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -19,47 +19,44 @@ pre[class*=language-] {
   hyphens: none;
 }
 
-code[class*=language-] ::-moz-selection,
-code[class*=language-]::-moz-selection,
-pre[class*=language-] ::-moz-selection,
-pre[class*=language-]::-moz-selection {
+code ::-moz-selection,
+code::-moz-selection,
+pre ::-moz-selection,
+pre::-moz-selection {
   background: var(--sea-code-selection);
 }
 
-code[class*=language-] ::selection,
-code[class*=language-]::selection,
-pre[class*=language-] ::selection,
-pre[class*=language-]::selection {
+code ::selection,
+code::selection,
+pre ::selection,
+pre::selection {
   background: var(--sea-code-selection);
 }
 
-pre[class*=language-] {
+pre {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
+  background: var(--sea-pre-code-bg);
 }
 
-:not(pre)>code[class*=language-],
-pre[class*=language-] {
-  background: var(--sea-code-bg);
-}
-
-:not(pre)>code[class*=language-] {
-  padding: .1em;
+:not(pre)>code {
+  padding: 0.15em 0.4em;
   border-radius: .3em;
   white-space: normal;
+  background: var(--sea-code-bg);
 }
 
 /*
  * line number
  */
-pre[class*=language-].line-numbers {
+pre.line-numbers {
   position: relative;
   padding-left: 3.8em;
   counter-reset: linenumber;
 }
 
-pre[class*=language-].line-numbers>code {
+pre.line-numbers>code {
   position: relative;
   white-space: inherit;
 }

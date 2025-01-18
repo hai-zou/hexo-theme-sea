@@ -3,6 +3,7 @@
   height: 100%;
   max-width: var(--sea-main-max-width);
   margin: 0 auto;
+  padding: 0 1.2rem;
 
   display: flex;
   align-items: center;
@@ -21,6 +22,6 @@
   gap: 1.5rem;
 }
 
-#sea-mobile-nav-toggle {
+#sea-nav-toggle {
   display: none;
 }

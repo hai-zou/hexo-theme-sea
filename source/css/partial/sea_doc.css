@@ -103,6 +103,7 @@
 
 .sea-doc a:hover {
   text-decoration: underline;
+  text-underline-offset: .4rem;
 }
 
 /**

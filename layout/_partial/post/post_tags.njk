@@ -1,0 +1,6 @@
+{% if post_tags.length %}
+  <div class="sea-post-tags">
+    {{ partial('svg/tag') }}
+    {{ list_tags(post_tags, { show_count: false, style: false, separator: ' , ' }) }}
+  </div>
+{% endif %}

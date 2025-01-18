@@ -1,52 +1,14 @@
 <head>
   <meta charset="utf-8">
-  <title>
-    {% set siteTitle = config.title %}
-    {% set siteDesc = config.description %}
-
-    {% set pageTitle = '' %}
-    {% if is_archive() %}
-      {% set pageTitle = __('page.archive') %}
-    {% elseif is_tag() %}
-      {% set pageTitle = page.tag %}
-    {% elseif is_category() %}
-      {% set pageTitle = page.category %}
-    {% elseif is_post() or is_page() %}
-      {% set pageTitle = page.title %}
-    {% endif %}
-
-    {% if is_home() %}
-      {% if siteTitle and siteDesc %}
-        {{ siteTitle }} | {{ siteDesc }}
-      {% elseif siteTitle %}
-        {{ siteTitle }}
-      {% elseif siteDesc %}
-        {{ siteDesc }}
-      {% endif %}
-    {% else %}
-      {% if pageTitle %}{{ pageTitle }} | {% endif %}{{ siteTitle }}
-    {% endif %}
-  </title>
+  <title>{{ generatePageTitle(page) }}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="{{ config.keywords }}">
+  <meta name="theme-color" content="{{ theme.primaryColor }}">
 
-  {# Waline 样式 #}
-  {% if theme.waline and theme.waline.enable %}
-    <link rel="stylesheet" href="https://unpkg.com/@waline/client@3.0.0-alpha.10/dist/waline.css">
-    {{ css('/css/plugins/waline.css') }}
-  {% endif %}
+  <link rel="canonical" href="{{ full_url_for(page.path) }}">
 
-  {# Docsearch 样式 #}
-  {% if theme.algolia and theme.algolia.enable %}
-    <link rel="stylesheet" href="https://unpkg.com/@docsearch/css@3.5.2/dist/style.css">
-    {{ css('/css/plugins/docsearch.css') }}
-  {% endif %}
-
-  <link rel="stylesheet" href="https://unpkg.com/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css">
-
-  {# 字体图标 #}
-  {{ css('fonts/sea-font') }}
+  {{ favicon_tag(config.favicon) }}
 
   {# CSS #}
   {{ css('css/main') }}
@@ -60,9 +22,5 @@
     }
   </style>
 
-  {{ js('js/global') }}
-
-  <script defer>
-    window.initThemeKey();
-  </script>
+  {{ js('js/theme_mode') }}
 </head>

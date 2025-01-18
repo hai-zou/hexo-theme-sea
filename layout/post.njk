@@ -3,14 +3,23 @@
     <h1 class="sea-article-title">{{ page.title }}</h1>
     {% if is_post() %}
       <div class="sea-post-meta sea-post-meta__center">
-        {{ partial('_partial/post-meta/post_date', {post_date: page.date}) }}
-        {{ partial('_partial/post-meta/post_categories', {post_categories: page.categories}) }}
-        {{ partial('_partial/post-meta/post_tags', {post_tags: page.tags}) }}
+        {{ partial('_partial/post/post_date', {post_date: page.date}) }}
+        {{ partial('_partial/post/post_categories', {post_categories: page.categories}) }}
+        {{ partial('_partial/post/post_tags', {post_tags: page.tags}) }}
       </div>
     {% endif %}
   </header>
-  <div class="sea-article-content sea-doc">
-    {{ render(page.content) }}
+  <div class="sea-doc">
+    {% set tocContent = toc(page.content) %}
+    {% if tocContent %}
+      <div class="sea-article-catalog">
+        <h2>{{ __('page.contents') }}</h2>
+        {{ tocContent }}
+      </div>
+    {% endif %}
+    <div class="sea-article-content">
+      {{ render(page.content) }}
+    </div>
   </div>
 
   {% if is_post() %}
@@ -18,4 +27,4 @@
   {% endif %}
 </article>
 
-{{ partial('_plugins/comments/layout') }}
+{{ partial('_plugins/comments/index') }}

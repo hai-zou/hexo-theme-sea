@@ -1,0 +1,21 @@
+.sea-hero-info__intro {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.sea-hero-info__link-item {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: .4rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  transition: all .3s;
+}
+
+.sea-hero-info__link-item:hover {
+  color: var(--sea-color-primary);
+}
+
+.sea-hero-info__dot:last-child {
+  display: none;
+}
