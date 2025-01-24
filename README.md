@@ -1,6 +1,8 @@
 # Hexo Theme Sea
 一款简约的 Hexo 博客主题！
 
+![Snipaste_2025-01-24_17-27-36](https://github.com/user-attachments/assets/638c12ee-8033-4973-ba24-47805f13eff8)
+
 ## 在线预览
 - Example: <https://hai-zou.github.io/hexo-theme-sea/>
 - My Blog: <https://blog.izou.top/>
