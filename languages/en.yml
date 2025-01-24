@@ -1,3 +1,8 @@
+home:
+  recommendedPosts: Recommended posts
+  recentPosts: Recent posts
+  allPosts: All Posts
+
 page:
   contents: Table of contents
   categories: Categories

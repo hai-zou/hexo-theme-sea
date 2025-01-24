@@ -1,7 +1,21 @@
-{% if theme.hero.enable %}
-  {{ partial('_partial/main/hero') }}
+{{ partial('_partial/main/hero') }}
+
+{% if theme.home.posts == 'recommend' %}
+  <h2 class="sea-index-title">
+    {{ __('home.recommendedPosts') }}
+  </h2>
+  {{ partial('_partial/post/post_list', {post_list: recommendedPosts}) }}
+{% elif theme.home.posts == 'recent' %}
+  <h2 class="sea-index-title">
+    {{ __('home.recentPosts') }}
+  </h2>
+  {{ partial('_partial/post/post_list', {post_list: recentPosts}) }}
+{% else %}
 {% endif %}
 
-{{ partial('_partial/post/post_list', {post_list: page.posts.toArray()}) }}
-
-{{ partial('_partial/main/pagination') }}
+<div class="sea-index-all-posts">
+  <a class="sea-index-all-posts__link" href="{{ url_for("/articles") }}">
+    {{ __('home.allPosts') }}
+    {{ partial('svg/arrow_right') }}
+  </a>
+</div>

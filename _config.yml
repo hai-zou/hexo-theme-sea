@@ -1,7 +1,16 @@
-hero:
-  enable: false
-  name: # 名称
-  intro: # 个人简介
+# 首页配置
+home:
+  hero:
+    name: # 名称
+    intro: # 个人简介
+    avatar: # 头像
+  posts: recent | recommend # recent: 最新文章 | recommend: 推荐文章
+
+# 所有文章
+articles:
+  path: '' # 路由，默认为 articles
+  per_page: 10 # 分页数
+  order_by: -date # 文章排序
 
 # 菜单栏
 menu:
