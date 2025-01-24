@@ -14,7 +14,7 @@
 {% endif %}
 
 <div class="sea-index-all-posts">
-  <a class="sea-index-all-posts__link" href="{{ url_for("/articles") }}">
+  <a class="sea-index-all-posts__link" href="{{ url_for(theme.articles.path) }}">
     {{ __('home.allPosts') }}
     {{ partial('svg/arrow_right') }}
   </a>

@@ -17,11 +17,13 @@
       {% endfor %}
     </div>
   </div>
-  <div class="sea-hero-info__right">
-    <img
-      class="sea-hero-info__avatar"
-      src="{{ theme.home.hero.avatar }}"
-      alt="{{ theme.home.hero.name }}"
-    />
-  </div>
+  {% if theme.home.hero.avatar %}
+    <div class="sea-hero-info__right">
+      <img
+        class="sea-hero-info__avatar"
+        src="{{ theme.home.hero.avatar }}"
+        alt="{{ theme.home.hero.name }}"
+      />
+    </div>
+  {% endif %}
 </section>

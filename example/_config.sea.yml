@@ -7,7 +7,7 @@ home:
   posts: recent
 
 articles:
-  path: ''
+  path: 'articles'
   per_page: 10
   order_by: -date
 

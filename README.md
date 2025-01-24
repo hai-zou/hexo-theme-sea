@@ -44,7 +44,7 @@ menu:
 
 ### 首页配置
 
-> 主页可配置展示 “推荐文章” 或者 “最近文章”
+> 主页可配置展示 “推荐文章” 或者 “最近文章”。
 > 注意：展示的推荐文章需要在文章的 `Front-matter` 中加上 `recommend: true`
 
 ```yml
@@ -63,7 +63,7 @@ home:
 
 ```yml
 articles:
-  path: '' # 路由，默认为 articles
+  path: 'articles' # 路由
   per_page: 10 # 分页数
   order_by: -date # 文章排序
 ```
