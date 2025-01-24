@@ -1,3 +1,11 @@
+.sea-index-title {
+  font-size: 1.8rem;
+  margin-top: 3rem;
+  margin-bottom: .5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--sea-color-divider);
+}
+
 .sea-post-item {
   position: relative;
   padding: 1rem 0;
@@ -53,4 +61,19 @@
 .sea-post-item .sea-post-meta .sea-svg-icon {
   width: .875rem;
   height: .875rem;
+}
+
+.sea-index-all-posts {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sea-index-all-posts .sea-svg-icon {
+  width: .875rem;
+  height: .875rem;
+}
+
+.sea-index-all-posts:hover .sea-index-all-posts__link {
+  color: var(--sea-color-primary);
 }

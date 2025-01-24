@@ -38,17 +38,31 @@ theme: sea
 
 ```yml
 menu:
-  - name: # 名称
-    url: # 链接
+  - name: Posts # 名称
+    url: /articles/ # 链接
 ```
 
-### 首页个人信息模块
+### 首页配置
 
 ```yml
-hero:
-  enable: false # 默认不展示
-  name: # 名称
-  intro: # 个人简介
+home:
+  hero:
+    name: # 名称
+    intro: # 个人简介
+    avatar: # 头像
+  posts: recent | recommend # recent: 最新文章 | recommend: 推荐文章
+```
+
+### 所有文章页
+
+> 因主页只展示（最近的 5 条 或者 推荐的 5 条）文章，所以自定义一个文章页，可展示所有的文章，支持分页。
+> 在菜单上配置 `/articles/` 路由即可，也可以自定义路径，注意切勿设置关键词 `posts` ，会出现问题。
+
+```yml
+articles:
+  path: '' # 路由，默认为 articles
+  per_page: 10 # 分页数
+  order_by: -date # 文章排序
 ```
 
 ### 评论

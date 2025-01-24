@@ -84,6 +84,10 @@
     left: 1.2rem;
   }
 
+  .sea-hero-info__right {
+    display: none;
+  }
+
   .sea-prev-next-wrapper .prev,
   .sea-prev-next-wrapper .next {
     width: 100%;

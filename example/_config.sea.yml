@@ -1,11 +1,19 @@
-hero:
-  enable: true
-  name: Hexo Theme Sea
-  intro: Hexo Theme Sea is a simple and elegant Hexo blog theme with built-in support for internationalization, light and dark modes, customizable themes, and seamless integration of comments (Waline, Giscus) and search (Algolia).
+
+home:
+  hero:
+    name: Hexo Theme Sea
+    intro: Hexo Theme Sea is a simple and elegant Hexo blog theme with built-in support for internationalization, light and dark modes, customizable themes, and seamless integration of comments (Waline, Giscus) and search (Algolia).
+    avatar: logo.svg
+  posts: recent
+
+articles:
+  path: ''
+  per_page: 10
+  order_by: -date
 
 menu:
-  - name: Home
-    url: /
+  - name: Posts
+    url: /articles/
   - name: Categories
     url: /categories/
   - name: Tags
