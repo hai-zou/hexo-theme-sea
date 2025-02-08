@@ -1,0 +1,49 @@
+#sea-hero-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sea-hero-info__left {
+  flex: 1;
+}
+
+.sea-hero-info__right {
+  width: 12.5rem;
+  height: 12.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.sea-hero-info__avatar {
+  width: 100%;
+}
+
+.sea-hero-name {
+  font-size: 1.8rem;
+}
+
+.sea-hero-info__intro {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.sea-hero-info__link-item {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: .4rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  transition: all .3s;
+}
+
+.sea-hero-info__link-item:hover {
+  color: var(--sea-color-primary);
+}
+
+.sea-hero-info__dot:last-child {
+  display: none;
+}

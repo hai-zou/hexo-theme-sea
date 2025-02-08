@@ -1,0 +1,27 @@
+.sea-nav-wrap {
+  width: var(--sea-main-width);
+  height: 100%;
+  max-width: var(--sea-main-max-width);
+  margin: 0 auto;
+  padding: 0 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sea-nav-logo {
+  font-size: 2rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.sea-nav-menus {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#sea-nav-toggle {
+  display: none;
+}

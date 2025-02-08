@@ -1,0 +1,75 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+html {
+  font-size: 16px;
+  scroll-padding-top: var(--sea-nav-height);
+  scroll-behavior: smooth;
+}
+
+.sea-svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+  overflow: hidden;
+  width: 1rem;
+  height: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--sea-color-gray);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--sea-color-gray-2);
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  color: var(--sea-color-text-1);
+  background-color: var(--sea-color-main-bg);
+  font-family: var(--sea-font-family-code);
+
+  /* 解决ios下代码块字体样式偏大问题 */
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* View Transitions API | 主题切换动画，关闭默认CSS动画 */
+::view-transition-image-pair(root) {
+  isolation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+  display: block;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 999;
+}
+html[theme=dark]::view-transition-old(root) {
+  z-index: 999;
+}
+html[theme=dark]::view-transition-new(root) {
+  z-index: 1;
+}
