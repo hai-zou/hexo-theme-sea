@@ -11,6 +11,11 @@
 
 .sea-hero-info__right {
   width: 12.5rem;
+  height: 12.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .sea-hero-info__avatar {
