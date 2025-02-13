@@ -5,7 +5,7 @@
 
 ## 在线预览
 - Example: <https://hai-zou.github.io/hexo-theme-sea/>
-- My Blog: <https://blog.izou.top/>
+- My Blog: <https://www.izou.top/>
 
 ## 特性
 - 响应式，适配移动端
