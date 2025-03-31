@@ -1,7 +1,7 @@
 # Hexo Theme Sea
 一款简约的 Hexo 博客主题！
 
-![Hexo-Theme-Sea](https://github.com/user-attachments/assets/7a972162-0f91-4bbb-9fa7-2e1b12f9d68b)
+![Hexo-Theme-Sea](https://github.com/user-attachments/assets/d337cf2c-4dcd-474e-a290-16746520de08)
 
 ## 在线预览
 - Example: <https://hai-zou.github.io/hexo-theme-sea/>
