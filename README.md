@@ -139,6 +139,13 @@ footer:
 primaryColor: '#10b981'
 ```
 
+### 目录
+
+```yml
+tableOfContents:
+  enable: true # 默认启用
+```
+
 ## 基本配置
 
 > 修改 `_config.yml` 配置文件  
