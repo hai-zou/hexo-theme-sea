@@ -74,3 +74,7 @@ socialLink:
 
 # 主题色
 primaryColor: '#10b981'
+
+# 目录
+tableOfContents:
+  enable: true
