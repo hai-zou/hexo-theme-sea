@@ -74,6 +74,13 @@
   height: .875rem;
 }
 
+.sea-index-all-posts__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1;
+}
+
 .sea-index-all-posts:hover .sea-index-all-posts__link {
   color: var(--sea-color-primary);
 }
