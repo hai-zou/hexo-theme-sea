@@ -110,7 +110,6 @@ html[theme=dark] .DocSearch-Form {
     width: auto;
     height: 22px;
     line-height: 22px;
-    font-family: var(--sea-font-family-code);
     font-size: 12px;
     font-weight: 500;
     transition: color 0.5s, border-color 0.5s;
