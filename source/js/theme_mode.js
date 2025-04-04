@@ -5,7 +5,9 @@ const THEME_MODE_DARK = 'dark';
 
 const getThemeKey = () => {
   const localTheme = window.localStorage.getItem(THEME_NAME);
-  return localTheme || THEME_MODE_LIGHT;
+  const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+  const defaultKey = darkThemeMq.matches ? THEME_MODE_DARK : THEME_MODE_LIGHT;
+  return localTheme || defaultKey;
 }
 
 const saveThemeKey = (themeKey) => {

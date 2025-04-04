@@ -43,7 +43,7 @@ body {
   min-width: 320px;
   color: var(--sea-color-text-1);
   background-color: var(--sea-color-main-bg);
-  font-family: var(--sea-font-family-code);
+  font-family: var(--sea-font-family);
 
   /* 解决ios下代码块字体样式偏大问题 */
   text-size-adjust: 100%;

@@ -10,12 +10,14 @@
     {% endif %}
   </header>
   <div class="sea-doc">
-    {% set tocContent = toc(page.content) %}
-    {% if tocContent %}
-      <div class="sea-article-catalog">
-        <h2>{{ __('page.contents') }}</h2>
-        {{ tocContent }}
-      </div>
+    {% if theme.tableOfContents.enable %}
+      {% set tocContent = toc(page.content) %}
+      {% if tocContent %}
+        <div class="sea-article-catalog">
+          <h2>{{ __('page.contents') }}</h2>
+          {{ tocContent }}
+        </div>
+      {% endif %}
     {% endif %}
     <div class="sea-article-content">
       {{ render(page.content) }}

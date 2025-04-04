@@ -77,9 +77,8 @@ html[theme=dark] {
 
 /* 字体 */
 :root {
-  --sea-font-family-code: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco,
+  --sea-font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco,
     Consolas, 'Liberation Mono', 'Courier New', monospace;
-  --sea-font-family-microsoft: "Microsoft YaHei";
 }
 
 /* 阴影 */
