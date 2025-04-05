@@ -24,6 +24,12 @@
   flex-wrap: wrap;
   align-items: center;
   gap: .5rem;
+  transition: color 0.3s ease;
+}
+
+.sea-post-tags:hover,
+.sea-post-categories:hover  {
+  color: var(--sea-color-primary);
 }
 
 .sea-post-meta__center {

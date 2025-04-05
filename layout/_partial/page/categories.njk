@@ -6,7 +6,7 @@
   <div class="sea-page-categories">
     {% for cateItem in site.categories.toArray() %}
       <a
-        class="sea-page-categories__item sea-hover-list-item"
+        class="sea-page-categories__item"
         href="{{ url_for(cateItem.path) }}"
       >
         {{ partial('svg/folder') }}

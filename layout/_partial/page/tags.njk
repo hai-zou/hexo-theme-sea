@@ -6,7 +6,7 @@
   <div class="sea-page-tags">
     {% for tagItem in site.tags.toArray() %}
       <a
-        class="sea-page-tags__item sea-hover-list-item"
+        class="sea-page-tags__item"
         href="{{ url_for(tagItem.path) }}"
       >
         <span class="icon">#</span>

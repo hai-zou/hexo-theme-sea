@@ -31,6 +31,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--sea-color-text-1);
+  transition: color 0.3s ease;
 }
 
 .sea-archive-list-item-date {
