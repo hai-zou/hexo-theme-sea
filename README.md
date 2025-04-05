@@ -120,6 +120,20 @@ friends:
     desc: # 描述
 ```
 
+### 作品
+
+```yml
+works:
+  - name: # 名称
+    desc: # 描述
+    tags: # 标签
+      - tag1
+      - tag2
+      - tag3
+    link: # 链接
+    cover: # 预览图
+```
+
 ### 社交链接
 
 ```yml
