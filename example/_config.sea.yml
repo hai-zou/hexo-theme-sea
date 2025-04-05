@@ -20,8 +20,6 @@ menu:
     url: /tags/
   - name: Archives
     url: /archives/
-  - name: Friends
-    url: /friends/
 
 socialLink:
   - name: Github
@@ -38,6 +36,16 @@ friends:
     avatar: //imgs.izou.top/images/userInfo/avatar.jpg
     link: //blog.izou.top
     desc: 冰冻三尺非一日之寒，滴水穿石非一日之功
+
+works:
+  - name: Hexo Theme Sea
+    desc: Blog Theme
+    tags:
+      - HTML
+      - CSS
+      - JavaScript
+    link: //www.izou.top
+    cover: //imgs.izou.top/images/blog/2025/0118/1407.webp
 
 footer:
   builtUpTime: 2024-05-28

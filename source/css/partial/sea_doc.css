@@ -98,7 +98,7 @@
   font-weight: 500;
   color: var(--sea-color-primary);
   text-decoration-style: dotted;
-  transition: color 0.25s;
+  transition: color 0.3s ease;
 }
 
 .sea-doc a:hover {
