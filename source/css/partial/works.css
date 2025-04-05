@@ -18,6 +18,10 @@
   overflow: hidden;
   position: relative;
   border-bottom: 1px solid var(--sea-color-border-1);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .sea-works-cover img {
@@ -27,10 +31,7 @@
   width: 100%;
   object-fit: cover;
   border: none !important;
-  border-bottom-right-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-  border-top-left-radius: 10px !important;
-  border-top-right-radius: 10px !important;
+  border-radius: 0 !important;
   transition: transform 0.3s ease;
 }
 
