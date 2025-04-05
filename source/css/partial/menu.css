@@ -26,3 +26,12 @@
   width: 1.5rem;
   height: 1.5rem;
 }
+
+.sea-menu-link{
+  transition: color .3s ease;
+}
+
+.sea-menu-link:hover,
+.sea-menu-link.active {
+  color: var(--sea-color-primary);
+}

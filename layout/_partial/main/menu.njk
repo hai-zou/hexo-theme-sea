@@ -2,7 +2,7 @@
 <div class="sea-menu-wrap">
   {% for menu_item in theme.menu %}
     <a
-      class="sea-menu-link"
+      class="sea-menu-link {% if url_for(menu_item.url) === url_for(page.path) | replace('index.html', '') %}active{% endif %}"
       {% if menu_item.url.startsWith("http") %}
         target="_blank"
       {% endif %}

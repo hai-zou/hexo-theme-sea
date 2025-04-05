@@ -26,6 +26,11 @@
   gap: .5rem;
 }
 
+.sea-post-tags:hover,
+.sea-post-categories:hover  {
+  color: var(--sea-color-primary);
+}
+
 .sea-post-meta__center {
   justify-content: center;
 }
