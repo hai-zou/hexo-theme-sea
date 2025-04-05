@@ -29,6 +29,8 @@
   border: none !important;
   border-bottom-right-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
   transition: transform 0.3s ease;
 }
 
