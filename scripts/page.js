@@ -36,3 +36,14 @@ hexo.extend.generator.register('articles', function (locals) {
     data: {},
   });
 });
+
+hexo.extend.generator.register('search', function () {
+  return {
+    path: 'search/index.html',
+    layout: ['search'],
+    data: {
+      type: 'search',
+      comment: false
+    }
+  };
+});

@@ -5,5 +5,6 @@ hexo.extend.filter.register('template_locals', locals => {
   // 将结果保存到 locals 中，供模板使用
   locals.recommendedPosts = recommendedPosts.slice(0, 5);
   locals.recentPosts = allPosts.slice(0, 5);
+  locals.isLocalServer = hexo.env.cmd === 'server';
   return locals;
 });

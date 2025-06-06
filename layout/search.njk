@@ -1,0 +1,51 @@
+<div class="sea-page-card-wrapper">
+  <h1 class="sea-page-card-title">
+    {{ __('page.search') }}
+  </h1>
+  {% if isLocalServer %}
+    <div class="sea-search-dev-tip">
+      {{ __('page.search_dev_tip')  }}
+      <code>hexo generate</code>
+    </div>
+  {% endif %}
+  <div id="pagefind-search"></div>
+</div>
+
+<link href="{{ url_for('/pagefind/pagefind-ui.css') }}" rel="stylesheet">
+<link href="{{ url_for('/css/plugins/localsearch.css') }}" rel="stylesheet">
+
+<script src="{{ url_for('/pagefind/pagefind-ui.js') }}"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const pagefindSearch = document.querySelector("#pagefind-search");
+    if (!pagefindSearch) return;
+    const params = new URLSearchParams(window.location.search);
+    const search = new PagefindUI({
+      element: "#pagefind-search",
+      showSubResults: true,
+      showImages: false,
+      showEmptyFilters: false,
+      resetStyles: false,
+      processTerm: function (term) {
+        params.set("q", term);
+        history.replaceState(history.state, "", "?" + params.toString());
+        return term;
+      },
+    });
+    const query = params.get("q");
+    if (query) {
+      search.triggerSearch(query);
+    }
+    // Reset search param if search input is cleared
+    const searchInput = document.querySelector(".pagefind-ui__search-input");
+    const clearButton = document.querySelector(".pagefind-ui__search-clear");
+    searchInput?.addEventListener("input", resetSearchParam);
+    clearButton?.addEventListener("click", resetSearchParam);
+
+    function resetSearchParam(e) {
+      if (e.target?.value.trim() === "") {
+        history.replaceState(history.state, "", window.location.pathname);
+      }
+    }
+  });
+</script>

@@ -6,6 +6,8 @@
   --sea-color-warning: #f59e0b;
   --sea-color-danger: #ef4444;
 
+  --sea-color-warning-bg: #FDF3D8;
+
   --sea-color-gray: #8e8e93;
   --sea-color-gray-1: #ccc;
   --sea-color-gray-2: #eee;
@@ -72,7 +74,7 @@ html[theme=dark] {
 :root {
   --sea-main-width: 85%;
   --sea-main-max-width: 800px;
-  --sea-nav-height: 100px;
+  --sea-nav-height: 85px;
 }
 
 /* 字体 */

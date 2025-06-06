@@ -1,6 +1,6 @@
 .sea-nav-wrap {
   width: var(--sea-main-width);
-  height: 100%;
+  height: var(--sea-nav-height);
   max-width: var(--sea-main-max-width);
   margin: 0 auto;
   padding: 0 1.2rem;
@@ -12,6 +12,7 @@
 
 .sea-nav-logo {
   font-size: 2rem;
+  font-weight: bold;
   margin: 0;
   cursor: pointer;
 }
