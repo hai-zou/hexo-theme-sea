@@ -98,10 +98,15 @@ giscus:
 
 ### 搜索
 
+```bash
+# 若使用的 pagefind，则需要安装依赖
+npm install --save-dev pagefind
+```
+
 ```yml
 search:
   enable: # 是否启用
-  type: # algolia
+  type: # algolia | pagefind
 
 # Docsearch https://docsearch.algolia.com/apply/
 algolia:
@@ -238,6 +243,3 @@ This is an info box.
 - 归档页面：/archives/
 - 分类页面：/categories/
 - 标签页面：/tags/
-
-## TodoList
-- [ ] 本地搜索

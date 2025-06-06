@@ -6,11 +6,13 @@ home:
 page:
   contents: 目录
   categories: 分类
+  search: Search
   tags: 标签
   tagcloud: 标签云
   archive: 归档
   recent_articles: 最近文章
   archive_total: 共计 %d 篇文章！
+  search_dev_tip: 🔍 开发模式警告！您需要先构建一次项目才能看到搜索结果。
 
 theme:
   auto: 跟随系统

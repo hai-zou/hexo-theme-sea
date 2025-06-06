@@ -54,6 +54,10 @@ comment:
   enable: true
   type: giscus
 
+search:
+  enable: true
+  type: pagefind
+
 giscus:
   repo: hai-zou/hexo-theme-sea
   repoid: R_kgDOLD6S2g

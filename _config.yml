@@ -47,7 +47,7 @@ giscus:
 
 search:
   enable: false
-  type: # algolia
+  type: # algolia | pagefind
 
 # Docsearch https://docsearch.algolia.com/apply/
 algolia:

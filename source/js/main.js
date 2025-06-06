@@ -1,14 +1,3 @@
-// 搜索
-function onDocSearch() {
-  const searchIconEle = document.getElementById('sea-search-icon');
-  const searchInputEle = document.getElementById('sea-search-input');
-  if (!searchIconEle) return;
-  searchIconEle.addEventListener('click', () => {
-    const btnEle = searchInputEle.querySelector('.DocSearch');
-    btnEle.click();
-  });
-}
-
 // 移动端菜单
 function onMobileNavShow() {
   const body = document.body;
@@ -33,6 +22,4 @@ function onMobileNavShow() {
   dimmer.addEventListener('click', closeFun);
   closeBtn.addEventListener('click', closeFun);
 }
-
-onDocSearch();
 onMobileNavShow();

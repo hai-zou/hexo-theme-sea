@@ -6,11 +6,13 @@ home:
 page:
   contents: Table of contents
   categories: Categories
+  search: Search
   tags: Tags
   tagcloud: Tag Cloud
   archive: Archive
   recent_articles: Recent Articles
   archive_total: Total %d articles!
+  search_dev_tip: 🔍 Development model warning! You need to build the project once before you can see the search results.
 
 theme:
   auto: System
