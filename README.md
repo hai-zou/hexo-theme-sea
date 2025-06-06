@@ -98,11 +98,6 @@ giscus:
 
 ### 搜索
 
-```bash
-# 若使用的 pagefind，则需要安装依赖
-npm install --save-dev pagefind
-```
-
 ```yml
 search:
   enable: # 是否启用
