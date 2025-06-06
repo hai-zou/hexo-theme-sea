@@ -1,0 +1,22 @@
+.sea-pagination {
+  text-align: center;
+}
+
+.sea-pagination .page-number,
+.sea-pagination .prev,
+.sea-pagination .next,
+.sea-pagination .space {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  background-color: var(--sea-color-bg);
+  margin: .3rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.sea-pagination .page-number.current {
+  background-color: var(--sea-color-primary);
+  color: var(--sea-color-white);
+}

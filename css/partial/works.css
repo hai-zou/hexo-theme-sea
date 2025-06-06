@@ -1,0 +1,83 @@
+.sea-works-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.sea-works-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--sea-color-border-1);
+  border-radius: 10px;
+}
+
+.sea-works-cover {
+  /* 宽高比20:9 */
+  width: 100%;
+  padding-top: 45%;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--sea-color-border-1);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.sea-works-cover img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+  border: none !important;
+  border-radius: 0 !important;
+  transition: transform 0.3s ease;
+}
+
+.sea-works-card:hover img {
+  transform: scale(1.1);
+}
+
+.sea-works-content {
+  padding: 0.625rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.sea-works-card .sea-works-title {
+  font-size: 1rem;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sea-works-card:hover .sea-works-title {
+  color: var(--sea-color-primary);
+}
+
+.sea-works-desc {
+  font-size: 0.875rem;
+  color: var(--sea-color-gray);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sea-works-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.sea-works-tag {
+  padding: 2px 5px;
+  border: 1px solid var(--sea-color-border-1);
+  border-radius: 5px;
+  font-size: 0.75rem;
+  color: var(--sea-color-gray);
+}

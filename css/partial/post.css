@@ -1,0 +1,62 @@
+.sea-article-content {
+  word-break: break-word;
+  margin-top: 1.5rem;
+}
+
+.sea-article-title {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.sea-post-meta {
+  color: var(--sea-color-text-2);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  row-gap: 0.5rem;
+}
+
+.sea-post-time,
+.sea-post-tags,
+.sea-post-categories {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  transition: color 0.3s ease;
+}
+
+.sea-post-tags:hover,
+.sea-post-categories:hover  {
+  color: var(--sea-color-primary);
+}
+
+.sea-post-meta__center {
+  justify-content: center;
+}
+
+.sea-article-catalog .toc,
+.sea-article-catalog .toc-child {
+  list-style-type: disc;
+  padding-left: 1.8rem;
+}
+
+.sea-article-catalog .toc-number {
+  display: none;
+}
+
+.sea-article-catalog .toc-item {
+  margin-top: 1rem;
+}
+
+.sea-article-catalog .toc-link {
+  text-decoration: none;
+  color: inherit;
+  padding: .5rem 0;
+  font-weight: 500;
+}
+
+.sea-article-catalog .toc-link:hover {
+  color: var(--sea-color-primary);
+}
