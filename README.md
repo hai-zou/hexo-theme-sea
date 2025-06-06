@@ -1,9 +1,11 @@
 # Hexo Theme Sea
 一款简约的 Hexo 博客主题！
 
+![Hexo-Theme-Sea](https://github.com/user-attachments/assets/d337cf2c-4dcd-474e-a290-16746520de08)
+
 ## 在线预览
 - Example: <https://hai-zou.github.io/hexo-theme-sea/>
-- My Blog: <https://blog.izou.top/>
+- My Blog: <https://www.izou.top/>
 
 ## 特性
 - 响应式，适配移动端
@@ -14,7 +16,7 @@
 - 搜索（Algolia）
 
 ## 评分
-![image](https://github.com/user-attachments/assets/b9761fed-789b-4738-ba11-d49baddddb02)
+![score](https://github.com/user-attachments/assets/577df733-de8e-40c0-ab61-795b37c0274d)
 
 ## 应用
 
@@ -121,6 +123,20 @@ friends:
     avatar: # 头像
     link: # 站点地址
     desc: # 描述
+```
+
+### 作品
+
+```yml
+works:
+  - name: # 名称
+    desc: # 描述
+    tags: # 标签
+      - tag1
+      - tag2
+      - tag3
+    link: # 链接
+    cover: # 预览图
 ```
 
 ### 社交链接
