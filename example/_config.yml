@@ -103,3 +103,10 @@ theme: sea
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# _config.yml
+math:
+  katex:
+    css: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css'
+  mathjax:
+    css: 'https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css'

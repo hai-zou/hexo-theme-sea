@@ -31,7 +31,7 @@
     script.setAttribute("data-lang", giscus_lang);
     script.setAttribute("data-loading", giscus_loading);
     script.setAttribute("crossorigin", "anonymous");
-    script.async = true;
+    script.defer = true;
     container && container.appendChild(script);
   }
   createGusicScript();

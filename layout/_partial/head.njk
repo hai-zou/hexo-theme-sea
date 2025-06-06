@@ -10,12 +10,12 @@
 
   {{ favicon_tag(config.favicon) }}
 
+  {{ open_graph() }}
+  {{ meta_generator() }}
+  {{ generateJSONLD(page) }}
+
   {# CSS #}
   {{ css('css/main') }}
-
-  {# Open Graph #}
-  {{ open_graph() }}
-
   <style>
     :root {
       --sea-color-primary: {{ theme.primaryColor }};

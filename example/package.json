@@ -24,8 +24,5 @@
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-sea": "^1.3.0"
-  },
-  "devDependencies": {
-    "pagefind": "^1.3.0"
   }
 }
