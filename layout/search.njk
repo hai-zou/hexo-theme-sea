@@ -14,8 +14,8 @@
 <link href="{{ url_for('/pagefind/pagefind-ui.css') }}" rel="stylesheet">
 <link href="{{ url_for('/css/plugins/localsearch.css') }}" rel="stylesheet">
 
-<script src="{{ url_for('/pagefind/pagefind-ui.js') }}"></script>
-<script>
+<script src="{{ url_for('/pagefind/pagefind-ui.js') }}" defer></script>
+<script defer>
   window.addEventListener('DOMContentLoaded', () => {
     const pagefindSearch = document.querySelector("#pagefind-search");
     if (!pagefindSearch) return;
