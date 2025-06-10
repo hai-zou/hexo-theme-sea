@@ -14,7 +14,10 @@
       {% set tocContent = toc(page.content) %}
       {% if tocContent %}
         <div class="sea-article-catalog">
-          <h2>{{ __('page.contents') }}</h2>
+          <h2 class="sea-article-catalog-title">
+            {{ partial('svg/arrow_right_fill') }}
+            {{ __('page.contents') }}
+          </h2>
           {{ tocContent }}
         </div>
       {% endif %}
@@ -30,3 +33,16 @@
 </article>
 
 {{ partial('_plugins/comments/index') }}
+
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleIcon = document.querySelector('.sea-article-catalog-title .sea-svg-icon');
+    const tocContent = document.querySelector('.sea-article-catalog > .toc');
+    if (toggleIcon && tocContent) {
+      toggleIcon.addEventListener('click', function () {
+        tocContent.classList.toggle('sea-article-catalog-show');
+        toggleIcon.classList.toggle('sea-svg-icon-rotate');
+      });
+    }
+  });
+</script>
