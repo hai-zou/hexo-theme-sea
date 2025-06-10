@@ -5,6 +5,7 @@ categories:
   - Doc
 excerpt: Hexo Theme Sea 主题详细配置文档
 recommend: true
+tableOfContents: true
 ---
 
 {% note info %}
@@ -251,6 +252,7 @@ tags: # 文章标签
   - tag2
 excerpt: # 摘要 或者 <!-- more --> 之前的文字将会被视为摘要
 comments: # 是否展示评论，默认 true
+tableOfContents: # 目录
 sticky: # 置顶，按数值大小排序
 permalink: # 覆盖文章的永久链接
 published: # 文章是否发布
@@ -268,8 +270,4 @@ footer:
 
 # 主题色
 primaryColor: '#10b981'
-
-# 目录
-tableOfContents:
-  enable: true # 默认启用
 ```

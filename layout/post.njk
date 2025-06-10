@@ -10,7 +10,7 @@
     {% endif %}
   </header>
   <div class="sea-doc">
-    {% if theme.tableOfContents.enable %}
+    {% if page.tableOfContents %}
       {% set tocContent = toc(page.content) %}
       {% if tocContent %}
         <div class="sea-article-catalog">

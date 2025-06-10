@@ -4,6 +4,7 @@ date: 2024-08-28 10:31:53
 categories:
   - Doc
 recommend: true
+tableOfContents: true
 ---
 
 ## 1、安装 `hexo-math`
