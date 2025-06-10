@@ -57,7 +57,7 @@ socialLink:
 
 ```yml _config.sea.yml
 articles:
-  path: 'articles' # 路由
+  path: 'posts' # 路由，默认为 posts
   per_page: 10 # 分页数
   order_by: -date # 文章排序
 ```
