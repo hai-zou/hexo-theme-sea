@@ -4,7 +4,7 @@ home:
     name: Hexo Theme Sea
     intro: Hexo Theme Sea is a simple and elegant Hexo blog theme with built-in support for internationalization, light and dark modes, customizable themes, and seamless integration of comments (Waline, Giscus) and search (Algolia).
     avatar: logo.svg
-  posts: recent
+  posts: recommend
 
 articles:
   path: 'posts'

@@ -1,6 +1,9 @@
 ---
 title: 如何使用 Katex 渲染数学公式
 date: 2024-08-28 10:31:53
+categories:
+  - Doc
+recommend: true
 ---
 
 ## 1、安装 `hexo-math`
