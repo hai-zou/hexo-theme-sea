@@ -142,6 +142,12 @@ socialLink:
     link: # 跳转链接
 ```
 
+### 站点图标
+
+```yml
+favicon: # Favicon 图标
+```
+
 ### Footer
 
 ```yml

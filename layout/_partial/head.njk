@@ -8,7 +8,9 @@
 
   <link rel="canonical" href="{{ full_url_for(page.path) }}">
 
-  {{ favicon_tag(config.favicon) }}
+  {% if theme.favicon %}
+    {{ favicon_tag(theme.favicon) }}
+  {% endif %}
 
   {{ open_graph() }}
   {{ meta_generator() }}

@@ -7,13 +7,13 @@ home:
   posts: recent
 
 articles:
-  path: 'articles'
+  path: 'posts'
   per_page: 10
   order_by: -date
 
 menu:
   - name: Posts
-    url: /articles/
+    url: /posts/
   - name: Categories
     url: /categories/
   - name: Tags
@@ -49,6 +49,8 @@ works:
 
 footer:
   builtUpTime: 2024-05-28
+
+favicon: /logo.svg
 
 comment:
   enable: true
