@@ -23,7 +23,7 @@
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-sea": "^1.3.2",
+    "hexo-theme-sea": "^1.3.3",
     "hexo-uglify": "^2.0.0"
   }
 }
