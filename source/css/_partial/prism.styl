@@ -69,7 +69,7 @@ pre.line-numbers>code {
   left: -3.8em;
   width: 3em;
   letter-spacing: -1px;
-  border-right: 1px solid #999;
+  border-right: 1px solid var(--sea-color-divider);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -87,6 +87,17 @@ pre.line-numbers>code {
   display: block;
   padding-right: .8em;
   text-align: right;
+}
+
+pre .caption {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  color: #999
+  margin-bottom: 0.5em;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 /* PrismJS 1.29.0

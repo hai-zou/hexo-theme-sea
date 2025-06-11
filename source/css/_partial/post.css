@@ -36,6 +36,30 @@
   justify-content: center;
 }
 
+.sea-article-catalog-title {
+  display: flex;
+  align-items: center;
+}
+
+.sea-article-catalog-title .sea-svg-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: .5rem;
+  cursor: pointer;
+}
+
+.sea-article-catalog-title .sea-svg-icon.sea-svg-icon-rotate {
+  transform: rotate(90deg);
+}
+
+.sea-article-catalog > .toc {
+  display: none;
+}
+
+.sea-article-catalog > .toc.sea-article-catalog-show {
+  display: block;
+}
+
 .sea-article-catalog .toc,
 .sea-article-catalog .toc-child {
   list-style-type: disc;

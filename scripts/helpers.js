@@ -63,7 +63,7 @@ hexo.extend.helper.register('generateJSONLD', function (page) {
         "name": config.title,
         "logo": {
           "@type": "ImageObject",
-          "url": this.full_url_for(theme.logo || '/favicon.ico')
+          "url": this.full_url_for(theme.favicon || '/favicon.ico')
         }
       }
     };

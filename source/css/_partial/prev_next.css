@@ -39,3 +39,8 @@
 .sea-prev-next-wrapper .next:hover .link {
   text-decoration: none;
 }
+
+.sea-prev-next-wrapper .sea-svg-icon {
+  width: .875rem;
+  height: .875rem;
+}

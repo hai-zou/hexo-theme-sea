@@ -21,9 +21,9 @@
     "sea"
   ],
   "dependencies": {
-    "hexo": "^7.2.0",
-    "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-marked": "^6.0.0",
-    "hexo-renderer-stylus": "^3.0.0"
+    "hexo-pagination": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }

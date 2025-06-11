@@ -8,7 +8,7 @@ home:
 
 # 所有文章
 articles:
-  path: 'articles' # 路由
+  path: 'posts' # 路由
   per_page: 10 # 分页数
   order_by: -date # 文章排序
 
@@ -75,6 +75,4 @@ socialLink:
 # 主题色
 primaryColor: '#10b981'
 
-# 目录
-tableOfContents:
-  enable: true
+favicon: # Favicon 图标
