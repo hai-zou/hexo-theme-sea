@@ -3,10 +3,6 @@
 
 ![Hexo-Theme-Sea](https://github.com/user-attachments/assets/d337cf2c-4dcd-474e-a290-16746520de08)
 
-## 在线预览
-- Example: <https://hai-zou.github.io/hexo-theme-sea/>
-- My Blog: <https://www.izou.top/>
-
 ## 特性
 - 响应式，适配移动端
 - 国际化，支持中英文
