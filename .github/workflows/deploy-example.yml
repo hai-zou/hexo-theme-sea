@@ -1,0 +1,43 @@
+name: Deploy Example to GitHub Pages
+
+on:
+  workflow_dispatch: # 支持手动触发
+
+jobs:
+  deploy:
+    name: Manual Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./example
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        run: |
+          cd public
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b gh-pages
+          git add .
+          git commit -m "ci: deploy"
+          git remote add origin https://github.com/hai-zou/hexo-theme-sea.git
+          git push -f https://x-access-token:${GITHUB_TOKEN}@github.com/hai-zou/hexo-theme-sea.git gh-pages
